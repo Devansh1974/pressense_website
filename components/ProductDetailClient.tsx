@@ -1,0 +1,233 @@
+"use client";
+
+import React, { useState } from "react";
+import { MessageCircle, FileText, Check, ArrowRight, Shield, Clock, HelpCircle } from "lucide-react";
+import { Product, Category } from "@/lib/types";
+import ProductGallery from "@/components/ProductGallery";
+import ProductSpecifications from "@/components/ProductSpecifications";
+import ProductCard from "@/components/ProductCard";
+import QuoteModal from "@/components/QuoteModal";
+import { WhatsAppProductButton } from "@/components/WhatsAppButtons";
+import { companyInfo } from "@/data/company";
+
+interface ProductDetailClientProps {
+  product: Product;
+  category: Category;
+  relatedProducts: Product[];
+}
+
+export default function ProductDetailClient({
+  product,
+  category,
+  relatedProducts,
+}: ProductDetailClientProps) {
+  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+
+  return (
+    <>
+      {/* Top Main Section: Gallery + Primary Purchase Action */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-14">
+        {/* Left Column: Product Gallery (7 cols) */}
+        <div className="lg:col-span-7">
+          <ProductGallery
+            images={product.images}
+            productName={product.name}
+          />
+        </div>
+
+        {/* Right Column: Machine Info & Conversion Funnel (5 cols) */}
+        <div className="lg:col-span-5 bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 shadow-xs flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between gap-2 mb-3">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0796CC]">
+                {category.name}
+              </span>
+              {product.modelCode && (
+                <span className="text-xs font-mono text-[#64748B] bg-[#F8FAFC] border border-[#E2E8F0] px-2 py-0.5 rounded">
+                  Ref: {product.modelCode}
+                </span>
+              )}
+            </div>
+
+            <h1 className="font-heading font-black text-2xl sm:text-3xl text-[#0D1B24] tracking-tight leading-snug">
+              {product.name}
+            </h1>
+
+            <p className="text-sm sm:text-base text-[#64748B] mt-4 leading-relaxed">
+              {product.shortDescription}
+            </p>
+
+            {/* Quick Highlights */}
+            <div className="my-6 p-4 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl space-y-2">
+              <div className="flex items-center gap-2 text-xs text-[#0D1B24] font-medium">
+                <Shield className="w-4 h-4 text-[#0796CC] shrink-0" />
+                <span>Heavy-Duty Industrial Specification</span>
+              </div>
+              <div className="flex items-center gap-2 text-xs text-[#0D1B24] font-medium">
+                <Clock className="w-4 h-4 text-[#0796CC] shrink-0" />
+                <span>Direct Stock • Rapid Dispatch Across India</span>
+              </div>
+            </div>
+
+            {/* Primary Action Buttons */}
+            <div className="flex flex-col gap-3">
+              <WhatsAppProductButton
+                product={product}
+                label="WhatsApp About This Machine"
+                className="w-full"
+              />
+
+              <button
+                onClick={() => setQuoteModalOpen(true)}
+                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-5 bg-white hover:bg-[#F8FAFC] text-[#0D1B24] border border-[#E2E8F0] hover:border-[#0796CC] text-sm sm:text-base font-semibold rounded-lg shadow-xs transition-colors cursor-pointer"
+              >
+                <FileText className="w-4 h-4 text-[#0796CC]" />
+                <span>Request a Quote</span>
+              </button>
+            </div>
+
+            <div className="mt-6 pt-5 border-t border-[#E2E8F0] text-xs text-[#64748B] space-y-1">
+              <p>• Technical personnel available for machine sizing questions</p>
+              <p>• Custom sizes &amp; bar configurations available upon request</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Tabs / Deep Content Sections */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-16">
+        {/* Left Column (8 cols): Overview, Features, Specs, Applications */}
+        <div className="lg:col-span-8 space-y-12">
+          {/* Machine Overview */}
+          <section className="bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 shadow-xs">
+            <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#0D1B24] mb-4 pb-3 border-b border-[#E2E8F0]">
+              Machine Overview &amp; Capabilities
+            </h2>
+            <div className="text-sm sm:text-base text-[#475569] leading-relaxed space-y-4">
+              <p>{product.description}</p>
+            </div>
+          </section>
+
+          {/* Key Features */}
+          <section className="bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 shadow-xs">
+            <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#0D1B24] mb-6 pb-3 border-b border-[#E2E8F0]">
+              Key Features &amp; Engineering Details
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {product.features.map((feature, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-start gap-3 p-3.5 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg"
+                >
+                  <div className="w-5 h-5 rounded-full bg-[#0796CC]/10 text-[#0796CC] flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="w-3.5 h-3.5 stroke-[3]" />
+                  </div>
+                  <span className="text-xs sm:text-sm font-medium text-[#111827]">
+                    {feature}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Technical Specifications */}
+          <section>
+            <ProductSpecifications
+              specifications={product.specifications}
+              modelCode={product.modelCode}
+            />
+          </section>
+
+          {/* Applications */}
+          <section className="bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 shadow-xs">
+            <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#0D1B24] mb-4 pb-3 border-b border-[#E2E8F0]">
+              Common Pressroom &amp; Bindery Applications
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {product.applications.map((app, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-2.5 p-3 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] text-xs sm:text-sm text-[#475569]"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#0796CC] shrink-0" />
+                  <span>{app}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+
+        {/* Right Sticky Sidebar (4 cols) */}
+        <div className="lg:col-span-4 space-y-6">
+          <div className="bg-white border border-[#E2E8F0] rounded-2xl p-6 shadow-xs sticky top-28">
+            <h3 className="font-heading font-bold text-base text-[#0D1B24] mb-3">
+              Need Verification or Advice?
+            </h3>
+            <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed mb-6">
+              Our specialists confirm dimensional compatibility with your cutter or press model before you order.
+            </p>
+
+            <div className="space-y-3">
+              <WhatsAppProductButton
+                product={product}
+                label="Direct WhatsApp Enquiry"
+                className="w-full text-xs"
+              />
+
+              <button
+                onClick={() => setQuoteModalOpen(true)}
+                className="w-full py-2.5 px-4 bg-[#F8FAFC] hover:bg-[#F1F5F9] border border-[#E2E8F0] text-xs font-semibold text-[#0D1B24] rounded-lg transition-colors cursor-pointer"
+              >
+                Request Quotation Sheet
+              </button>
+            </div>
+
+            <div className="mt-6 pt-5 border-t border-[#E2E8F0] space-y-2 text-xs text-[#64748B]">
+              <div className="flex justify-between">
+                <span>Direct Sales Desk:</span>
+                <strong className="text-[#0D1B24]">{companyInfo.displayPhone}</strong>
+              </div>
+              <div className="flex justify-between">
+                <span>Dispatch Location:</span>
+                <span className="text-[#0D1B24]">Delhi, India</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Response Time:</span>
+                <span className="text-[#16A34A] font-medium">Within 1 Hour</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Products Section */}
+      {relatedProducts.length > 0 && (
+        <div className="my-16">
+          <div className="flex items-center justify-between pb-4 mb-6 border-b border-[#E2E8F0]">
+            <div>
+              <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#0D1B24]">
+                Related Equipment in {category.name}
+              </h2>
+              <p className="text-xs text-[#64748B] mt-0.5">
+                Explore complementary finishing units and tooling
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {relatedProducts.map((relProduct) => (
+              <ProductCard key={relProduct.id} product={relProduct} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Quote Modal */}
+      <QuoteModal
+        product={product}
+        isOpen={quoteModalOpen}
+        onClose={() => setQuoteModalOpen(false)}
+      />
+    </>
+  );
+}
