@@ -25,7 +25,7 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex items-center justify-between pb-4 mb-6 border-b border-[#E2E8F0]">
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-[#0796CC]">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-[#FA7533]">
               Product Catalogue
             </h3>
             <p className="text-sm font-semibold text-[#111827] mt-0.5">
@@ -35,7 +35,7 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
           <Link
             href="/products"
             onClick={onClose}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0796CC] hover:text-[#0684b3] group transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#FA7533] hover:text-[#E05D1C] group transition-colors"
           >
             <span>View All Products</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -52,7 +52,7 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
                 key={cat.id}
                 href={`/products/${cat.slug}`}
                 onClick={onClose}
-                className="group flex flex-col bg-[#F7F8F7] hover:bg-white border border-[#E2E8F0] hover:border-[#0796CC] rounded-lg p-4 transition-all duration-200"
+                className="group flex flex-col bg-[#F7F8F7] hover:bg-white border border-[#E2E8F0] hover:border-[#FA7533] rounded-lg p-4 transition-all duration-200"
               >
                 {/* 4:3 Image Container with object-fit: contain */}
                 <div className="relative w-full aspect-[4/3] bg-white rounded border border-[#E2E8F0] overflow-hidden p-3 mb-4 flex items-center justify-center">
@@ -71,7 +71,7 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
 
                 <div className="flex-1 flex flex-col justify-between">
                   <div>
-                    <h4 className="text-sm font-bold text-[#111827] group-hover:text-[#0796CC] transition-colors leading-snug">
+                    <h4 className="text-sm font-bold text-[#111827] group-hover:text-[#FA7533] transition-colors leading-snug">
                       {cat.name}
                     </h4>
                     <p className="text-xs text-[#64748B] mt-1 line-clamp-2 leading-relaxed">
@@ -79,7 +79,7 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
                     </p>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-[#E2E8F0] flex items-center justify-between text-xs font-semibold text-[#0796CC]">
+                  <div className="mt-4 pt-3 border-t border-[#E2E8F0] flex items-center justify-between text-xs font-semibold text-[#FA7533]">
                     <span>View Category</span>
                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
