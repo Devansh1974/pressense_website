@@ -551,6 +551,463 @@ export const products: Product[] = [
     badge: "Multi-Brand Trimmer Sets",
     modelCode: "KN-3KNIFE-SERIES",
   },
+  {
+    id: "prod-brochure-1",
+    slug: "in-house-barred-printing-blankets",
+    name: "In-House Barred Printing Blankets",
+    categorySlug: "offset-consumables-spare-parts",
+    shortDescription:
+      "Precision-prepared printing blankets barred in our dedicated in-house facility. Economical China imports, Continental, UV, and Acoma options.",
+    description:
+      "Our in-house blanket baring facility allows us to prepare and finish blankets according to exact customer press dimensions, helping us maintain strict control over mechanical accuracy, tension consistency, and fast turnaround. Available in Economical Printing Blankets imported from China as a reliable, cost-effective option, Continental (Conti-Air) blankets, UV curing blankets, and Acoma solutions for Heidelberg, Mitsubishi, Ryobi, Sakurai, and Komori presses.",
+    images: [
+      "/images/products/conti-air-printing-blankets.png",
+      "/images/products/saphira-blanket-pro-strippable.jpg",
+      "/images/categories/offset-consumables.png",
+    ],
+    features: [
+      "Custom prepared in our specialized In-House Blanket Baring Facility",
+      "Economical Chinese blankets positioned as reliable, cost-effective option",
+      "Continental (Conti-Air) blankets supplied to exact press specifications",
+      "Dedicated UV printing blankets for UV ink curing and varnishing",
+      "Acoma blanket options tailored to specific substrate requirements",
+      "Guaranteed bar squareness, uniform clamping torque, and zero slippage",
+    ],
+    applications: [
+      "Sheetfed commercial offset printing presses",
+      "Packaging carton converters and folding board presses",
+      "UV varnish and spot coating units",
+      "High-speed publication and book work",
+    ],
+    specifications: {
+      "Facility": "Press Sense In-House Blanket Baring Center",
+      "Blanket Types": "China Economical, Continental, UV, Acoma",
+      "Compatible Presses": "Heidelberg, Mitsubishi, Ryobi, Sakurai, Komori, KBA",
+      "Thickness Range": "1.70 mm and 1.95 mm (4-ply compressible)",
+      "Bar Materials": "Heavy-duty pre-drilled galvanized steel & aluminum",
+      "Tolerances": "Calibrated thickness uniformity ±0.015 mm",
+    },
+    featured: true,
+    badge: "In-House Baring Facility",
+    modelCode: "PS-BLK-BAR",
+  },
+  {
+    id: "prod-brochure-2",
+    slug: "dic-printing-inks",
+    name: "DIC Printing Inks",
+    categorySlug: "offset-consumables-spare-parts",
+    shortDescription:
+      "Genuine DIC printing inks supplied for a wide range of commercial and packaging offset printing applications.",
+    description:
+      "We supply high-performance DIC printing inks selected for optimal pressroom runnability, vibrant color density, rapid oxidative setting, and dependable rub resistance. Suitable for high-speed multi-color sheetfed offset presses across paperboard, coated art stock, and uncoated paper.",
+    images: [
+      "/images/categories/offset-consumables.png",
+      "/images/products/conti-air-printing-blankets.png",
+    ],
+    features: [
+      "Official DIC printing inks for commercial and packaging applications",
+      "High tinctorial strength and true dot fidelity",
+      "Clean ink-water balance with minimal emulsification",
+      "Excellent rub, scratch, and scuff resistance",
+      "Available in 4-color process sets, Pantone matches, and metallic inks",
+    ],
+    applications: [
+      "Folding cartons and FMCG packaging",
+      "Commercial brochures, magazines, and marketing collaterals",
+      "High-speed publication printing",
+    ],
+    specifications: {
+      "Brand": "DIC",
+      "Series": "Process CMYK & Specialized Color Inks",
+      "Packaging": "1 kg, 2.5 kg, 20 kg vacuum sealed cans & drums",
+      "Setting Time": "Ultra-fast oxidative setting on coated substrates",
+      "Viscosity": "Controlled rheology for high-speed press runs",
+    },
+    featured: true,
+    badge: "Authorized DIC Supply",
+    modelCode: "PS-DIC-INK",
+  },
+  {
+    id: "prod-brochure-3",
+    slug: "boettcher-pressroom-chemicals",
+    name: "Böttcher Pressroom Chemicals",
+    categorySlug: "offset-consumables-spare-parts",
+    shortDescription:
+      "Böttcher pressroom chemicals supporting day-to-day printing requirements: washes, fountain solutions, and cleaners.",
+    description:
+      "Comprehensive range of Böttcher pressroom chemicals engineered to optimize printing press stability and maintain roller and blanket hygiene. From alcohol-reducing fountain solution additives to automatic blanket washes, calcium deglazers, and plate preservation cleaners.",
+    images: [
+      "/images/categories/offset-consumables.png",
+      "/images/products/saphira-blanket-pro-strippable.jpg",
+    ],
+    features: [
+      "Genuine Böttcher chemicals supporting daily printing operations",
+      "Fountain solutions for alcohol-reduced and alcohol-free printing",
+      "High-flashpoint automatic and manual blanket washes",
+      "Calcium deglazing pastes for roller rejuvenation",
+      "Non-abrasive plate cleaners and gumming solutions",
+    ],
+    applications: [
+      "Daily press hygiene and scheduled preventative maintenance",
+      "Commercial sheetfed offset and web presses",
+      "Eliminating ink glazing and blanket piling",
+    ],
+    specifications: {
+      "Brand": "Böttcher",
+      "Product Line": "Fountain Additives, Blanket Washes, Deglazers",
+      "Packaging Options": "5L, 25L, 200L industrial containers",
+      "Flash Point": "FOGRA certified safety ratings",
+    },
+    featured: true,
+    badge: "Böttcher Certified",
+    modelCode: "PS-BOT-CHEM",
+  },
+  {
+    id: "prod-brochure-4",
+    slug: "anti-marking-film",
+    name: "Non-Adhesive Anti-Marking Film",
+    categorySlug: "offset-consumables-spare-parts",
+    shortDescription:
+      "Non-adhesive anti-marking film, imported from Japan and China, engineered for sheetfed transfer and delivery cylinders.",
+    description:
+      "Imported from leading manufacturers in Japan and China, our non-adhesive anti-marking films provide a microscopic glass-bead textured surface that eliminates fresh ink smear, marking, and static clinging on transfer drums and delivery cylinders.",
+    images: [
+      "/images/categories/offset-consumables.png",
+      "/images/products/conti-air-printing-blankets.png",
+    ],
+    features: [
+      "Imported directly from Japan and China for dependable performance",
+      "Non-adhesive design for straightforward mechanical clamping",
+      "Microscopic silicone-coated glass bead surface prevents ink adherence",
+      "High wear resistance and easy cleaning with standard wash solutions",
+      "Dramatically reduces sheet waste on two-sided printing jobs",
+    ],
+    applications: [
+      "Transfer cylinders and delivery drums on sheetfed offset presses",
+      "High-coverage commercial print work and packaging carton printing",
+    ],
+    specifications: {
+      "Origin": "Imported from Japan & China",
+      "Type": "Non-adhesive glass bead cylinder jacket film",
+      "Roll Widths": "Available in custom press widths (up to 1250mm)",
+      "Surface Property": "Oleophobic and antistatic treated",
+    },
+    featured: false,
+    badge: "Imported Japan/China",
+    modelCode: "PS-AMF-PRO",
+  },
+  {
+    id: "prod-brochure-5",
+    slug: "press-sense-creasing-matrix",
+    name: "Press Sense Own-Brand Creasing Matrix",
+    categorySlug: "die-making-machines",
+    shortDescription:
+      "Our own-brand creasing matrix is an imported product with strong market acceptance, offering a practical, competitively priced packaging solution.",
+    description:
+      "Press Sense proprietary own-brand creasing matrix is an imported product that has gained wide industry acceptance among folding carton manufacturers and packaging converters. Engineered for exceptional register accuracy, clean crease formation, and extended die-cutting tool life without delamination.",
+    images: [
+      "/images/categories/die-making-machines.png",
+      "/images/products/paper-corner-rounder-cutter.png",
+    ],
+    features: [
+      "Press Sense own-brand imported product with strong market acceptance",
+      "Practical and competitively priced for carton packaging converters",
+      "Micro-precise channel profiling ensures crisp folds without board cracking",
+      "Engineered locator bridge guarantees accurate die-rule alignment",
+      "Strong finger-lift adhesive backing ensures firm hold on cutting plates",
+    ],
+    applications: [
+      "Folding carton die-cutting and creasing",
+      "Corrugated board, fluted boxes, and luxury cosmetic cartons",
+      "High-speed automatic platen die cutters and cylinder presses",
+    ],
+    specifications: {
+      "Brand": "Press Sense (Own-Brand)",
+      "Channel Profile": "Standard, Narrow, Off-Center, and Multi-Crease",
+      "Base Material": "Engineered composite matrix with polymer locator",
+      "Adhesive": "High-shear solvent-free finger-lift tape",
+      "Packaging": "Standard boxes with matching locator strips",
+    },
+    featured: true,
+    badge: "Own-Brand Market Leader",
+    modelCode: "PS-MTX-PR",
+  },
+  {
+    id: "prod-brochure-6",
+    slug: "thermal-wet-dry-laminating-machines",
+    name: "Thermal, Wet & Dry Laminating Machines",
+    categorySlug: "digital-offset-finishing-machines",
+    shortDescription:
+      "Industrial thermal, wet and dry laminating machines supplied to printers in Chennai and nationwide, configured to format and volume.",
+    description:
+      "We supply high-efficiency thermal, wet, and dry laminating machines to commercial printers and packaging companies across India, including established installations in Chennai. Sourced and configured around your specific paper format, substrate thicknesses, production volume, and budget.",
+    images: [
+      "/images/categories/digital-offset.jpg",
+      "/images/products/paper-creasing-perforating.png",
+    ],
+    features: [
+      "Thermal (BOPP/thermal film), wet (water-based), and dry lamination modes",
+      "Large-diameter mirror-finish hard chrome heated roller",
+      "Pneumatic pressure system with sensitive pressure regulation",
+      "Automatic sheet overlap feeder with precision flying-knife separator",
+      "Supplied and serviced across Chennai, Delhi, and nationwide",
+    ],
+    applications: [
+      "Book covers, catalogues, and luxury packaging cartons",
+      "Thermal film gloss, matte, velvet soft-touch, and metallic finishes",
+      "High-volume commercial print finishing",
+    ],
+    specifications: {
+      "Working Widths": "520 mm / 720 mm / 920 mm / 1100 mm options",
+      "Laminating Speed": "Up to 40–60 meters/min (volume dependent)",
+      "Heating System": "Electromagnetic / oil-circulating precision roller",
+      "Substrate Range": "100 gsm to 500 gsm paper and cardboard",
+    },
+    featured: true,
+    badge: "Chennai & Pan-India Supply",
+    modelCode: "PS-LAM-TD",
+  },
+  {
+    id: "prod-brochure-7",
+    slug: "rigid-box-making-machines",
+    name: "Rigid Box Making Machines",
+    categorySlug: "die-making-machines",
+    shortDescription:
+      "Automated and semi-automated rigid box making machinery for luxury packaging, gift boxes, and electronic device casings.",
+    description:
+      "Complete machinery solutions for high-end rigid-box production. Sourced around your production requirements, shop-floor space, and investment level. Includes corner pasting, grooving machines, automatic gluing, and visual position wrapping machines.",
+    images: [
+      "/images/categories/die-making-machines.png",
+      "/images/products/paper-corner-rounder-cutter.png",
+    ],
+    features: [
+      "Complete rigid box production lines (corner pasting, gluing & wrapping)",
+      "High positioning precision with visual servo registration",
+      "Seamless edge folding and air-bubble elimination rollers",
+      "Quick job changeover for diverse luxury box dimensions",
+      "New and pre-owned options sourced according to budget",
+    ],
+    applications: [
+      "Smartphone and consumer electronic rigid boxes",
+      "Luxury confectionery, perfume, and jewelry packaging",
+      "Apparel gift boxes and hardcover book slipcases",
+    ],
+    specifications: {
+      "Box Size Range": "Min: 80x60x15 mm | Max: 450x350x120 mm",
+      "Production Speed": "15 to 25 boxes per minute",
+      "Board Thickness": "1.0 mm to 3.5 mm greyboard",
+      "Control": "Touchscreen PLC with servo drives",
+    },
+    featured: true,
+    badge: "Packaging Machinery",
+    modelCode: "PS-RBM-PRO",
+  },
+  {
+    id: "prod-brochure-8",
+    slug: "paper-bag-making-machines",
+    name: "Paper Bag Making Machines",
+    categorySlug: "die-making-machines",
+    shortDescription:
+      "Automated paper bag making machinery for retail carrier bags with square bottom, flat handle, and twisted handle configurations.",
+    description:
+      "Sourced around your production needs and capacity targets. We supply roll-fed and sheet-fed paper bag making machines capable of forming square-bottom grocery bags, luxury boutique retail bags, and takeaway food carriers with inline handle pasting.",
+    images: [
+      "/images/categories/die-making-machines.png",
+      "/images/products/round-corner-cutting-machine.png",
+    ],
+    features: [
+      "High-speed square-bottom paper bag forming with inline gluing",
+      "Twisted handle and flat handle automatic attachment units",
+      "Compatible with Kraft paper, white bleached paper, and recycled paper",
+      "Application-led sourcing matched to required hourly output",
+    ],
+    applications: [
+      "Retail fashion and shopping carrier bags",
+      "Food delivery and bakery square-bottom grocery bags",
+      "Eco-friendly corporate packaging",
+    ],
+    specifications: {
+      "Feed Type": "Roll-fed / Sheet-fed options",
+      "Paper Weight": "60 – 180 gsm Kraft paper",
+      "Bag Width": "120 – 330 mm",
+      "Speed": "Up to 150 – 220 bags/min (model dependent)",
+    },
+    featured: true,
+    badge: "Eco-Packaging",
+    modelCode: "PS-PBM-AUTO",
+  },
+  {
+    id: "prod-brochure-9",
+    slug: "pre-owned-offset-printing-machines",
+    name: "Pre-Owned Printing Machines (Heidelberg, Mitsubishi, Ryobi, Sakurai)",
+    categorySlug: "digital-offset-finishing-machines",
+    shortDescription:
+      "Internationally sourced pre-owned offset presses from established brands: Heidelberg, Mitsubishi, Ryobi, Sakurai.",
+    description:
+      "We source and supply printing machinery from international markets, specializing in pre-owned multi-color offset presses from established manufacturers such as Mitsubishi, Ryobi, Sakurai, and Heidelberg. Every machine is sourced around your format, production volume, and investment level with full technical verification.",
+    images: [
+      "/images/products/heidelberg-quickmaster-46di.jpg",
+      "/images/products/kba-rapida-162a-6.jpg",
+    ],
+    features: [
+      "Sourced directly from verified international printing markets",
+      "Established brands: Heidelberg, Mitsubishi, Ryobi, Sakurai",
+      "Mechanical and electronic inspection by experienced print engineers",
+      "Tailored to production needs, available space, and investment budget",
+      "Full installation assistance and spare parts backing",
+    ],
+    applications: [
+      "Commercial sheetfed offset printing (2-color, 4-color, 5-color+)",
+      "High-speed carton packaging production",
+      "Publication, book, and brochure printing",
+    ],
+    specifications: {
+      "Available Brands": "Heidelberg, Mitsubishi, Ryobi, Sakurai, Komori",
+      "Format Sizes": "Quarter size, Half size, Full size (720mm, 1020mm)",
+      "Color Configurations": "1 to 6 colors with coater units",
+      "Service Support": "Pre-shipment inspection & in-house engineer setup",
+    },
+    featured: true,
+    badge: "International Sourcing",
+    modelCode: "PS-PREOWN-PRINT",
+  },
+  {
+    id: "prod-brochure-10",
+    slug: "automatic-paper-banding-machines",
+    name: "Automatic Paper Banding Machines",
+    categorySlug: "digital-offset-finishing-machines",
+    shortDescription:
+      "Automated paper and film banding machines for clean bundling of finished print materials, cartons, and labels.",
+    description:
+      "Automated bundling solutions designed for packaging and finished-product handling. Secures stacks of brochures, envelopes, pharmaceutical leaflets, banknotes, and folding cartons without marking delicate edges or creasing paper.",
+    images: [
+      "/images/categories/digital-offset.jpg",
+      "/images/products/paper-creasing-perforating.png",
+    ],
+    features: [
+      "Clean thermal weld sealing using paper tape or plastic film bands",
+      "Tension adjustment from delicate touch to tight bundle hold",
+      "Photo-eye sensor for automatic instantaneous cycle trigger",
+      "Compact benchtop or stand-alone castor configurations",
+    ],
+    applications: [
+      "Bundling folding cartons and blister card packaging",
+      "Pharmaceutical leaflet and label bundle management",
+      "Commercial bindery and mailing fulfillment",
+    ],
+    specifications: {
+      "Arch Size": "420 x 200 mm (standard) / custom arches",
+      "Tape Width": "20 mm / 30 mm kraft paper & BOPP film",
+      "Cycle Speed": "Up to 25–30 bands per minute",
+      "Operation": "Sensor, push button, or foot pedal",
+    },
+    featured: false,
+    badge: "Bundling Solution",
+    modelCode: "PS-BAND-AUTO",
+  },
+  {
+    id: "prod-brochure-11",
+    slug: "automatic-shrink-wrapping-machines",
+    name: "Automatic Shrink Wrapping Machines",
+    categorySlug: "digital-offset-finishing-machines",
+    shortDescription:
+      "High-speed automatic shrink wrapping machines and tunnels for finished print protection and transit bundling.",
+    description:
+      "Wrapping solutions engineered for packaging and finished-product handling. Combines automatic L-bar sealing with high-efficiency thermal shrink tunnels, delivering transparent, moisture-proof, and tamper-resistant protection for books, reams, and boxes.",
+    images: [
+      "/images/categories/digital-offset.jpg",
+      "/images/products/round-corner-cutting-machine.png",
+    ],
+    features: [
+      "Automatic infeed conveyor with optical product length sensing",
+      "Continuous heat sealing with carbon fiber heating elements",
+      "Even temperature air-circulation shrink tunnel for tight wraps",
+      "Compatible with POF (polyolefin) and PE shrink films",
+    ],
+    applications: [
+      "Book blocks, magazines, and multi-pack stationery wrapping",
+      "Cosmetic packaging and retail display packs",
+      "Moisture-proof warehouse storage and shipping protection",
+    ],
+    specifications: {
+      "Sealing Dimensions": "500 x 400 mm / 600 x 500 mm options",
+      "Max Package Height": "150 mm",
+      "Speed": "15 – 35 packs/minute",
+      "Tunnel Power": "Heavy-duty dual heating blowers",
+    },
+    featured: false,
+    badge: "Post-Press Wrapping",
+    modelCode: "PS-SHRINK-PRO",
+  },
+  {
+    id: "prod-brochure-12",
+    slug: "automatic-spiral-binding-machines",
+    name: "Automatic Spiral Binding Machines",
+    categorySlug: "digital-offset-finishing-machines",
+    shortDescription:
+      "High-production automatic spiral and double-loop wire binding machines for publishers and book producers.",
+    description:
+      "Engineered for publishers and book-production businesses requiring high-speed, consistent binding. Automates punching, wire inserting, and crimping for notebooks, desk calendars, diaries, and technical manuals.",
+    images: [
+      "/images/categories/digital-offset.jpg",
+      "/images/products/paper-creasing-perforating.png",
+    ],
+    features: [
+      "Automated book block feeding, punching, and spiral crimping",
+      "Interchangeable punching dies for varied pitch ratios (3:1, 2:1)",
+      "High consistency without manual wire feeding fatigue",
+      "Essential for commercial notebook, calendar, and publishing lines",
+    ],
+    applications: [
+      "School exercise books and spiral diaries",
+      "Wall and desk calendar production",
+      "Corporate reports, manuals, and flip charts",
+    ],
+    specifications: {
+      "Binding Width": "Up to 520 mm",
+      "Binding Thickness": "Up to 25 mm block height",
+      "Speed": "Up to 1200 books/hour (operator dependent)",
+      "Wire Sizes": "1/4 inch to 1-1/4 inch",
+    },
+    featured: false,
+    badge: "Book Binding",
+    modelCode: "PS-SPB-AUTO",
+  },
+  {
+    id: "prod-brochure-13",
+    slug: "spare-parts-service-support",
+    name: "Spare Parts & In-House Engineer Support",
+    categorySlug: "offset-consumables-spare-parts",
+    shortDescription:
+      "Comprehensive spare parts inventory and dedicated in-house service engineer support for troubleshooting and maintenance.",
+    description:
+      "Our relationship with customers continues beyond the sale. We supply genuine replacement spares for printing, packaging, and post-press machinery, backed by our dedicated in-house service engineers who provide on-site servicing, mechanical troubleshooting, calibration, and long-term preventative maintenance.",
+    images: [
+      "/images/categories/offset-consumables.png",
+      "/images/products/conti-air-printing-blankets.png",
+    ],
+    features: [
+      "Comprehensive supply of spares for printing, packaging & post-press equipment",
+      "In-House Engineer for servicing, troubleshooting, and technical assistance",
+      "Preventative maintenance support based on machine type and production hours",
+      "Fast dispatch of critical wear components to minimize pressroom downtime",
+      "Keeping your machinery running reliably throughout its working life",
+    ],
+    applications: [
+      "Scheduled press servicing and cylinder alignment",
+      "Emergency breakdown troubleshooting and board repairs",
+      "Tooling replacement and mechanical refurbishing",
+    ],
+    specifications: {
+      "Coverage": "Printing, packaging, cutting, and finishing machinery",
+      "Support Team": "Factory-trained in-house service engineers",
+      "Response Time": "Immediate WhatsApp and phone technical assistance",
+      "Availability": "Spares stocked for immediate dispatch across India",
+    },
+    featured: true,
+    badge: "In-House Service",
+    modelCode: "PS-SPARE-SERV",
+  },
 ];
 
 // Helper functions
