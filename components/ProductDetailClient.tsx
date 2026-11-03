@@ -39,7 +39,7 @@ export default function ProductDetailClient({
         <div className="lg:col-span-5 bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 shadow-xs flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between gap-2 mb-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#0796CC]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#FA7533]">
                 {category.name}
               </span>
               {product.modelCode && (
@@ -49,7 +49,7 @@ export default function ProductDetailClient({
               )}
             </div>
 
-            <h1 className="font-heading font-black text-2xl sm:text-3xl text-[#0D1B24] tracking-tight leading-snug">
+            <h1 className="font-heading font-black text-2xl sm:text-3xl text-[#0D171F] tracking-tight leading-snug">
               {product.name}
             </h1>
 
@@ -59,13 +59,13 @@ export default function ProductDetailClient({
 
             {/* Quick Highlights */}
             <div className="my-6 p-4 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl space-y-2">
-              <div className="flex items-center gap-2 text-xs text-[#0D1B24] font-medium">
-                <Shield className="w-4 h-4 text-[#0796CC] shrink-0" />
+              <div className="flex items-center gap-2 text-xs text-[#0D171F] font-medium">
+                <Shield className="w-4 h-4 text-[#FA7533] shrink-0" />
                 <span>Heavy-Duty Industrial Specification</span>
               </div>
-              <div className="flex items-center gap-2 text-xs text-[#0D1B24] font-medium">
-                <Clock className="w-4 h-4 text-[#0796CC] shrink-0" />
-                <span>Direct Stock • Rapid Dispatch Across India</span>
+              <div className="flex items-center gap-2 text-xs text-[#0D171F] font-medium">
+                <Clock className="w-4 h-4 text-[#FA7533] shrink-0" />
+                <span>Direct Stock • In-House Technical Support</span>
               </div>
             </div>
 
@@ -73,21 +73,21 @@ export default function ProductDetailClient({
             <div className="flex flex-col gap-3">
               <WhatsAppProductButton
                 product={product}
-                label="WhatsApp About This Machine"
+                label="WhatsApp About This Product"
                 className="w-full"
               />
 
               <button
                 onClick={() => setQuoteModalOpen(true)}
-                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-5 bg-white hover:bg-[#F8FAFC] text-[#0D1B24] border border-[#E2E8F0] hover:border-[#0796CC] text-sm sm:text-base font-semibold rounded-lg shadow-xs transition-colors cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-5 bg-white hover:bg-[#F8FAFC] text-[#0D171F] border border-[#E2E8F0] hover:border-[#FA7533] text-sm sm:text-base font-semibold rounded-lg shadow-xs transition-colors cursor-pointer"
               >
-                <FileText className="w-4 h-4 text-[#0796CC]" />
+                <FileText className="w-4 h-4 text-[#FA7533]" />
                 <span>Request a Quote</span>
               </button>
             </div>
 
             <div className="mt-6 pt-5 border-t border-[#E2E8F0] text-xs text-[#64748B] space-y-1">
-              <p>• Technical personnel available for machine sizing questions</p>
+              <p>• Technical personnel available for sizing and format consultation</p>
               <p>• Custom sizes &amp; bar configurations available upon request</p>
             </div>
           </div>
@@ -100,8 +100,8 @@ export default function ProductDetailClient({
         <div className="lg:col-span-8 space-y-12">
           {/* Machine Overview */}
           <section className="bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 shadow-xs">
-            <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#0D1B24] mb-4 pb-3 border-b border-[#E2E8F0]">
-              Machine Overview &amp; Capabilities
+            <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#0D171F] mb-4 pb-3 border-b border-[#E2E8F0]">
+              Equipment Overview &amp; Capabilities
             </h2>
             <div className="text-sm sm:text-base text-[#475569] leading-relaxed space-y-4">
               <p>{product.description}</p>
@@ -110,7 +110,7 @@ export default function ProductDetailClient({
 
           {/* Key Features */}
           <section className="bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 shadow-xs">
-            <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#0D1B24] mb-6 pb-3 border-b border-[#E2E8F0]">
+            <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#0D171F] mb-6 pb-3 border-b border-[#E2E8F0]">
               Key Features &amp; Engineering Details
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -119,7 +119,7 @@ export default function ProductDetailClient({
                   key={idx}
                   className="flex items-start gap-3 p-3.5 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg"
                 >
-                  <div className="w-5 h-5 rounded-full bg-[#0796CC]/10 text-[#0796CC] flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-5 h-5 rounded-full bg-[#FA7533]/10 text-[#FA7533] flex items-center justify-center shrink-0 mt-0.5">
                     <Check className="w-3.5 h-3.5 stroke-[3]" />
                   </div>
                   <span className="text-xs sm:text-sm font-medium text-[#111827]">
@@ -140,8 +140,8 @@ export default function ProductDetailClient({
 
           {/* Applications */}
           <section className="bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 shadow-xs">
-            <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#0D1B24] mb-4 pb-3 border-b border-[#E2E8F0]">
-              Common Pressroom &amp; Bindery Applications
+            <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#0D171F] mb-4 pb-3 border-b border-[#E2E8F0]">
+              Common Pressroom &amp; Packaging Applications
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {product.applications.map((app, idx) => (
@@ -149,7 +149,7 @@ export default function ProductDetailClient({
                   key={idx}
                   className="flex items-center gap-2.5 p-3 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] text-xs sm:text-sm text-[#475569]"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#0796CC] shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FA7533] shrink-0" />
                   <span>{app}</span>
                 </div>
               ))}

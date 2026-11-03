@@ -45,7 +45,7 @@ export default function QuoteModal({
       role="dialog"
       aria-modal="true"
       aria-label="Request a Formal Quote"
-      className="fixed inset-0 z-[120] bg-[#0D1B24]/70 backdrop-blur-xs flex items-center justify-center p-4"
+      className="fixed inset-0 z-[120] bg-[#0D171F]/70 backdrop-blur-xs flex items-center justify-center p-4"
       onClick={onClose}
     >
       <div
@@ -55,16 +55,16 @@ export default function QuoteModal({
         {/* Modal Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-[#E2E8F0] bg-[#F8FAFC]">
           <div>
-            <span className="text-[11px] font-bold uppercase tracking-wider text-[#0796CC]">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-[#FA7533]">
               Request a Quotation
             </span>
-            <h3 className="font-heading font-bold text-lg text-[#0D1B24]">
+            <h3 className="font-heading font-bold text-lg text-[#0D171F]">
               {product.name}
             </h3>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-[#64748B] hover:text-[#0D1B24] hover:bg-[#E2E8F0] transition-colors"
+            className="p-1.5 rounded-lg text-[#64748B] hover:text-[#0D171F] hover:bg-[#E2E8F0] transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -73,11 +73,11 @@ export default function QuoteModal({
         {submitted ? (
           <div className="p-8 text-center">
             <CheckCircle2 className="w-12 h-12 text-[#25D366] mx-auto mb-3" />
-            <h4 className="font-heading font-bold text-lg text-[#0D1B24]">
-              Connecting to WhatsApp Sales Desk
+            <h4 className="font-heading font-bold text-lg text-[#0D171F]">
+              Connecting to WhatsApp Consultation Desk
             </h4>
             <p className="text-xs sm:text-sm text-[#64748B] mt-1">
-              Your inquiry has been formulated and routed to our technical sales team.
+              Your inquiry has been formulated and routed to Raj Kumar at Press Sense.
             </p>
           </div>
         ) : (
@@ -93,7 +93,7 @@ export default function QuoteModal({
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="e.g. Ramesh Kumar"
-                  className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-white text-[#111827] focus:border-[#0796CC] focus:outline-none"
+                  className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-white text-[#111827] focus:border-[#FA7533] focus:outline-none"
                 />
               </div>
 
@@ -106,7 +106,7 @@ export default function QuoteModal({
                   value={company}
                   onChange={(e) => setCompany(e.target.value)}
                   placeholder="e.g. Alpha Print Solutions"
-                  className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-white text-[#111827] focus:border-[#0796CC] focus:outline-none"
+                  className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-white text-[#111827] focus:border-[#FA7533] focus:outline-none"
                 />
               </div>
             </div>
@@ -122,7 +122,7 @@ export default function QuoteModal({
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="+91 98765 43210"
-                  className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-white text-[#111827] focus:border-[#0796CC] focus:outline-none"
+                  className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-white text-[#111827] focus:border-[#FA7533] focus:outline-none"
                 />
               </div>
 
@@ -134,8 +134,8 @@ export default function QuoteModal({
                   type="text"
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
-                  placeholder="e.g. Delhi, Mumbai, Bengaluru"
-                  className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-white text-[#111827] focus:border-[#0796CC] focus:outline-none"
+                  placeholder="e.g. Delhi, Chennai, Mumbai"
+                  className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-white text-[#111827] focus:border-[#FA7533] focus:outline-none"
                 />
               </div>
             </div>
@@ -149,7 +149,7 @@ export default function QuoteModal({
                 value={requirements}
                 onChange={(e) => setRequirements(e.target.value)}
                 placeholder="Mention required cutting sizes, blanket thickness, press models, or delivery timeframe..."
-                className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-white text-[#111827] focus:border-[#0796CC] focus:outline-none resize-none"
+                className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-white text-[#111827] focus:border-[#FA7533] focus:outline-none resize-none"
               />
             </div>
 

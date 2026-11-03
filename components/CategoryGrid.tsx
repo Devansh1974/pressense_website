@@ -11,20 +11,20 @@ export default function CategoryGrid() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-[#0796CC]">
-              Product Catalogue
+            <span className="text-xs font-bold uppercase tracking-widest text-[#FA7533]">
+              Product Divisions
             </span>
-            <h2 className="font-heading font-black text-2xl sm:text-3xl lg:text-4xl text-[#0D1B24] tracking-tight mt-1.5">
-              Explore Our Product Range
+            <h2 className="font-heading font-black text-2xl sm:text-3xl lg:text-4xl text-[#0D171F] tracking-tight mt-1.5">
+              Explore Our Machinery &amp; Consumables
             </h2>
             <p className="text-sm sm:text-base text-[#64748B] mt-2 max-w-2xl">
-              Categorized industrial machinery, post-press finishing systems, and precision printing consumables.
+              Categorized industrial machinery, in-house barred blankets, packaging solutions, and precision pressroom supplies.
             </p>
           </div>
 
           <Link
             href="/products"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0796CC] hover:text-[#0684b3] group shrink-0"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#FA7533] hover:text-[#E05D1C] group shrink-0"
           >
             <span>Browse Full Catalogue</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

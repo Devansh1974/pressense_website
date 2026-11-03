@@ -69,21 +69,21 @@ export default function FeaturedCarousel() {
         {/* Header with Navigation Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-[#0796CC]">
-              Engineered Machinery &amp; Tooling
+            <span className="text-xs font-bold uppercase tracking-widest text-[#FA7533]">
+              Featured Equipment &amp; Consumables
             </span>
-            <h2 className="font-heading font-black text-2xl sm:text-3xl lg:text-4xl text-[#0D1B24] tracking-tight mt-1.5">
-              Featured Machines &amp; Solutions
+            <h2 className="font-heading font-black text-2xl sm:text-3xl lg:text-4xl text-[#0D171F] tracking-tight mt-1.5">
+              Production Machinery &amp; Pressroom Solutions
             </h2>
             <p className="text-sm sm:text-base text-[#64748B] mt-2 max-w-xl">
-              High-demand equipment engineered for precision, speed, and continuous production cycles.
+              High-demand equipment engineered for precision, speed, and continuous industrial production.
             </p>
           </div>
 
           <div className="flex items-center gap-3">
             <Link
               href="/products"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0796CC] hover:text-[#0684b3] mr-4 transition-colors"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#FA7533] hover:text-[#E05D1C] mr-4 transition-colors"
             >
               <span>All Products</span>
               <ArrowRight className="w-4 h-4" />
@@ -92,14 +92,14 @@ export default function FeaturedCarousel() {
             <button
               onClick={scrollPrev}
               aria-label="Previous featured machine"
-              className="p-2.5 rounded-lg border border-[#E2E8F0] bg-white hover:bg-[#F8FAFC] text-[#0D1B24] transition-colors shadow-xs cursor-pointer"
+              className="p-2.5 rounded-lg border border-[#E2E8F0] bg-white hover:bg-[#F8FAFC] text-[#0D171F] transition-colors shadow-xs cursor-pointer"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={scrollNext}
               aria-label="Next featured machine"
-              className="p-2.5 rounded-lg border border-[#E2E8F0] bg-white hover:bg-[#F8FAFC] text-[#0D1B24] transition-colors shadow-xs cursor-pointer"
+              className="p-2.5 rounded-lg border border-[#E2E8F0] bg-white hover:bg-[#F8FAFC] text-[#0D171F] transition-colors shadow-xs cursor-pointer"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -129,7 +129,7 @@ export default function FeaturedCarousel() {
               aria-label={`Jump to slide ${index + 1}`}
               className={`h-2 rounded-full transition-all duration-300 ${
                 index === selectedIndex
-                  ? "w-8 bg-[#0796CC]"
+                  ? "w-8 bg-[#FA7533]"
                   : "w-2 bg-[#E2E8F0] hover:bg-[#CBD5E1]"
               }`}
             />

@@ -191,7 +191,7 @@ export default function SearchModal() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-semibold text-[#0796CC] tracking-wider uppercase">
+                      <span className="text-[11px] font-semibold text-[#FA7533] tracking-wider uppercase">
                         {category?.name || product.categorySlug}
                       </span>
                       {product.modelCode && (
@@ -210,7 +210,7 @@ export default function SearchModal() {
                   <ArrowRight
                     className={`w-4 h-4 shrink-0 transition-transform ${
                       isSelected
-                        ? "text-[#0796CC] translate-x-1"
+                        ? "text-[#FA7533] translate-x-1"
                         : "text-[#94A3B8]"
                     }`}
                   />

@@ -1,31 +1,35 @@
 import React from "react";
 import Link from "next/link";
-import { MessageCircle, Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { MessageCircle, Phone, Mail, MapPin, ArrowRight, User } from "lucide-react";
 import { companyInfo } from "@/data/company";
 import { categories } from "@/data/categories";
 import { getGeneralWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0D1B24] text-white border-t border-slate-800">
+    <footer className="bg-[#0D171F] text-white border-t border-slate-800">
       {/* Main Footer Links */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
           {/* Brand Column (4 cols) */}
           <div className="lg:col-span-4">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 rounded-sm bg-[#0796CC] flex items-center justify-center font-heading font-black text-white text-base tracking-tighter">
-                PS
-              </div>
-              <span className="font-heading font-extrabold text-2xl tracking-tight text-white">
-                PRESS<span className="text-[#0796CC]">SENSE</span>
-              </span>
-            </div>
+            <Link href="/" className="inline-block mb-4">
+              <Image
+                src="/images/logo/pressense-logo-dark.svg"
+                alt="PRESS SENSE | Printing • Packaging • Industrial Solutions"
+                width={260}
+                height={48}
+                unoptimized
+                className="h-11 w-auto object-contain"
+              />
+            </Link>
 
             <p className="text-sm text-slate-300 leading-relaxed max-w-sm">
-              B2B industrial machinery and printing-solutions catalogue.
-              Supplying precision die-making systems, digital-offset finishing units,
-              pressroom consumables, and guillotine knives since 1983.
+              Press Sense provides printing and packaging solutions to printers,
+              publishers, converters and packaging companies. Our focus is to supply
+              reliable consumables, quality machinery, in-house blanket baring, and
+              practical solutions backed by dedicated engineering support.
             </p>
 
             <div className="mt-6 pt-6 border-t border-slate-800/80">
@@ -43,7 +47,7 @@ export default function Footer() {
 
           {/* Product Categories (3 cols) */}
           <div className="lg:col-span-3">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-[#0796CC] mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#FA7533] mb-4">
               Product Catalogue
             </h4>
             <ul className="space-y-2.5 text-sm text-slate-300">
@@ -60,9 +64,9 @@ export default function Footer() {
               <li className="pt-2">
                 <Link
                   href="/products"
-                  className="text-xs font-semibold text-[#0796CC] hover:text-white inline-flex items-center gap-1"
+                  className="text-xs font-semibold text-[#FA7533] hover:text-white inline-flex items-center gap-1"
                 >
-                  <span>All Products Directory</span>
+                  <span>All Products &amp; Machinery</span>
                   <ArrowRight className="w-3 h-3" />
                 </Link>
               </li>
@@ -71,7 +75,7 @@ export default function Footer() {
 
           {/* Quick Links & Industries (2 cols) */}
           <div className="lg:col-span-2">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-[#0796CC] mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#FA7533] mb-4">
               Navigation
             </h4>
             <ul className="space-y-2.5 text-sm text-slate-300">
@@ -105,31 +109,35 @@ export default function Footer() {
 
           {/* Contact Details (3 cols) */}
           <div className="lg:col-span-3">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-[#0796CC] mb-4">
-              Headquarters
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#FA7533] mb-4">
+              Direct Contact
             </h4>
             <div className="space-y-3 text-xs sm:text-sm text-slate-300">
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#0796CC] shrink-0 mt-0.5" />
-                <span>
-                  {companyInfo.address.line1}, {companyInfo.address.city},{" "}
-                  {companyInfo.address.state} {companyInfo.address.postalCode},{" "}
-                  {companyInfo.address.country}
-                </span>
+              <div className="flex items-center gap-2.5">
+                <User className="w-4 h-4 text-[#FA7533] shrink-0" />
+                <span className="font-semibold text-white">Raj Kumar</span>
               </div>
 
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#0796CC] shrink-0" />
-                <a
-                  href={`tel:${companyInfo.whatsappNumber}`}
-                  className="hover:text-white transition-colors"
-                >
-                  {companyInfo.displayPhone}
-                </a>
+                <Phone className="w-4 h-4 text-[#FA7533] shrink-0" />
+                <div className="flex flex-col">
+                  <a
+                    href={`tel:${companyInfo.displayPhone.replace(/\s+/g, "")}`}
+                    className="hover:text-white transition-colors"
+                  >
+                    {companyInfo.displayPhone}
+                  </a>
+                  <a
+                    href={`tel:${companyInfo.displayAltPhone.replace(/\s+/g, "")}`}
+                    className="hover:text-white transition-colors text-slate-400"
+                  >
+                    {companyInfo.displayAltPhone}
+                  </a>
+                </div>
               </div>
 
               <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#0796CC] shrink-0" />
+                <Mail className="w-4 h-4 text-[#FA7533] shrink-0" />
                 <a
                   href={`mailto:${companyInfo.email}`}
                   className="hover:text-white transition-colors"
@@ -138,9 +146,18 @@ export default function Footer() {
                 </a>
               </div>
 
+              <div className="flex items-start gap-2.5 pt-1">
+                <MapPin className="w-4 h-4 text-[#FA7533] shrink-0 mt-0.5" />
+                <span>
+                  {companyInfo.address.line1}, {companyInfo.address.city},{" "}
+                  {companyInfo.address.state} {companyInfo.address.postalCode},{" "}
+                  {companyInfo.address.country}
+                </span>
+              </div>
+
               <div className="pt-2 text-xs text-slate-400">
                 <p>Hours: {companyInfo.operatingHours}</p>
-                <p className="mt-1 text-slate-500">Sole Proprietorship • Est. 1983</p>
+                <p className="mt-1 text-slate-500">In-House Baring Facility • Established 1983</p>
               </div>
             </div>
           </div>
@@ -148,9 +165,9 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-slate-800/80 bg-[#091319] py-6 px-4 sm:px-6 lg:px-8 text-xs text-slate-400">
+      <div className="border-t border-slate-800/80 bg-[#070E14] py-6 px-4 sm:px-6 lg:px-8 text-xs text-slate-400">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© {new Date().getFullYear()} Press Sense. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} PRESS SENSE. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">
               Privacy Policy

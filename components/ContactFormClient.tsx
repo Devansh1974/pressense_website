@@ -69,7 +69,7 @@ export default function ContactFormClient() {
                   setFormData({ ...formData, name: e.target.value })
                 }
                 placeholder="Ramesh Kumar"
-                className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] focus:bg-white focus:border-[#0796CC] focus:outline-none"
+                className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] focus:bg-white focus:border-[#FA7533] focus:outline-none"
               />
             </div>
 
@@ -84,7 +84,7 @@ export default function ContactFormClient() {
                   setFormData({ ...formData, company: e.target.value })
                 }
                 placeholder="Print Systems Ltd"
-                className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] focus:bg-white focus:border-[#0796CC] focus:outline-none"
+                className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] focus:bg-white focus:border-[#FA7533] focus:outline-none"
               />
             </div>
           </div>
@@ -102,7 +102,7 @@ export default function ContactFormClient() {
                   setFormData({ ...formData, phone: e.target.value })
                 }
                 placeholder="+91 98765 43210"
-                className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] focus:bg-white focus:border-[#0796CC] focus:outline-none"
+                className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] focus:bg-white focus:border-[#FA7533] focus:outline-none"
               />
             </div>
 
@@ -118,7 +118,7 @@ export default function ContactFormClient() {
                   setFormData({ ...formData, email: e.target.value })
                 }
                 placeholder="ramesh@company.com"
-                className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] focus:bg-white focus:border-[#0796CC] focus:outline-none"
+                className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] focus:bg-white focus:border-[#FA7533] focus:outline-none"
               />
             </div>
           </div>
@@ -132,7 +132,7 @@ export default function ContactFormClient() {
               onChange={(e) =>
                 setFormData({ ...formData, product: e.target.value })
               }
-              className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] focus:bg-white focus:border-[#0796CC] focus:outline-none"
+              className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] focus:bg-white focus:border-[#FA7533] focus:outline-none"
             >
               <option value="">-- Select Equipment or Consumable --</option>
               {products.map((p) => (
@@ -156,7 +156,7 @@ export default function ContactFormClient() {
                 setFormData({ ...formData, message: e.target.value })
               }
               placeholder="Please provide details regarding your machine models, desired cut radii, paper gsm, or quantity..."
-              className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] focus:bg-white focus:border-[#0796CC] focus:outline-none resize-none"
+              className="w-full text-sm px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] focus:bg-white focus:border-[#FA7533] focus:outline-none resize-none"
             />
           </div>
 
@@ -164,7 +164,7 @@ export default function ContactFormClient() {
           <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
             <button
               type="submit"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#0D1B24] hover:bg-[#0796CC] text-white text-sm font-semibold rounded-lg shadow-xs transition-colors cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#0D171F] hover:bg-[#FA7533] text-white text-sm font-semibold rounded-lg shadow-xs transition-colors cursor-pointer"
             >
               <Send className="w-4 h-4" />
               <span>Send Enquiry</span>

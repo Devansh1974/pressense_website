@@ -3,41 +3,69 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, MessageCircle, ChevronLeft, ChevronRight, ShieldCheck, Clock, Award } from "lucide-react";
+import {
+  ArrowRight,
+  MessageCircle,
+  ChevronLeft,
+  ChevronRight,
+  ShieldCheck,
+  CheckCircle2,
+  Wrench,
+  Sparkles,
+} from "lucide-react";
 import { getGeneralWhatsAppUrl } from "@/lib/whatsapp";
+import { companyInfo } from "@/data/company";
 
 const heroMachines = [
   {
-    name: "Paper Corner Rounder & Cutter",
-    category: "Die Making & Post-Press",
-    image: "/images/products/paper-corner-rounder-cutter.png",
-    description: "Heavy-duty lever action with interchangeable R3–R13 precision tool steel dies.",
-    href: "/products/die-making-machines/paper-corner-rounder-cutter",
-    spec: "30mm Max Stack",
-  },
-  {
-    name: "Motorized Round Corner Cutting Machine",
-    category: "Digital-Offset Finishing",
-    image: "/images/products/round-corner-cutting-machine.png",
-    description: "High-throughput electric cutting cycle with optical safety guard and foot pedal trigger.",
-    href: "/products/digital-offset-finishing-machines/round-corner-cutting-machine",
-    spec: "50mm Block Height",
-  },
-  {
-    name: "Paper Creasing & Perforating Machine",
-    category: "Digital-Offset Finishing",
-    image: "/images/products/paper-creasing-perforating.png",
-    description: "Precision scoring and tear-off perforation preventing toner cracking on heavy cardstocks.",
-    href: "/products/digital-offset-finishing-machines/paper-creasing-perforating-machine",
-    spec: "460mm Bed Width",
-  },
-  {
-    name: "Conti-Air High-Performance Blankets",
-    category: "Offset Consumables",
+    name: "In-House Barred Printing Blankets",
+    category: "02 | In-House Baring Facility",
     image: "/images/products/conti-air-printing-blankets.png",
-    description: "Closed-cell compressible technology for true dot fidelity and rapid smash recovery.",
-    href: "/products/offset-consumables-spare-parts/conti-air-printing-blankets",
-    spec: "Continental Certified",
+    description:
+      "Custom prepared and finished in our in-house facility. Economical China imports, Continental, UV, and Acoma options.",
+    href: "/products/offset-consumables-spare-parts/in-house-barred-printing-blankets",
+    spec: "Custom Barred In-House",
+    highlight: "Heidelberg, Mitsubishi, Ryobi, Sakurai",
+  },
+  {
+    name: "Thermal, Wet & Dry Laminating Machines",
+    category: "03 | Printing Machinery",
+    image: "/images/categories/digital-offset.jpg",
+    description:
+      "High-efficiency laminators supplied to printers in Chennai and nationwide, tailored to format and production volume.",
+    href: "/products/digital-offset-finishing-machines/thermal-wet-dry-laminating-machines",
+    spec: "Thermal / Wet / Dry",
+    highlight: "Chennai & Pan-India Supply",
+  },
+  {
+    name: "Press Sense Own-Brand Creasing Matrix",
+    category: "04 | Packaging Consumables",
+    image: "/images/categories/die-making-machines.png",
+    description:
+      "Our proprietary imported product with strong market acceptance. Practical, competitively priced for packaging converters.",
+    href: "/products/die-making-machines/press-sense-creasing-matrix",
+    spec: "Own-Brand Leader",
+    highlight: "High Market Acceptance",
+  },
+  {
+    name: "Pre-Owned Offset Printing Machinery",
+    category: "03 | Internationally Sourced",
+    image: "/images/products/heidelberg-quickmaster-46di.jpg",
+    description:
+      "Sourced internationally from top brands: Heidelberg, Mitsubishi, Ryobi, Sakurai. Inspected and supported by in-house engineers.",
+    href: "/products/digital-offset-finishing-machines/pre-owned-offset-printing-machines",
+    spec: "Global Sourcing",
+    highlight: "Heidelberg • Ryobi • Mitsubishi",
+  },
+  {
+    name: "Rigid Box & Paper Bag Making Machines",
+    category: "05 | Packaging Machinery",
+    image: "/images/categories/die-making-machines.png",
+    description:
+      "Automated solutions for luxury rigid boxes and retail paper bags, selected around your space, investment, and capacity.",
+    href: "/products/die-making-machines/rigid-box-making-machines",
+    spec: "New & Pre-Owned",
+    highlight: "Luxury Boxes & Eco-Bags",
   },
 ];
 
@@ -49,7 +77,7 @@ export default function Hero() {
     if (isPaused) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % heroMachines.length);
-    }, 6000);
+    }, 5500);
     return () => clearInterval(interval);
   }, [isPaused]);
 
@@ -58,41 +86,52 @@ export default function Hero() {
   return (
     <section
       aria-label="Hero Section"
-      className="relative bg-[#F7F8F7] border-b border-[#E2E8F0] overflow-hidden"
+      className="relative bg-gradient-to-b from-[#F8FAFC] via-[#F7F8F7] to-[#F1F5F9] border-b border-[#E2E8F0] overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      {/* Subtle industrial grid ambient background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* Left Editorial Copy (7 cols) */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            {/* Heritage pill */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E2E8F0] rounded-full text-xs font-semibold text-[#0D1B24] w-fit mb-6 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-[#0796CC]" />
-              <span>Established 1983 • Delhi, India</span>
-              <span className="text-[#94A3B8]">|</span>
-              <span className="text-[#64748B]">B2B Direct Supply</span>
+            {/* Live facility badge with animated pulse */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border border-[#E2E8F0] rounded-full text-xs font-semibold text-[#0D171F] w-fit mb-5 shadow-xs">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FA7533] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#FA7533]" />
+              </span>
+              <span>In-House Blanket Baring Facility</span>
+              <span className="text-[#CBD5E1]">|</span>
+              <span className="text-[#64748B] font-medium">Est. 1983</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-heading font-black text-3xl sm:text-5xl lg:text-6xl text-[#0D1B24] tracking-tight leading-[1.08]">
-              Printing &amp; Finishing Solutions for Modern Businesses.
+            <h1 className="font-heading font-black text-3xl sm:text-5xl lg:text-[54px] text-[#0D171F] tracking-tight leading-[1.1]">
+              PRINTING &amp; PACKAGING <span className="text-[#FA7533]">SOLUTIONS</span>
             </h1>
 
-            {/* Supporting Copy */}
-            <p className="text-base sm:text-lg text-[#64748B] mt-6 max-w-2xl leading-relaxed">
-              Explore professional machinery, finishing equipment and printing
-              solutions designed for demanding production environments. Direct
-              factory consultation and immediate WhatsApp quotation.
+            {/* Core Pillars Subtitle */}
+            <p className="text-sm sm:text-base font-bold uppercase tracking-wider text-[#475569] mt-3">
+              Consumables • Machinery • Pre-Press • Post-Press • Service Support
+            </p>
+
+            {/* Supporting Copy from brochure */}
+            <p className="text-base sm:text-lg text-[#64748B] mt-4 max-w-2xl leading-relaxed">
+              Press Sense provides reliable consumables, quality machinery, and practical solutions
+              tailored to each customer&apos;s production requirements and budget. Backed by an in-house
+              service engineer and custom blanket finishing center.
             </p>
 
             {/* CTA Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 mt-8 sm:mt-10">
+            <div className="flex flex-wrap items-center gap-3.5 mt-7 sm:mt-8">
               <Link
                 href="/products"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#0D1B24] hover:bg-[#0796CC] text-white text-sm sm:text-base font-semibold rounded-lg shadow-sm transition-all duration-200 group"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#0D171F] hover:bg-[#FA7533] text-white text-sm sm:text-base font-semibold rounded-lg shadow-sm transition-all duration-200 group"
               >
-                <span>Explore Products</span>
+                <span>Browse Catalogue</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
 
@@ -103,55 +142,59 @@ export default function Hero() {
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white text-sm sm:text-base font-semibold rounded-lg shadow-sm transition-all duration-200"
               >
                 <MessageCircle className="w-4 h-4 fill-white text-transparent" />
-                <span>WhatsApp Us</span>
+                <span>Direct WhatsApp: Raj Kumar</span>
               </a>
             </div>
 
-            {/* Trust bullet markers */}
-            <div className="grid grid-cols-3 gap-4 pt-10 mt-10 border-t border-[#E2E8F0]">
-              <div>
-                <p className="font-heading font-bold text-lg sm:text-xl text-[#0D1B24]">
-                  Since 1983
+            {/* Brochure highlights pills */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-8 mt-8 border-t border-[#E2E8F0]">
+              <div className="bg-white/80 border border-[#E2E8F0] rounded-lg p-2.5">
+                <p className="font-heading font-bold text-xs sm:text-sm text-[#0D171F]">
+                  DIC &amp; Böttcher
                 </p>
-                <p className="text-xs text-[#64748B] mt-0.5">Four Decades in Delhi</p>
+                <p className="text-[11px] text-[#64748B] mt-0.5">Inks &amp; Press Chemicals</p>
               </div>
-              <div>
-                <p className="font-heading font-bold text-lg sm:text-xl text-[#0D1B24]">
-                  Direct Stock
+              <div className="bg-white/80 border border-[#E2E8F0] rounded-lg p-2.5">
+                <p className="font-heading font-bold text-xs sm:text-sm text-[#0D171F]">
+                  Barred Blankets
                 </p>
-                <p className="text-xs text-[#64748B] mt-0.5">Genuine Consumables</p>
+                <p className="text-[11px] text-[#64748B] mt-0.5">China, Conti, UV, Acoma</p>
               </div>
-              <div>
-                <p className="font-heading font-bold text-lg sm:text-xl text-[#0D1B24]">
-                  Fast Dispatch
+              <div className="bg-white/80 border border-[#E2E8F0] rounded-lg p-2.5">
+                <p className="font-heading font-bold text-xs sm:text-sm text-[#0D171F]">
+                  Creasing Matrix
                 </p>
-                <p className="text-xs text-[#64748B] mt-0.5">Across All India</p>
+                <p className="text-[11px] text-[#64748B] mt-0.5">Press Sense Own-Brand</p>
+              </div>
+              <div className="bg-white/80 border border-[#E2E8F0] rounded-lg p-2.5">
+                <p className="font-heading font-bold text-xs sm:text-sm text-[#0D171F]">
+                  In-House Engineer
+                </p>
+                <p className="text-[11px] text-[#64748B] mt-0.5">Service &amp; Spares Support</p>
               </div>
             </div>
           </div>
 
           {/* Right Product Showcase (5 cols) */}
           <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="w-full bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col relative">
-              {/* Top tag & slide indicator */}
-              <div className="flex items-center justify-between pb-4 border-b border-[#E2E8F0]">
-                <div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#0796CC]">
+            <div className="w-full bg-white border border-[#E2E8F0] rounded-2xl p-5 sm:p-7 shadow-lg flex flex-col relative transition-all duration-300">
+              {/* Category indicator & slide navigation */}
+              <div className="flex items-center justify-between pb-3.5 border-b border-[#E2E8F0]">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#FA7533]" />
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#FA7533]">
                     {currentMachine.category}
                   </span>
-                  <p className="text-xs font-mono text-[#64748B] mt-0.5">
-                    Feature Showcase
-                  </p>
                 </div>
                 <div className="flex items-center gap-1.5">
                   {heroMachines.map((_, i) => (
                     <button
                       key={i}
                       onClick={() => setCurrentIndex(i)}
-                      aria-label={`Show machine ${i + 1}`}
-                      className={`h-1.5 rounded-full transition-all duration-300 ${
+                      aria-label={`Show equipment slide ${i + 1}`}
+                      className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                         i === currentIndex
-                          ? "w-6 bg-[#0796CC]"
+                          ? "w-6 bg-[#FA7533]"
                           : "w-2 bg-[#E2E8F0] hover:bg-[#CBD5E1]"
                       }`}
                     />
@@ -160,7 +203,7 @@ export default function Hero() {
               </div>
 
               {/* 4:3 Image Container with object-fit: contain */}
-              <div className="relative w-full aspect-[4/3] bg-white rounded-lg my-6 flex items-center justify-center p-4">
+              <div className="relative w-full aspect-[4/3] bg-[#F8FAFC] rounded-xl my-4 flex items-center justify-center p-4 border border-[#F1F5F9] overflow-hidden group">
                 <Image
                   key={currentMachine.image}
                   src={currentMachine.image}
@@ -169,26 +212,29 @@ export default function Hero() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                   priority={true}
                   fetchPriority="high"
-                  className="object-contain p-2 transition-all duration-500"
+                  className="object-contain p-3 transition-transform duration-500 group-hover:scale-105"
                 />
-                <span className="absolute bottom-2 right-2 text-xs font-mono font-semibold bg-[#F1F5F9] border border-[#E2E8F0] text-[#0D1B24] px-2.5 py-1 rounded">
+                <span className="absolute bottom-3 right-3 text-xs font-mono font-semibold bg-white/95 border border-[#E2E8F0] text-[#0D171F] px-2.5 py-1 rounded shadow-xs">
                   {currentMachine.spec}
+                </span>
+                <span className="absolute top-3 left-3 text-[10px] font-semibold bg-[#FA7533] text-white px-2 py-0.5 rounded shadow-xs">
+                  {currentMachine.highlight}
                 </span>
               </div>
 
               {/* Machine Details */}
-              <div className="pt-2">
-                <h3 className="font-heading font-bold text-lg sm:text-xl text-[#0D1B24] leading-snug">
+              <div className="pt-1">
+                <h3 className="font-heading font-bold text-lg sm:text-xl text-[#0D171F] leading-snug">
                   {currentMachine.name}
                 </h3>
                 <p className="text-xs sm:text-sm text-[#64748B] mt-1.5 line-clamp-2 leading-relaxed">
                   {currentMachine.description}
                 </p>
 
-                <div className="flex items-center justify-between mt-5 pt-4 border-t border-[#E2E8F0]">
+                <div className="flex items-center justify-between mt-4 pt-3.5 border-t border-[#E2E8F0]">
                   <Link
                     href={currentMachine.href}
-                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#0796CC] hover:text-[#0684b3] group"
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#FA7533] hover:text-[#E05D1C] group"
                   >
                     <span>View Specifications</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -201,7 +247,7 @@ export default function Hero() {
                           (prev) => (prev - 1 + heroMachines.length) % heroMachines.length
                         )
                       }
-                      className="p-1.5 rounded border border-[#E2E8F0] text-[#64748B] hover:text-[#0D1B24] hover:bg-[#F1F5F9] transition-colors"
+                      className="p-1.5 rounded-lg border border-[#E2E8F0] text-[#64748B] hover:text-[#0D171F] hover:bg-[#F8FAFC] transition-colors cursor-pointer"
                       aria-label="Previous equipment slide"
                     >
                       <ChevronLeft className="w-4 h-4" />
@@ -210,7 +256,7 @@ export default function Hero() {
                       onClick={() =>
                         setCurrentIndex((prev) => (prev + 1) % heroMachines.length)
                       }
-                      className="p-1.5 rounded border border-[#E2E8F0] text-[#64748B] hover:text-[#0D1B24] hover:bg-[#F1F5F9] transition-colors"
+                      className="p-1.5 rounded-lg border border-[#E2E8F0] text-[#64748B] hover:text-[#0D171F] hover:bg-[#F8FAFC] transition-colors cursor-pointer"
                       aria-label="Next equipment slide"
                     >
                       <ChevronRight className="w-4 h-4" />

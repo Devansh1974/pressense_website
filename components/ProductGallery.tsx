@@ -111,7 +111,7 @@ export default function ProductGallery({
               aria-label={`View image ${idx + 1}`}
               className={`relative w-20 h-16 sm:w-24 sm:h-18 rounded-lg overflow-hidden border-2 bg-white p-1 shrink-0 transition-all cursor-pointer ${
                 idx === activeIndex
-                  ? "border-[#0796CC] ring-2 ring-[#0796CC]/20"
+                  ? "border-[#FA7533] ring-2 ring-[#FA7533]/20"
                   : "border-[#E2E8F0] hover:border-[#94A3B8]"
               }`}
             >

@@ -15,7 +15,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
   const category = categories.find((c) => c.slug === product.categorySlug);
 
   return (
-    <div className="group flex flex-col bg-white border border-[#E2E8F0] hover:border-[#0796CC] rounded-xl overflow-hidden shadow-xs hover:shadow-md transition-all duration-200">
+    <div className="group flex flex-col bg-white border border-[#E2E8F0] hover:border-[#FA7533] rounded-xl overflow-hidden shadow-xs hover:shadow-md transition-all duration-200">
       {/* 4:3 Image Container with object-fit: contain */}
       <Link
         href={`/products/${product.categorySlug}/${product.slug}`}
@@ -34,7 +34,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
         {/* Badges / Model Code */}
         <div className="absolute top-2.5 left-2.5 flex flex-col gap-1 items-start">
           {product.badge && (
-            <span className="bg-[#0D1B24] text-white text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded shadow-xs">
+            <span className="bg-[#0D171F] text-white text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded shadow-xs">
               {product.badge}
             </span>
           )}
@@ -50,7 +50,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
       {/* Card Content */}
       <div className="p-5 flex-1 flex flex-col justify-between">
         <div>
-          <div className="flex items-center justify-between text-xs text-[#0796CC] font-semibold mb-1">
+          <div className="flex items-center justify-between text-xs text-[#FA7533] font-semibold mb-1">
             <span className="uppercase tracking-wider line-clamp-1">
               {category?.name || product.categorySlug}
             </span>
@@ -60,7 +60,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
             href={`/products/${product.categorySlug}/${product.slug}`}
             className="block"
           >
-            <h3 className="font-heading font-bold text-base sm:text-lg text-[#0D1B24] group-hover:text-[#0796CC] transition-colors leading-snug line-clamp-2">
+            <h3 className="font-heading font-bold text-base sm:text-lg text-[#0D171F] group-hover:text-[#FA7533] transition-colors leading-snug line-clamp-2">
               {product.name}
             </h3>
           </Link>
@@ -74,7 +74,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
         <div className="mt-5 pt-4 border-t border-[#E2E8F0] flex items-center justify-between gap-2">
           <Link
             href={`/products/${product.categorySlug}/${product.slug}`}
-            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#0D1B24] group-hover:text-[#0796CC] transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#0D171F] group-hover:text-[#FA7533] transition-colors"
           >
             <span>View Product</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
