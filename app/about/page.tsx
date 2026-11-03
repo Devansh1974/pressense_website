@@ -22,22 +22,23 @@ export default function AboutPage() {
         {/* Hero Section */}
         <div className="bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-12 my-6 shadow-xs">
           <div className="max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#0796CC]">
-              Four Decades in Industrial Supply
+            <span className="text-xs font-bold uppercase tracking-widest text-[#FA7533]">
+              PRESS SENSE | PRINTING • PACKAGING • INDUSTRIAL SOLUTIONS
             </span>
-            <h1 className="font-heading font-black text-3xl sm:text-5xl text-[#0D1B24] tracking-tight mt-2">
-              Engineering Heritage Since 1983
+            <h1 className="font-heading font-black text-3xl sm:text-5xl text-[#0D171F] tracking-tight mt-2">
+              Engineering Heritage &amp; Production Reliability
             </h1>
             <p className="text-base sm:text-lg text-[#64748B] mt-4 leading-relaxed">
-              Founded in Delhi, India, Press Sense operates as an established supplier
-              and distributor to the printing, publishing, and paper packaging industries
-              across India.
+              Press Sense provides printing and packaging solutions to printers, publishers,
+              converters, and packaging companies. Our focus is to supply reliable consumables,
+              quality machinery, and practical solutions based on each customer&apos;s production
+              requirements and budget.
             </p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-10 pt-8 border-t border-[#E2E8F0]">
             <div>
-              <p className="font-heading font-black text-2xl sm:text-3xl text-[#0796CC]">
+              <p className="font-heading font-black text-2xl sm:text-3xl text-[#FA7533]">
                 1983
               </p>
               <p className="text-xs text-[#64748B] mt-1 font-medium">
@@ -45,27 +46,27 @@ export default function AboutPage() {
               </p>
             </div>
             <div>
-              <p className="font-heading font-black text-2xl sm:text-3xl text-[#0D1B24]">
-                Delhi, IN
+              <p className="font-heading font-black text-2xl sm:text-3xl text-[#0D171F]">
+                In-House
               </p>
               <p className="text-xs text-[#64748B] mt-1 font-medium">
-                Headquarters
+                Blanket Baring Center
               </p>
             </div>
             <div>
-              <p className="font-heading font-black text-2xl sm:text-3xl text-[#0796CC]">
-                4 Divisions
+              <p className="font-heading font-black text-2xl sm:text-3xl text-[#FA7533]">
+                Global
               </p>
               <p className="text-xs text-[#64748B] mt-1 font-medium">
-                Machinery &amp; Consumables
+                Machine Sourcing
               </p>
             </div>
             <div>
-              <p className="font-heading font-black text-2xl sm:text-3xl text-[#0D1B24]">
-                Direct
+              <p className="font-heading font-black text-2xl sm:text-3xl text-[#0D171F]">
+                Dedicated
               </p>
               <p className="text-xs text-[#64748B] mt-1 font-medium">
-                Technical Consultation
+                In-House Engineer
               </p>
             </div>
           </div>
@@ -74,24 +75,33 @@ export default function AboutPage() {
         {/* Company Narrative & Image */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center my-12">
           <div className="lg:col-span-6 space-y-5 text-sm sm:text-base text-[#475569] leading-relaxed">
-            <h2 className="font-heading font-black text-2xl sm:text-3xl text-[#0D1B24] tracking-tight">
-              Specialized Industrial Trading &amp; Technical Support
+            <h2 className="font-heading font-black text-2xl sm:text-3xl text-[#0D171F] tracking-tight">
+              Consumables, Machinery &amp; End-to-End Service
             </h2>
             <p>
-              We specialize in the wholesale distribution, trading, and precision supply
-              of diverse products including Printing &amp; Coating Blankets, Paper Cutting
-              Sticks &amp; Spare Parts, and high-tolerance Paper Cutting Knives.
+              <strong>Consumables &amp; Materials:</strong> Selected for performance, application,
+              and value. Featuring genuine DIC printing inks, Böttcher pressroom chemicals,
+              non-adhesive anti-marking films imported from Japan and China, and our proprietary
+              own-brand creasing matrix with strong market acceptance.
             </p>
             <p>
-              All our equipment and consumable offerings are produced exclusively by
-              reliable, vetted manufacturers who consider our customers&apos; exacting
-              substrate tolerances, machine run speeds, and mechanical specifications.
+              <strong>In-House Blanket Baring Facility:</strong> Our dedicated in-house baring
+              facility allows us to prepare and finish blankets according to exact customer
+              requirements, helping us maintain strict control over accuracy, consistency,
+              and fast turnaround across Economical Chinese blankets, Continental, UV, and Acoma.
             </p>
             <p>
-              Under the direct leadership of Director <strong>{companyInfo.director}</strong>,
-              Press Sense has attained a commendable position in the market, attributed to
-              our consistent focus on product authenticity, responsive communication, and
-              commitment to fair trade practices.
+              <strong>Machinery &amp; Equipment:</strong> Sourced around your production needs,
+              available space, and investment level. We supply thermal, wet, and dry laminators
+              (including Chennai and pan-India installations), automated rigid box and paper bag
+              making machinery, and pre-owned offset presses from international markets (Mitsubishi,
+              Ryobi, Sakurai, Heidelberg).
+            </p>
+            <p>
+              Under the active leadership of <strong>{companyInfo.contactPerson}</strong>, our
+              relationship with customers continues beyond the sale through our dedicated in-house
+              service engineers who provide mechanical troubleshooting, ongoing servicing, and
+              spares replenishment to keep your machines running.
             </p>
           </div>
 
@@ -110,40 +120,47 @@ export default function AboutPage() {
 
         {/* Core Principles */}
         <div className="bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-10 my-12 shadow-xs">
-          <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#0D1B24] mb-6">
-            Our Business Principles
+          <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#0D171F] mb-6">
+            Our Four Production Pillars
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="p-5 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl">
-              <ShieldCheck className="w-6 h-6 text-[#0796CC] mb-3" />
-              <h3 className="font-heading font-bold text-base text-[#0D1B24]">
-                Authentic Metallurgy &amp; Material
+          <div className="grid grid-cols-1 sm:grid-cols-4 gap-6">
+            <div className="p-5 bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#FA7533] rounded-xl transition-colors">
+              <ShieldCheck className="w-6 h-6 text-[#FA7533] mb-3" />
+              <h3 className="font-heading font-bold text-base text-[#0D171F]">
+                In-House Blanket Baring
               </h3>
               <p className="text-xs sm:text-sm text-[#64748B] mt-2 leading-relaxed">
-                Whether supplying Tungsten Carbide guillotine knives or Conti-Air
-                compressible blankets, we deliver strictly verified factory grades.
+                Finished in our dedicated facility for maximum precision, squareness, and rapid delivery.
               </p>
             </div>
 
-            <div className="p-5 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl">
-              <UserCheck className="w-6 h-6 text-[#0796CC] mb-3" />
-              <h3 className="font-heading font-bold text-base text-[#0D1B24]">
-                Direct Technical Leadership
+            <div className="p-5 bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#FA7533] rounded-xl transition-colors">
+              <Award className="w-6 h-6 text-[#FA7533] mb-3" />
+              <h3 className="font-heading font-bold text-base text-[#0D171F]">
+                DIC &amp; Böttcher Supplies
               </h3>
               <p className="text-xs sm:text-sm text-[#64748B] mt-2 leading-relaxed">
-                Customers converse directly with experienced equipment personnel who
-                comprehend press cylinder configurations and post-press finishing constraints.
+                High-performance DIC inks, Böttcher chemicals, and own-brand creasing matrix.
               </p>
             </div>
 
-            <div className="p-5 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl">
-              <Award className="w-6 h-6 text-[#0796CC] mb-3" />
-              <h3 className="font-heading font-bold text-base text-[#0D1B24]">
-                Commitment to Fair Trade
+            <div className="p-5 bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#FA7533] rounded-xl transition-colors">
+              <UserCheck className="w-6 h-6 text-[#FA7533] mb-3" />
+              <h3 className="font-heading font-bold text-base text-[#0D171F]">
+                Global Machine Sourcing
               </h3>
               <p className="text-xs sm:text-sm text-[#64748B] mt-2 leading-relaxed">
-                We believe in transparent lead times, accurate specifications, and
-                long-term partnerships with pressrooms nationwide.
+                Pre-owned Heidelberg, Ryobi, Mitsubishi presses, plus rigid box &amp; bag machinery.
+              </p>
+            </div>
+
+            <div className="p-5 bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#FA7533] rounded-xl transition-colors">
+              <Calendar className="w-6 h-6 text-[#FA7533] mb-3" />
+              <h3 className="font-heading font-bold text-base text-[#0D171F]">
+                In-House Service Support
+              </h3>
+              <p className="text-xs sm:text-sm text-[#64748B] mt-2 leading-relaxed">
+                Ongoing servicing, troubleshooting, and spare parts supply throughout machine life.
               </p>
             </div>
           </div>

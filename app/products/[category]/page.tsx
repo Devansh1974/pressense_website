@@ -66,7 +66,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         <div className="bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-10 my-6 shadow-xs">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F1F5F9] rounded-full text-xs font-semibold text-[#0796CC] mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFF4ED] rounded-full text-xs font-semibold text-[#FA7533] mb-3">
                 <span>Category Division</span>
                 <span>•</span>
                 <span className="text-[#0D1B24]">
@@ -151,9 +151,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 <Link
                   key={c.id}
                   href={`/products/${c.slug}`}
-                  className="p-4 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#0796CC] hover:bg-white transition-all group"
+                  className="p-4 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#FA7533] hover:bg-white transition-all group"
                 >
-                  <p className="text-sm font-bold text-[#0D1B24] group-hover:text-[#0796CC] transition-colors">
+                  <p className="text-sm font-bold text-[#0D1B24] group-hover:text-[#FA7533] transition-colors">
                     {c.name}
                   </p>
                   <p className="text-xs text-[#64748B] mt-1 line-clamp-1">

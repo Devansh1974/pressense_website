@@ -22,7 +22,7 @@ const inter = Inter({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0D1B24",
+  themeColor: "#0D171F",
   width: "device-width",
   initialScale: 1,
 };
@@ -30,41 +30,131 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://pressense.com"),
   title: {
-    default: "Press Sense | Premium Industrial Printing & Finishing Solutions",
+    default: "Press Sense | Printing • Packaging • Industrial Solutions",
     template: "%s | Press Sense",
   },
   description:
-    "Explore professional printing machinery, digital-offset finishing equipment, die making solutions, and premium consumables engineered for demanding production environments.",
+    "Press Sense provides printing and packaging solutions to printers, publishers, converters, and packaging companies. In-house blanket baring facility, DIC Inks, Böttcher pressroom chemicals, imported creasing matrix, laminating machines, and pre-owned Heidelberg & Mitsubishi equipment.",
   keywords: [
-    "industrial machinery",
-    "printing solutions",
-    "die making machines",
-    "digital offset finishing",
-    "paper cutting knives",
-    "printing blankets",
-    "reprographic supplies",
     "Press Sense",
+    "printing consumables",
+    "DIC printing inks",
+    "Böttcher pressroom chemicals",
+    "printing blankets",
+    "blanket baring facility",
+    "creasing matrix",
+    "thermal laminating machines",
+    "pre-owned printing machinery",
+    "Heidelberg",
+    "Mitsubishi",
+    "Ryobi",
+    "Sakurai",
+    "rigid box making machine",
+    "paper bag making machine",
+    "paper cutting machine",
+    "shrink wrapping",
+    "paper banding",
+    "spiral binding",
+    "packaging machinery",
+    "printing solutions India",
+    "Chennai printers machinery",
+    "Raj Kumar Press Sense",
   ],
-  authors: [{ name: "Press Sense" }],
+  authors: [{ name: "Press Sense" }, { name: "Raj Kumar" }],
+  creator: "Press Sense",
+  publisher: "Press Sense",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png", sizes: "32x32" },
+      { url: "/images/logo/pressense-icon-orange.png", type: "image/png", sizes: "192x192" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   openGraph: {
-    title: "Press Sense | Premium Industrial Printing & Finishing Solutions",
+    title: "Press Sense | Printing • Packaging • Industrial Solutions",
     description:
-      "Explore professional printing machinery, digital-offset finishing equipment, and precision consumables.",
+      "Reliable consumables, quality machinery, and practical solutions tailored to production requirements and budgets across India.",
     url: "https://pressense.com",
     siteName: "Press Sense",
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "/images/logo/pressense-logo-light.png",
+        width: 468,
+        height: 96,
+        alt: "Press Sense - Printing & Packaging Solutions",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Press Sense | Premium Industrial Printing & Finishing Solutions",
+    title: "Press Sense | Printing • Packaging • Industrial Solutions",
     description:
-      "Explore professional printing machinery, digital-offset finishing equipment, and precision consumables.",
+      "Reliable consumables, quality machinery, and practical solutions tailored to production requirements and budgets across India.",
+    images: ["/images/logo/pressense-logo-light.png"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://pressense.com/#organization",
+      name: "Press Sense",
+      url: "https://pressense.com",
+      logo: "https://pressense.com/images/logo/pressense-logo-light.png",
+      description:
+        "Press Sense provides printing and packaging solutions to printers, publishers, converters and packaging companies across India.",
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: "+91-9840089494",
+          contactType: "sales and customer service",
+          areaServed: "IN",
+          availableLanguage: ["English", "Hindi", "Tamil"],
+        },
+        {
+          "@type": "ContactPoint",
+          telephone: "+91-9944588469",
+          contactType: "technical support",
+          areaServed: "IN",
+          availableLanguage: ["English", "Hindi", "Tamil"],
+        },
+      ],
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Plot No. 42, Okhla Industrial Area, Phase-III",
+        addressLocality: "New Delhi",
+        postalCode: "110020",
+        addressCountry: "IN",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://pressense.com/#website",
+      url: "https://pressense.com",
+      name: "Press Sense",
+      publisher: {
+        "@id": "https://pressense.com/#organization",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -74,7 +164,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${manrope.variable} ${inter.variable}`}>
-      <body className="min-h-screen flex flex-col bg-[#F7F8F7] text-[#111827] antialiased selection:bg-[#0796CC] selection:text-white">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className="min-h-screen flex flex-col bg-[#F7F8F7] text-[#111827] antialiased selection:bg-[#FA7533] selection:text-white">
         <SearchProvider>
           <Navbar />
           <main className="flex-1">{children}</main>

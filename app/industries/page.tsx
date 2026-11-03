@@ -21,14 +21,14 @@ export default function IndustriesPage() {
 
         {/* Page Header */}
         <div className="mt-4 mb-10">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#0796CC]">
-            Industrial Sectors
+          <span className="text-xs font-bold uppercase tracking-widest text-[#FA7533]">
+            Target Production Sectors
           </span>
-          <h1 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-[#0D1B24] tracking-tight mt-1.5">
+          <h1 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-[#0D171F] tracking-tight mt-1.5">
             Industries &amp; Applications
           </h1>
           <p className="text-sm sm:text-base text-[#64748B] mt-2 max-w-2xl leading-relaxed">
-            Our equipment, finishing machinery, and pressroom consumables are deployed
+            Our equipment, in-house barred blankets, and pressroom consumables are deployed
             in high-demand production facilities across India. Discover how our
             catalogue integrates with your specific manufacturing workflow.
           </p>
@@ -39,7 +39,8 @@ export default function IndustriesPage() {
           {industries.map((ind, idx) => (
             <div
               key={ind.id}
-              className="bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-10 shadow-xs"
+              id={ind.slug}
+              className="scroll-mt-28 bg-white border border-[#E2E8F0] hover:border-[#FA7533] rounded-2xl p-6 sm:p-10 shadow-xs transition-colors"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 {/* 4:3 Contained Image on the left/right */}
@@ -65,10 +66,10 @@ export default function IndustriesPage() {
                     idx % 2 === 1 ? "lg:order-1" : ""
                   }`}
                 >
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#0796CC]">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#FA7533]">
                     0{idx + 1} • {ind.tagline}
                   </span>
-                  <h2 className="font-heading font-black text-2xl sm:text-3xl text-[#0D1B24] tracking-tight mt-1.5">
+                  <h2 className="font-heading font-black text-2xl sm:text-3xl text-[#0D171F] tracking-tight mt-1.5">
                     {ind.name}
                   </h2>
                   <p className="text-sm sm:text-base text-[#475569] mt-3 leading-relaxed">
@@ -76,7 +77,7 @@ export default function IndustriesPage() {
                   </p>
 
                   <div className="mt-6 pt-5 border-t border-[#E2E8F0]">
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#0D1B24] mb-3">
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#0D171F] mb-3">
                       Recommended Equipment &amp; Tooling:
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -85,7 +86,7 @@ export default function IndustriesPage() {
                           key={i}
                           className="flex items-center gap-2 p-2.5 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] text-xs text-[#111827] font-medium"
                         >
-                          <Check className="w-4 h-4 text-[#0796CC] shrink-0" />
+                          <Check className="w-4 h-4 text-[#FA7533] shrink-0" />
                           <span className="truncate">{eq}</span>
                         </div>
                       ))}
@@ -95,9 +96,9 @@ export default function IndustriesPage() {
                   <div className="mt-8 flex items-center gap-4">
                     <Link
                       href="/products"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0D1B24] hover:bg-[#0796CC] text-white text-xs sm:text-sm font-semibold rounded-lg transition-colors group"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0D171F] hover:bg-[#FA7533] text-white text-xs sm:text-sm font-semibold rounded-lg transition-colors group cursor-pointer"
                     >
-                      <span>Explore Equipment</span>
+                      <span>Explore Suitable Products</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>

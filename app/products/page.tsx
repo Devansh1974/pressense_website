@@ -41,7 +41,7 @@ export default function ProductsPage() {
 
         {/* Page Header */}
         <div className="mt-4 mb-10">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#0796CC]">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#FA7533]">
             Industrial Machinery &amp; Consumables
           </span>
           <h1 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-[#0D1B24] tracking-tight mt-1.5">
@@ -96,7 +96,7 @@ export default function ProductsPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Filter by name, model or feature..."
-              className="w-full pl-9 pr-3.5 py-2 text-xs sm:text-sm rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] text-[#111827] placeholder:text-[#94A3B8] focus:bg-white focus:border-[#0796CC] focus:outline-none"
+              className="w-full pl-9 pr-3.5 py-2 text-xs sm:text-sm rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] text-[#111827] placeholder:text-[#94A3B8] focus:bg-white focus:border-[#FA7533] focus:outline-none"
             />
           </div>
         </div>
@@ -110,7 +110,7 @@ export default function ProductsPage() {
           {activeCategory !== "all" && (
             <Link
               href={`/products/${activeCategory}`}
-              className="text-[#0796CC] font-semibold hover:underline inline-flex items-center gap-1"
+              className="text-[#FA7533] font-semibold hover:underline inline-flex items-center gap-1"
             >
               <span>View dedicated {categories.find((c) => c.slug === activeCategory)?.name} page</span>
               <ArrowRight className="w-3 h-3" />
@@ -132,7 +132,7 @@ export default function ProductsPage() {
                 setActiveCategory("all");
                 setSearchQuery("");
               }}
-              className="mt-4 px-4 py-2 bg-[#0D1B24] text-white text-xs font-semibold rounded-lg hover:bg-[#0796CC] transition-colors"
+              className="mt-4 px-4 py-2 bg-[#0D1B24] text-white text-xs font-semibold rounded-lg hover:bg-[#FA7533] transition-colors"
             >
               Reset Filters
             </button>
