@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-navy: #0D171F;
+  --color-brand-navy: #070B10;
   --color-brand-orange: #FA7533;
   --color-brand-orange-hover: #E05D1C;
-  --color-brand-orange-light: #FFF4ED;
+  --color-brand-orange-light: #1A130F;
   --color-brand-blue: #FA7533;
   --color-brand-blue-hover: #E05D1C;
-  --color-brand-bg: #F7F8F7;
-  --color-brand-text: #111827;
-  --color-brand-secondary: #64748B;
-  --color-brand-border: #E2E8F0;
+  --color-brand-bg: #070B10;
+  --color-brand-text: #F8FAFC;
+  --color-brand-secondary: #94A3B8;
+  --color-brand-border: #1E293B;
   --color-brand-whatsapp: #25D366;
   --color-brand-whatsapp-hover: #20ba59;
   
@@ -19,20 +19,21 @@
 }
 
 :root {
-  --background: #F7F8F7;
-  --foreground: #111827;
+  --background: #070B10;
+  --foreground: #F8FAFC;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #F7F8F7;
-  color: #111827;
+  background-color: #070B10;
+  color: #F8FAFC;
+  color-scheme: dark;
 }
 
 body {
   font-family: var(--font-inter), sans-serif;
-  background-color: #F7F8F7;
-  color: #111827;
+  background-color: #070B10;
+  color: #F8FAFC;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -42,27 +43,39 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-/* Custom scrollbars */
+/* Custom scrollbars - Dark & Orange */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F7F8F7;
+  background: #070B10;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
-  border-radius: 3px;
+  background: #1E293B;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
+  background: #FA7533;
 }
 
 /* Focus outline accessibility */
 :focus-visible {
   outline: 2px solid #FA7533;
   outline-offset: 2px;
+}
+
+/* Scroll reveal helper transitions */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -170,7 +170,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-[#F7F8F7] text-[#111827] antialiased selection:bg-[#FA7533] selection:text-white">
+      <body className="min-h-screen flex flex-col bg-[#070B10] text-[#F8FAFC] antialiased selection:bg-[#FA7533] selection:text-white">
         <SearchProvider>
           <Navbar />
           <main className="flex-1">{children}</main>

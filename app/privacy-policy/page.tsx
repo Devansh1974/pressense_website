@@ -10,18 +10,18 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="bg-[#F7F8F7] min-h-screen py-8 lg:py-12">
+    <div className="bg-[#070B10] text-white min-h-screen py-8 lg:py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Breadcrumbs items={[{ label: "Privacy Policy" }]} />
 
-        <div className="bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-12 my-6 shadow-xs space-y-6 text-sm text-[#475569] leading-relaxed">
-          <h1 className="font-heading font-black text-2xl sm:text-4xl text-[#0D1B24] tracking-tight">
+        <div className="bg-[#0D1520] border border-slate-800 rounded-2xl p-6 sm:p-12 my-6 shadow-xl space-y-6 text-sm text-slate-300 leading-relaxed">
+          <h1 className="font-heading font-black text-2xl sm:text-4xl text-white tracking-tight">
             Privacy Policy
           </h1>
-          <p className="text-xs text-[#64748B]">Last updated: {new Date().getFullYear()}</p>
+          <p className="text-xs text-slate-400">Last updated: {new Date().getFullYear()}</p>
 
           <section className="space-y-3">
-            <h2 className="font-heading font-bold text-lg text-[#0D1B24]">
+            <h2 className="font-heading font-bold text-lg text-white">
               1. Information Collection &amp; Use
             </h2>
             <p>
@@ -34,7 +34,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="font-heading font-bold text-lg text-[#0D1B24]">
+            <h2 className="font-heading font-bold text-lg text-white">
               2. No E-Commerce or Payment Data
             </h2>
             <p>
@@ -45,7 +45,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="font-heading font-bold text-lg text-[#0D1B24]">
+            <h2 className="font-heading font-bold text-lg text-white">
               3. Communication Channels
             </h2>
             <p>
@@ -56,13 +56,13 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="font-heading font-bold text-lg text-[#0D1B24]">
+            <h2 className="font-heading font-bold text-lg text-white">
               4. Contact Information
             </h2>
             <p>
               For any questions regarding your data privacy, contact our office at:
               <br />
-              <strong>{companyInfo.name}</strong>, {companyInfo.address.line1},{" "}
+              <strong className="text-white">{companyInfo.name}</strong>, {companyInfo.address.line1},{" "}
               {companyInfo.address.city}, {companyInfo.address.state},{" "}
               {companyInfo.address.country}. Email: {companyInfo.email}.
             </p>

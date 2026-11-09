@@ -57,7 +57,7 @@ export default function ProductGallery({
   return (
     <div className="flex flex-col gap-4">
       {/* Main Large Display with 4:3 Aspect Ratio Container */}
-      <div className="relative w-full aspect-[4/3] bg-white border border-[#E2E8F0] rounded-xl p-4 sm:p-8 flex items-center justify-center overflow-hidden shadow-xs">
+      <div className="relative w-full aspect-[4/3] bg-[#0D1520] border border-slate-800 rounded-xl p-4 sm:p-8 flex items-center justify-center overflow-hidden shadow-xl">
         <Image
           src={activeImage}
           alt={`${productName} view ${activeIndex + 1}`}
@@ -71,7 +71,7 @@ export default function ProductGallery({
         <button
           onClick={() => setIsFullscreen(true)}
           aria-label="Expand image fullscreen"
-          className="absolute top-3 right-3 p-2 bg-white/90 hover:bg-white border border-[#E2E8F0] text-[#64748B] hover:text-[#0D1B24] rounded-lg shadow-xs transition-colors cursor-pointer"
+          className="absolute top-3 right-3 p-2 bg-slate-900/80 hover:bg-[#FA7533] border border-slate-700 text-slate-300 hover:text-white rounded-lg shadow-sm transition-colors cursor-pointer"
         >
           <Maximize2 className="w-4 h-4" />
         </button>
@@ -82,21 +82,21 @@ export default function ProductGallery({
             <button
               onClick={prevImage}
               aria-label="Previous product image"
-              className="absolute left-3 top-1/2 -translate-y-1/2 p-2 bg-white/90 hover:bg-white border border-[#E2E8F0] text-[#64748B] hover:text-[#0D1B24] rounded-lg shadow-xs transition-colors cursor-pointer"
+              className="absolute left-3 top-1/2 -translate-y-1/2 p-2 bg-slate-900/80 hover:bg-[#FA7533] border border-slate-700 text-slate-300 hover:text-white rounded-lg shadow-sm transition-colors cursor-pointer"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={nextImage}
               aria-label="Next product image"
-              className="absolute right-3 top-1/2 -translate-y-1/2 p-2 bg-white/90 hover:bg-white border border-[#E2E8F0] text-[#64748B] hover:text-[#0D1B24] rounded-lg shadow-xs transition-colors cursor-pointer"
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-2 bg-slate-900/80 hover:bg-[#FA7533] border border-slate-700 text-slate-300 hover:text-white rounded-lg shadow-sm transition-colors cursor-pointer"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
           </>
         )}
 
-        <div className="absolute bottom-3 left-3 bg-[#0D1B24]/80 text-white text-[11px] font-mono px-2 py-0.5 rounded">
+        <div className="absolute bottom-3 left-3 bg-black/75 border border-white/10 text-white text-[11px] font-mono px-2 py-0.5 rounded">
           {activeIndex + 1} / {images.length}
         </div>
       </div>
@@ -109,10 +109,10 @@ export default function ProductGallery({
               key={idx}
               onClick={() => setActiveIndex(idx)}
               aria-label={`View image ${idx + 1}`}
-              className={`relative w-20 h-16 sm:w-24 sm:h-18 rounded-lg overflow-hidden border-2 bg-white p-1 shrink-0 transition-all cursor-pointer ${
+              className={`relative w-20 h-16 sm:w-24 sm:h-18 rounded-lg overflow-hidden border-2 bg-[#0D1520] p-1 shrink-0 transition-all cursor-pointer ${
                 idx === activeIndex
-                  ? "border-[#FA7533] ring-2 ring-[#FA7533]/20"
-                  : "border-[#E2E8F0] hover:border-[#94A3B8]"
+                  ? "border-[#FA7533] ring-2 ring-[#FA7533]/30"
+                  : "border-slate-800 hover:border-slate-600"
               }`}
             >
               <Image
@@ -134,7 +134,7 @@ export default function ProductGallery({
           role="dialog"
           aria-modal="true"
           aria-label="Fullscreen Product Viewer"
-          className="fixed inset-0 z-[110] bg-[#0D1B24]/95 backdrop-blur-md flex flex-col items-center justify-center p-4 sm:p-8 animate-in fade-in duration-200"
+          className="fixed inset-0 z-[110] bg-[#070B10]/95 backdrop-blur-md flex flex-col items-center justify-center p-4 sm:p-8 animate-in fade-in duration-200"
           onClick={() => setIsFullscreen(false)}
         >
           {/* Top control bar */}

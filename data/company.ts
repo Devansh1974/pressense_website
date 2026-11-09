@@ -6,7 +6,7 @@ export const companyInfo = {
     "Consumables • Machinery • Pre-Press • Post-Press • Service Support",
   aboutText:
     "Press Sense provides printing and packaging solutions to printers, publishers, converters and packaging companies. Our focus is to supply reliable consumables, quality machinery and practical solutions based on each customer's production requirements and budget.",
-  foundedYear: 1983,
+  foundedYear: 2010,
   director: "Raj Kumar",
   contactPerson: "Raj Kumar",
   whatsappNumber: "919840089494",
@@ -23,7 +23,7 @@ export const companyInfo = {
   },
   operatingHours: "Monday – Saturday: 9:30 AM – 6:30 PM IST",
   stats: [
-    { label: "Established Heritage", value: "Since 1983" },
+    { label: "Established Heritage", value: "Since 2010" },
     { label: "Core Divisions", value: "Consumables & Machinery" },
     { label: "In-House Facility", value: "Blanket Baring Center" },
     { label: "Direct Support", value: "Dedicated In-House Engineer" },

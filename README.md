@@ -1,6 +1,6 @@
 # Press Sense — Premium Industrial Product Catalogue
 
-Production-quality B2B industrial machinery, digital-offset finishing, and precision printing-solutions catalogue for **PRESS SENSE** (Est. 1983, Delhi, India).
+Production-quality B2B industrial machinery, digital-offset finishing, and precision printing-solutions catalogue for **PRESS SENSE** (Est. 2010, Delhi, India).
 
 Designed with an **Apple-like minimalist product presentation** meets **Swiss editorial layout**, engineered around WhatsApp sales lead generation and direct technical consultation.
 

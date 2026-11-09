@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, Sparkles } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import WhatsAppCTA from "@/components/WhatsAppCTA";
 import { industries } from "@/data/industries";
@@ -15,19 +15,20 @@ export const metadata: Metadata = {
 
 export default function IndustriesPage() {
   return (
-    <div className="bg-[#F7F8F7] min-h-screen py-8 lg:py-12">
+    <div className="bg-[#070B10] text-white min-h-screen py-8 lg:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Breadcrumbs items={[{ label: "Industries & Applications" }]} />
 
         {/* Page Header */}
         <div className="mt-4 mb-10">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#FA7533]">
-            Target Production Sectors
-          </span>
-          <h1 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-[#0D171F] tracking-tight mt-1.5">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-[#FA7533]/15 text-[#FA7533] border border-[#FA7533]/30 mb-3">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Target Production Sectors</span>
+          </div>
+          <h1 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight mt-1.5">
             Industries &amp; Applications
           </h1>
-          <p className="text-sm sm:text-base text-[#64748B] mt-2 max-w-2xl leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-400 mt-2 max-w-2xl leading-relaxed">
             Our equipment, in-house barred blankets, and pressroom consumables are deployed
             in high-demand production facilities across India. Discover how our
             catalogue integrates with your specific manufacturing workflow.
@@ -35,27 +36,27 @@ export default function IndustriesPage() {
         </div>
 
         {/* Industries Detailed Cards */}
-        <div className="space-y-8 mb-16">
+        <div className="space-y-5 sm:space-y-8 mb-12 sm:mb-16">
           {industries.map((ind, idx) => (
             <div
               key={ind.id}
               id={ind.slug}
-              className="scroll-mt-28 bg-white border border-[#E2E8F0] hover:border-[#FA7533] rounded-2xl p-6 sm:p-10 shadow-xs transition-colors"
+              className="scroll-mt-28 bg-[#0D1520] border border-slate-800 hover:border-[#FA7533] rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-xl transition-all duration-300 group"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                {/* 4:3 Contained Image on the left/right */}
+                {/* 4:3 Contained Image */}
                 <div
                   className={`lg:col-span-5 ${
                     idx % 2 === 1 ? "lg:order-2" : ""
                   }`}
                 >
-                  <div className="relative w-full aspect-[4/3] bg-[#F7F8F7] border border-[#E2E8F0] rounded-xl p-4 flex items-center justify-center overflow-hidden">
+                  <div className="relative w-full aspect-[4/3] bg-[#05080E] border border-slate-800 rounded-xl p-4 flex items-center justify-center overflow-hidden">
                     <Image
                       src={ind.image}
                       alt={ind.name}
                       fill
                       sizes="(max-width: 1024px) 100vw, 420px"
-                      className="object-contain p-2"
+                      className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
                       loading="lazy"
                     />
                   </div>
@@ -66,25 +67,25 @@ export default function IndustriesPage() {
                     idx % 2 === 1 ? "lg:order-1" : ""
                   }`}
                 >
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#FA7533]">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#FA7533]">
                     0{idx + 1} • {ind.tagline}
                   </span>
-                  <h2 className="font-heading font-black text-2xl sm:text-3xl text-[#0D171F] tracking-tight mt-1.5">
+                  <h2 className="font-heading font-black text-2xl sm:text-3xl text-white tracking-tight mt-1.5">
                     {ind.name}
                   </h2>
-                  <p className="text-sm sm:text-base text-[#475569] mt-3 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-300 mt-3 leading-relaxed">
                     {ind.description}
                   </p>
 
-                  <div className="mt-6 pt-5 border-t border-[#E2E8F0]">
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#0D171F] mb-3">
+                  <div className="mt-6 pt-5 border-t border-slate-800">
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 font-mono">
                       Recommended Equipment &amp; Tooling:
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                       {ind.keyEquipment.map((eq, i) => (
                         <div
                           key={i}
-                          className="flex items-center gap-2 p-2.5 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] text-xs text-[#111827] font-medium"
+                          className="flex items-center gap-2 p-2.5 rounded-lg bg-[#070B10] border border-slate-800 text-xs text-slate-200 font-medium"
                         >
                           <Check className="w-4 h-4 text-[#FA7533] shrink-0" />
                           <span className="truncate">{eq}</span>
@@ -96,7 +97,7 @@ export default function IndustriesPage() {
                   <div className="mt-8 flex items-center gap-4">
                     <Link
                       href="/products"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0D171F] hover:bg-[#FA7533] text-white text-xs sm:text-sm font-semibold rounded-lg transition-colors group cursor-pointer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#FA7533] hover:bg-[#E05D1C] text-white text-xs sm:text-sm font-bold rounded-xl transition-colors group cursor-pointer"
                     >
                       <span>Explore Suitable Products</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

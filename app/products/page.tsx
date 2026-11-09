@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
-import { Search, Filter, ArrowRight } from "lucide-react";
+import { Search, Filter, ArrowRight, Sparkles } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { products } from "@/data/products";
@@ -34,20 +34,21 @@ export default function ProductsPage() {
   }, [activeCategory, searchQuery]);
 
   return (
-    <div className="bg-[#F7F8F7] min-h-screen py-8 lg:py-12">
+    <div className="bg-[#070B10] text-white min-h-screen py-8 lg:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumbs */}
         <Breadcrumbs items={[{ label: "Products Catalogue" }]} />
 
         {/* Page Header */}
         <div className="mt-4 mb-10">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#FA7533]">
-            Industrial Machinery &amp; Consumables
-          </span>
-          <h1 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-[#0D1B24] tracking-tight mt-1.5">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-[#FA7533]/15 text-[#FA7533] border border-[#FA7533]/30 mb-3">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Industrial Machinery &amp; Consumables</span>
+          </div>
+          <h1 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight mt-1.5">
             Products Catalogue
           </h1>
-          <p className="text-sm sm:text-base text-[#64748B] mt-2 max-w-2xl">
+          <p className="text-sm sm:text-base text-slate-400 mt-2 max-w-2xl leading-relaxed">
             Explore our range of printing, finishing and industrial solutions
             engineered for demanding production environments. Select any machine to
             view comprehensive technical specifications or initiate direct WhatsApp
@@ -56,15 +57,15 @@ export default function ProductsPage() {
         </div>
 
         {/* Filter Controls Bar */}
-        <div className="bg-white border border-[#E2E8F0] rounded-xl p-4 mb-8 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="bg-[#0D1520] border border-slate-800 rounded-2xl p-4 mb-8 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
           {/* Category Tabs */}
           <div className="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0 scrollbar-none">
             <button
               onClick={() => setActiveCategory("all")}
-              className={`px-3.5 py-2 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer ${
+              className={`px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
                 activeCategory === "all"
-                  ? "bg-[#0D1B24] text-white"
-                  : "bg-[#F8FAFC] text-[#64748B] hover:text-[#0D1B24] border border-[#E2E8F0]"
+                  ? "bg-[#FA7533] text-white shadow-md font-bold"
+                  : "bg-[#070B10] text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700"
               }`}
             >
               All Categories ({products.length})
@@ -76,10 +77,10 @@ export default function ProductsPage() {
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.slug)}
-                  className={`px-3.5 py-2 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer ${
+                  className={`px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
                     activeCategory === cat.slug
-                      ? "bg-[#0D1B24] text-white"
-                      : "bg-[#F8FAFC] text-[#64748B] hover:text-[#0D1B24] border border-[#E2E8F0]"
+                      ? "bg-[#FA7533] text-white shadow-md font-bold"
+                      : "bg-[#070B10] text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700"
                   }`}
                 >
                   {cat.name} ({count})
@@ -90,27 +91,27 @@ export default function ProductsPage() {
 
           {/* Inline Filter Search */}
           <div className="relative min-w-[240px] sm:min-w-[280px]">
-            <Search className="w-4 h-4 text-[#94A3B8] absolute left-3 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Filter by name, model or feature..."
-              className="w-full pl-9 pr-3.5 py-2 text-xs sm:text-sm rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] text-[#111827] placeholder:text-[#94A3B8] focus:bg-white focus:border-[#FA7533] focus:outline-none"
+              className="w-full pl-9 pr-3.5 py-2 text-xs sm:text-sm rounded-xl border border-slate-800 bg-[#05080E] text-white placeholder-slate-500 focus:border-[#FA7533] focus:outline-none transition-colors"
             />
           </div>
         </div>
 
         {/* Results Counter */}
-        <div className="flex items-center justify-between text-xs text-[#64748B] mb-6">
+        <div className="flex items-center justify-between text-xs text-slate-400 mb-6 font-mono">
           <span>
-            Showing <strong className="text-[#0D1B24]">{filteredProducts.length}</strong>{" "}
+            Showing <strong className="text-white font-bold">{filteredProducts.length}</strong>{" "}
             {filteredProducts.length === 1 ? "machine" : "machines & items"}
           </span>
           {activeCategory !== "all" && (
             <Link
               href={`/products/${activeCategory}`}
-              className="text-[#FA7533] font-semibold hover:underline inline-flex items-center gap-1"
+              className="text-[#FA7533] font-semibold hover:text-[#FF8D4D] inline-flex items-center gap-1 transition-colors"
             >
               <span>View dedicated {categories.find((c) => c.slug === activeCategory)?.name} page</span>
               <ArrowRight className="w-3 h-3" />
@@ -118,13 +119,13 @@ export default function ProductsPage() {
           )}
         </div>
 
-        {/* Products Grid (3 columns on desktop, 2 on tablet, 1 on mobile) */}
+        {/* Products Grid */}
         {filteredProducts.length === 0 ? (
-          <div className="bg-white border border-[#E2E8F0] rounded-xl p-12 text-center">
-            <p className="text-base font-semibold text-[#0D1B24]">
+          <div className="bg-[#0D1520] border border-slate-800 rounded-2xl p-12 text-center">
+            <p className="text-base font-semibold text-white">
               No products found matching your current filter.
             </p>
-            <p className="text-xs text-[#64748B] mt-1">
+            <p className="text-xs text-slate-400 mt-1">
               Try adjusting your search terms or switch to &ldquo;All Categories&rdquo;.
             </p>
             <button
@@ -132,7 +133,7 @@ export default function ProductsPage() {
                 setActiveCategory("all");
                 setSearchQuery("");
               }}
-              className="mt-4 px-4 py-2 bg-[#0D1B24] text-white text-xs font-semibold rounded-lg hover:bg-[#FA7533] transition-colors"
+              className="mt-4 px-5 py-2.5 bg-[#FA7533] hover:bg-[#E05D1C] text-white text-xs font-bold rounded-xl transition-colors cursor-pointer"
             >
               Reset Filters
             </button>

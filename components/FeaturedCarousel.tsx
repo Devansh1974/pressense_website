@@ -3,7 +3,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
 import ProductCard from "./ProductCard";
 import { getFeaturedProducts } from "@/data/products";
@@ -64,55 +64,60 @@ export default function FeaturedCarousel() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="bg-white py-16 lg:py-24 border-b border-[#E2E8F0]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-[#090E15] py-8 sm:py-12 lg:py-14 border-b border-slate-800 overflow-hidden text-white">
+      {/* Subtle industrial grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
+      <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-[#FA7533]/10 blur-[130px] rounded-full pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with Navigation Controls */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-6 sm:mb-8 gap-3">
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-[#FA7533]">
-              Featured Equipment &amp; Consumables
-            </span>
-            <h2 className="font-heading font-black text-2xl sm:text-3xl lg:text-4xl text-[#0D171F] tracking-tight mt-1.5">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-bold uppercase tracking-wider bg-[#FA7533]/15 text-[#FA7533] border border-[#FA7533]/30 mb-2">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Featured Equipment &amp; Consumables</span>
+            </div>
+            <h2 className="font-heading font-black text-xl sm:text-2xl lg:text-3xl text-white tracking-tight">
               Production Machinery &amp; Pressroom Solutions
             </h2>
-            <p className="text-sm sm:text-base text-[#64748B] mt-2 max-w-xl">
+            <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-xl leading-relaxed">
               High-demand equipment engineered for precision, speed, and continuous industrial production.
             </p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 self-end sm:self-auto">
             <Link
               href="/products"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#FA7533] hover:text-[#E05D1C] mr-4 transition-colors"
+              className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-[#FA7533] hover:text-[#FF8D4D] mr-2 sm:mr-3 transition-colors"
             >
               <span>All Products</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3.5 h-3.5" />
             </Link>
 
             <button
               onClick={scrollPrev}
               aria-label="Previous featured machine"
-              className="p-2.5 rounded-lg border border-[#E2E8F0] bg-white hover:bg-[#F8FAFC] text-[#0D171F] transition-colors shadow-xs cursor-pointer"
+              className="p-2 sm:p-2.5 rounded-lg sm:rounded-xl border border-slate-800 bg-[#0E1522] hover:bg-[#FA7533] hover:border-[#FA7533] text-white transition-colors shadow-xs cursor-pointer"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
             <button
               onClick={scrollNext}
               aria-label="Next featured machine"
-              className="p-2.5 rounded-lg border border-[#E2E8F0] bg-white hover:bg-[#F8FAFC] text-[#0D171F] transition-colors shadow-xs cursor-pointer"
+              className="p-2 sm:p-2.5 rounded-lg sm:rounded-xl border border-slate-800 bg-[#0E1522] hover:bg-[#FA7533] hover:border-[#FA7533] text-white transition-colors shadow-xs cursor-pointer"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </div>
         </div>
 
         {/* Embla Carousel Viewport */}
         <div className="overflow-hidden -mx-4 px-4 sm:mx-0 sm:px-0" ref={emblaRef}>
-          <div className="flex gap-6">
+          <div className="flex gap-4 sm:gap-6">
             {featured.map((product) => (
               <div
                 key={product.id}
-                className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] min-w-0"
+                className="flex-[0_0_82%] sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] min-w-0"
               >
                 <ProductCard product={product} />
               </div>
@@ -121,16 +126,16 @@ export default function FeaturedCarousel() {
         </div>
 
         {/* Dots pagination */}
-        <div className="flex items-center justify-center gap-2 mt-8">
+        <div className="flex items-center justify-center gap-1.5 sm:gap-2 mt-5 sm:mt-6">
           {scrollSnaps.map((_, index) => (
             <button
               key={index}
               onClick={() => scrollTo(index)}
               aria-label={`Jump to slide ${index + 1}`}
-              className={`h-2 rounded-full transition-all duration-300 ${
+              className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 cursor-pointer ${
                 index === selectedIndex
-                  ? "w-8 bg-[#FA7533]"
-                  : "w-2 bg-[#E2E8F0] hover:bg-[#CBD5E1]"
+                  ? "w-6 sm:w-8 bg-[#FA7533] shadow-[0_0_10px_#FA7533]"
+                  : "w-1.5 sm:w-2 bg-slate-800 hover:bg-slate-700"
               }`}
             />
           ))}

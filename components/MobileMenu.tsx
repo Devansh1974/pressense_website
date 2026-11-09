@@ -38,18 +38,18 @@ export default function MobileMenu({
       role="dialog"
       aria-modal="true"
       aria-label="Mobile Navigation"
-      className="fixed inset-0 z-50 lg:hidden flex flex-col bg-[#0D171F]/60 backdrop-blur-xs transition-opacity duration-200"
+      className="fixed inset-0 z-50 lg:hidden flex flex-col bg-black/80 backdrop-blur-sm transition-opacity duration-200"
       onClick={onClose}
     >
       <div
-        className="w-full max-w-sm h-full bg-white ml-auto flex flex-col shadow-2xl transition-transform animate-in slide-in-from-right duration-200"
+        className="w-full max-w-sm h-full bg-[#090E16] ml-auto flex flex-col border-l border-slate-800 shadow-2xl transition-transform animate-in slide-in-from-right duration-200 text-white"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-[#E2E8F0]">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800">
           <Link href="/" onClick={onClose} className="flex items-center">
             <Image
-              src="/images/logo/pressense-logo-light.svg"
+              src="/images/logo/pressense-logo-dark.svg"
               alt="PRESS SENSE"
               width={180}
               height={36}
@@ -59,7 +59,7 @@ export default function MobileMenu({
           </Link>
           <button
             onClick={onClose}
-            className="p-2 rounded-lg text-[#64748B] hover:text-[#111827] hover:bg-[#F1F5F9]"
+            className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
             aria-label="Close menu"
           >
             <X className="w-5 h-5" />
@@ -67,19 +67,19 @@ export default function MobileMenu({
         </div>
 
         {/* Mobile Search Button */}
-        <div className="p-4 border-b border-[#E2E8F0]">
+        <div className="p-4 border-b border-slate-800">
           <button
             onClick={() => {
               onClose();
               onOpenSearch();
             }}
-            className="w-full flex items-center justify-between px-4 py-2.5 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg text-sm text-[#64748B] hover:text-[#111827] hover:bg-[#F1F5F9] transition-colors"
+            className="w-full flex items-center justify-between px-4 py-2.5 bg-[#0E1522] border border-slate-800 rounded-xl text-sm text-slate-400 hover:text-white hover:border-[#FA7533] transition-colors"
           >
             <span className="flex items-center gap-2">
               <Search className="w-4 h-4 text-[#FA7533]" />
               Search equipment &amp; parts...
             </span>
-            <span className="text-xs bg-white border border-[#E2E8F0] px-1.5 py-0.5 rounded font-mono">
+            <span className="text-xs bg-black/50 border border-slate-700 px-1.5 py-0.5 rounded font-mono text-slate-400">
               Find
             </span>
           </button>
@@ -90,21 +90,21 @@ export default function MobileMenu({
           <Link
             href="/"
             onClick={onClose}
-            className="flex items-center justify-between py-3 text-base font-semibold text-[#111827] border-b border-[#F1F5F9]"
+            className="flex items-center justify-between py-3 text-base font-semibold text-white border-b border-slate-800/80 hover:text-[#FA7533] transition-colors"
           >
             Home
           </Link>
 
           {/* Products Accordion */}
-          <div className="border-b border-[#F1F5F9]">
+          <div className="border-b border-slate-800/80">
             <button
               onClick={() => setProductsExpanded(!productsExpanded)}
-              className="w-full flex items-center justify-between py-3 text-base font-semibold text-[#111827]"
+              className="w-full flex items-center justify-between py-3 text-base font-semibold text-white"
               aria-expanded={productsExpanded}
             >
               <span>Products &amp; Machinery</span>
               <ChevronDown
-                className={`w-4 h-4 text-[#64748B] transition-transform duration-200 ${
+                className={`w-4 h-4 text-slate-400 transition-transform duration-200 ${
                   productsExpanded ? "rotate-180 text-[#FA7533]" : ""
                 }`}
               />
@@ -128,10 +128,10 @@ export default function MobileMenu({
                       key={cat.id}
                       href={`/products/${cat.slug}`}
                       onClick={onClose}
-                      className="flex items-center justify-between py-2 text-sm text-[#475569] hover:text-[#FA7533] transition-colors"
+                      className="flex items-center justify-between py-2 text-sm text-slate-300 hover:text-[#FA7533] transition-colors"
                     >
                       <span className="line-clamp-1">{cat.name}</span>
-                      <span className="text-xs font-mono text-[#94A3B8] ml-2">
+                      <span className="text-xs font-mono text-slate-500 ml-2">
                         {count}
                       </span>
                     </Link>
@@ -142,15 +142,15 @@ export default function MobileMenu({
           </div>
 
           {/* Industries Accordion */}
-          <div className="border-b border-[#F1F5F9]">
+          <div className="border-b border-slate-800/80">
             <button
               onClick={() => setIndustriesExpanded(!industriesExpanded)}
-              className="w-full flex items-center justify-between py-3 text-base font-semibold text-[#111827]"
+              className="w-full flex items-center justify-between py-3 text-base font-semibold text-white"
               aria-expanded={industriesExpanded}
             >
               <span>Industry Sectors</span>
               <ChevronDown
-                className={`w-4 h-4 text-[#64748B] transition-transform duration-200 ${
+                className={`w-4 h-4 text-slate-400 transition-transform duration-200 ${
                   industriesExpanded ? "rotate-180 text-[#FA7533]" : ""
                 }`}
               />
@@ -172,10 +172,10 @@ export default function MobileMenu({
                     key={ind.id}
                     href={`/industries#${ind.slug}`}
                     onClick={onClose}
-                    className="flex items-center justify-between py-2 text-sm text-[#475569] hover:text-[#FA7533] transition-colors"
+                    className="flex items-center justify-between py-2 text-sm text-slate-300 hover:text-[#FA7533] transition-colors"
                   >
                     <span className="line-clamp-1">{ind.name}</span>
-                    <ChevronRight className="w-3.5 h-3.5 text-[#94A3B8]" />
+                    <ChevronRight className="w-3.5 h-3.5 text-slate-500" />
                   </Link>
                 ))}
               </div>
@@ -185,7 +185,7 @@ export default function MobileMenu({
           <Link
             href="/about"
             onClick={onClose}
-            className="flex items-center justify-between py-3 text-base font-semibold text-[#111827] border-b border-[#F1F5F9]"
+            className="flex items-center justify-between py-3 text-base font-semibold text-white border-b border-slate-800/80 hover:text-[#FA7533] transition-colors"
           >
             About Press Sense
           </Link>
@@ -193,27 +193,27 @@ export default function MobileMenu({
           <Link
             href="/contact"
             onClick={onClose}
-            className="flex items-center justify-between py-3 text-base font-semibold text-[#111827]"
+            className="flex items-center justify-between py-3 text-base font-semibold text-white hover:text-[#FA7533] transition-colors"
           >
             Contact &amp; Location
           </Link>
         </div>
 
         {/* Bottom Drawer Actions */}
-        <div className="p-6 border-t border-[#E2E8F0] bg-[#F8FAFC] space-y-3">
+        <div className="p-6 border-t border-slate-800 bg-[#070B10] space-y-3">
           <a
             href={getGeneralWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-sm rounded-lg shadow-xs transition-colors"
+            className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm rounded-xl shadow-xs transition-colors"
           >
             <MessageCircle className="w-4 h-4 fill-white text-transparent" />
-            WhatsApp Us
+            WhatsApp Consultation
           </a>
 
-          <div className="text-center text-xs text-[#64748B]">
-            <p className="font-semibold text-[#111827]">Raj Kumar: {companyInfo.displayPhone}</p>
-            <p className="mt-0.5">Est. {companyInfo.foundedYear} • Delhi, India</p>
+          <div className="text-center text-xs text-slate-400">
+            <p className="font-semibold text-white">Raj Kumar: {companyInfo.displayPhone}</p>
+            <p className="mt-0.5 font-mono text-[11px]">Est. 2010 • Delhi, India</p>
           </div>
         </div>
       </div>

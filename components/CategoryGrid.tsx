@@ -1,38 +1,45 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Layers } from "lucide-react";
 import CategoryCard from "./CategoryCard";
 import { categories } from "@/data/categories";
 
 export default function CategoryGrid() {
   return (
-    <section className="bg-[#F7F8F7] py-16 lg:py-24 border-b border-[#E2E8F0]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-[#070B10] py-8 sm:py-12 lg:py-14 border-b border-slate-800 overflow-hidden text-white">
+      {/* Subtle industrial grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
+      <div className="absolute -top-32 -right-32 w-80 h-80 bg-[#FA7533]/10 blur-[130px] rounded-full pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-6 sm:mb-8 gap-3">
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-[#FA7533]">
-              Product Divisions
-            </span>
-            <h2 className="font-heading font-black text-2xl sm:text-3xl lg:text-4xl text-[#0D171F] tracking-tight mt-1.5">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-bold uppercase tracking-wider bg-[#FA7533]/15 text-[#FA7533] border border-[#FA7533]/30 mb-2">
+              <Layers className="w-3.5 h-3.5" />
+              <span>Core Product Divisions</span>
+            </div>
+            <h2 className="font-heading font-black text-xl sm:text-2xl lg:text-3xl text-white tracking-tight">
               Explore Our Machinery &amp; Consumables
             </h2>
-            <p className="text-sm sm:text-base text-[#64748B] mt-2 max-w-2xl">
-              Categorized industrial machinery, in-house barred blankets, packaging solutions, and precision pressroom supplies.
+            <p className="text-xs sm:text-sm text-slate-400 mt-1.5 max-w-2xl leading-relaxed">
+              Categorized industrial machinery, in-house barred blankets, converting solutions, and precision pressroom consumables.
             </p>
           </div>
 
           <Link
             href="/products"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#FA7533] hover:text-[#E05D1C] group shrink-0"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800 hover:border-[#FA7533] text-xs sm:text-sm font-bold text-[#FA7533] hover:text-[#FF8D4D] shadow-xs transition-all duration-200 group shrink-0 self-start sm:self-auto"
           >
-            <span>Browse Full Catalogue</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <span>Catalogue</span>
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 
-        {/* Grid (4 columns desktop, 2 tablet, 1 mobile) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 2 columns on mobile, 4 columns on desktop - saves 50% mobile height */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
           {categories.map((category) => (
             <CategoryCard key={category.id} category={category} />
           ))}
