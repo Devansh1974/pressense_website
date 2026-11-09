@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -8,13 +8,8 @@ import {
   MessageCircle,
   ChevronLeft,
   ChevronRight,
-  ShieldCheck,
-  CheckCircle2,
-  Wrench,
   Sparkles,
   Maximize2,
-  Phone,
-  Info,
   Play,
   Pause,
 } from "lucide-react";
@@ -271,213 +266,208 @@ export default function Hero() {
     <>
       <section
         aria-label="Press Sense Industrial Machinery Showcase"
-        className="relative bg-[#070B10] text-white overflow-hidden border-b border-slate-800"
+        className="relative bg-[#070B10] text-white overflow-hidden border-b border-slate-800 py-6 sm:py-8 lg:py-12"
       >
-        {/* Full-bleed Slideshow Viewport */}
-        <div className="relative w-full min-h-[500px] sm:min-h-[580px] lg:min-h-[620px] flex items-center">
-          {/* Background Images with Cross-fade Transition */}
-          {heroSlides.map((slide, idx) => {
-            const isActive = idx === currentIndex;
-            return (
+        {/* Subtle background industrial grid & warm ambient glow */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
+        <div className="absolute top-1/3 -left-32 w-80 h-80 bg-[#FA7533]/15 blur-[130px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-[#FA7533]/10 blur-[130px] rounded-full pointer-events-none" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-10 items-center">
+            
+            {/* 1. MACHINE IMAGE UP (Mobile: Order 1, Desktop: Order 2 Right Column 6 cols) */}
+            <div className="order-1 lg:order-2 lg:col-span-6 flex flex-col">
+              {/* Dedicated Image Showcase Container */}
               <div
-                key={slide.id}
-                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out cursor-pointer ${
-                  isActive ? "opacity-100 z-10 pointer-events-auto" : "opacity-0 z-0 pointer-events-none"
-                }`}
-                onClick={() => handleOpenDetail(slide)}
+                className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] bg-[#0A1018] rounded-2xl border border-slate-800 hover:border-[#FA7533] shadow-2xl p-3 sm:p-5 flex items-center justify-center cursor-pointer group overflow-hidden transition-all duration-300"
+                onClick={() => handleOpenDetail(currentSlide)}
+                title="Click to inspect complete technical specifications"
               >
-                {/* Full-Sized Background Image */}
-                <Image
-                  src={slide.image}
-                  alt={slide.name}
-                  fill
-                  priority={idx === 0}
-                  className="object-cover object-center scale-100 transform transition-transform duration-7000 ease-out"
-                  style={{
-                    transform: isActive ? "scale(1.04)" : "scale(1.0)",
-                  }}
-                />
+                {/* Active Machine Image with smooth transition */}
+                <div
+                  key={currentSlide.id}
+                  className="relative w-full h-full flex items-center justify-center animate-in fade-in duration-300"
+                >
+                  <Image
+                    src={currentSlide.image}
+                    alt={currentSlide.name}
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 600px"
+                    className="object-contain p-2 sm:p-3 group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
 
-                {/* Layered Cinematic Overlays for Optimal Text Contrast */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#070B10]/95 via-[#070B10]/85 to-transparent sm:w-3/4 lg:w-3/5" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#070B10] via-transparent to-[#070B10]/40" />
-                <div className="absolute inset-0 bg-[#070B10]/40" />
+                {/* Machine Badge Floating Top-Left */}
+                <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 flex items-center gap-1.5 z-10 pointer-events-none">
+                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 sm:py-1 rounded-md text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider bg-[#FA7533] text-white shadow-md">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
+                    {currentSlide.badge}
+                  </span>
+                  <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono bg-black/80 border border-white/10 text-slate-300">
+                    Est. 2010
+                  </span>
+                </div>
 
-                {/* Subtle Ambient Orange Glow in Corner */}
-                <div className="absolute -top-24 -left-24 w-80 h-80 bg-[#FA7533]/20 blur-[120px] rounded-full pointer-events-none" />
+                {/* Model Code Floating Bottom-Right */}
+                {currentSlide.modelCode && (
+                  <span className="absolute bottom-2.5 right-2.5 sm:bottom-3 sm:right-3 z-10 text-[10px] sm:text-[11px] font-mono bg-black/85 border border-slate-700 text-slate-300 px-2 py-0.5 rounded shadow-xs backdrop-blur-xs">
+                    {currentSlide.modelCode}
+                  </span>
+                )}
 
-                {/* Interactive Click Indicator Pill (Floating on Image) */}
-                <div className="absolute top-5 right-5 z-20 hidden md:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 hover:bg-[#FA7533] backdrop-blur-md border border-white/20 text-white text-xs font-semibold shadow-lg transition-colors group">
-                  <Maximize2 className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
-                  <span>Click to Inspect Machine Details</span>
+                {/* Tap to inspect Floating Bottom-Left */}
+                <div className="absolute bottom-2.5 left-2.5 sm:bottom-3 sm:left-3 z-10 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] sm:text-xs font-semibold text-white bg-black/80 border border-white/15 backdrop-blur-xs group-hover:bg-[#FA7533] group-hover:border-[#FA7533] transition-colors shadow-xs">
+                  <Maximize2 className="w-3 h-3 text-[#FA7533] group-hover:text-white" />
+                  <span>Tap to inspect specs</span>
                 </div>
               </div>
-            );
-          })}
 
-          {/* Foreground Content: Text & Descriptions directly ON the images */}
-          <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-16 w-full">
-            <div className="max-w-2xl sm:max-w-3xl">
-              {/* Header Badges */}
-              <div className="flex flex-wrap items-center gap-2 mb-3">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold uppercase tracking-wider bg-[#FA7533] text-white shadow-xs">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
-                  {currentSlide.badge}
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono text-slate-300 bg-white/10 backdrop-blur-md border border-white/15">
-                  <span>Est. 2010</span>
-                  <span className="text-[#FA7533]">•</span>
-                  <span>Delhi Facility</span>
-                </span>
-                <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  Auto-Scrolling Active
-                </span>
-              </div>
+              {/* Dedicated Image Navigation & Progress Bar (Right below Image, zero overlapping!) */}
+              <div className="flex items-center justify-between gap-3 mt-3 p-2 sm:p-2.5 rounded-xl bg-[#0D1520] border border-slate-800 shadow-sm">
+                {/* Left: Counter & Auto-scroll Segmented Indicators */}
+                <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                  <span className="text-xs font-mono font-bold text-[#FA7533] shrink-0">
+                    0{currentIndex + 1} / 0{heroSlides.length}
+                  </span>
 
-              {/* Slide Subtitle */}
-              <p className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-[#FA7533] font-bold">
-                {currentSlide.subtitle}
-              </p>
+                  {/* 6 Interactive Segmented Progress Bars */}
+                  <div className="flex items-center gap-1 sm:gap-1.5 flex-1 max-w-[200px] sm:max-w-xs">
+                    {heroSlides.map((slide, i) => {
+                      const isActive = i === currentIndex;
+                      return (
+                        <button
+                          key={slide.id}
+                          onClick={() => goToSlide(i)}
+                          aria-label={`Jump to slide ${i + 1}: ${slide.name}`}
+                          className="relative flex-1 h-1.5 sm:h-2 rounded-full overflow-hidden bg-slate-800 transition-all cursor-pointer hover:bg-slate-700"
+                        >
+                          {isActive && (
+                            <div
+                              className="h-full bg-gradient-to-r from-[#FA7533] to-[#FF8D4D] rounded-full transition-all duration-75 shadow-[0_0_8px_#FA7533]"
+                              style={{ width: `${slideProgress}%` }}
+                            />
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
 
-              {/* Big Machine Name */}
-              <h1 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-white tracking-tight mt-1.5 leading-[1.15] drop-shadow-md">
-                {currentSlide.name}
-              </h1>
-
-              {/* Machine Description directly ON the image */}
-              <p className="text-xs sm:text-sm lg:text-base text-slate-200 mt-2.5 sm:mt-3 leading-relaxed max-w-2xl font-normal drop-shadow-xs line-clamp-3 sm:line-clamp-none">
-                {currentSlide.description}
-              </p>
-
-              {/* Specs Pills Grid directly ON the image */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-4 sm:mt-5 pt-3.5 sm:pt-4 border-t border-white/15 max-w-2xl">
-                {Object.entries(currentSlide.specs)
-                  .slice(0, 4)
-                  .map(([key, val], i) => (
-                    <div
-                      key={i}
-                      className="bg-black/50 backdrop-blur-md border border-white/10 rounded-lg p-2 sm:p-2.5 shadow-sm"
-                    >
-                      <p className="text-[10px] font-mono uppercase text-slate-400 truncate">
-                        {key}
-                      </p>
-                      <p className="text-xs sm:text-sm font-bold text-white truncate mt-0.5 font-mono">
-                        {val}
-                      </p>
-                    </div>
-                  ))}
-              </div>
-
-              {/* CTA Action Buttons */}
-              <div className="flex flex-wrap sm:flex-nowrap items-center gap-2.5 sm:gap-3 mt-4 sm:mt-6">
-                {/* 1. Click to Inspect Detailed Section */}
-                <button
-                  onClick={() => handleOpenDetail(currentSlide)}
-                  className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-4 py-2.5 sm:px-5 sm:py-3 bg-[#FA7533] hover:bg-[#E05D1C] text-white text-xs sm:text-sm font-bold rounded-xl shadow-[0_0_15px_rgba(250,117,51,0.4)] transition-all duration-200 group cursor-pointer"
-                >
-                  <Maximize2 className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
-                  <span>Inspect Machine</span>
-                </button>
-
-                {/* 2. Direct WhatsApp Consultation */}
-                <a
-                  href={getProductWhatsAppUrl(
-                    currentSlide.name,
-                    currentSlide.modelCode
-                  )}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-4 py-2.5 sm:px-5 sm:py-3 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs sm:text-sm font-bold rounded-xl shadow-sm transition-all duration-200"
-                >
-                  <MessageCircle className="w-3.5 h-3.5 fill-white text-transparent" />
-                  <span>WhatsApp Raj Kumar</span>
-                </a>
-
-                {/* 3. Direct Link to Product Page */}
-                <Link
-                  href={currentSlide.href}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1 px-3.5 py-2 sm:py-3 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md text-white text-xs sm:text-sm font-semibold border border-white/15 transition-colors"
-                >
-                  <span>Catalogue Page</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Navigation Controls & Continuous Dots Bar at the Bottom */}
-          <div className="absolute bottom-6 left-0 right-0 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            {/* Interactive Dots for Auto Scrolled Slides with Progress Bar */}
-            <div className="flex items-center gap-2.5">
-              <span className="text-xs font-mono text-slate-400 mr-1">
-                0{currentIndex + 1} / 0{heroSlides.length}
-              </span>
-
-              {heroSlides.map((slide, i) => {
-                const isActive = i === currentIndex;
-                return (
+                  {/* Auto-scroll Pause / Play Toggle */}
                   <button
-                    key={slide.id}
-                    onClick={() => goToSlide(i)}
-                    aria-label={`Switch to machine slide ${i + 1}: ${slide.name}`}
-                    className={`relative h-2.5 rounded-full overflow-hidden transition-all duration-300 cursor-pointer ${
-                      isActive ? "w-12 sm:w-16 bg-white/20" : "w-3 bg-white/20 hover:bg-white/40"
-                    }`}
+                    onClick={() => setIsAutoScrollActive(!isAutoScrollActive)}
+                    aria-label={isAutoScrollActive ? "Pause auto-scroll" : "Play auto-scroll"}
+                    className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors shrink-0 cursor-pointer"
                   >
-                    {isActive && (
-                      <div
-                        className="h-full bg-gradient-to-r from-[#FA7533] to-[#FF8D4D] rounded-full transition-all duration-75 shadow-[0_0_8px_#FA7533]"
-                        style={{ width: `${slideProgress}%` }}
-                      />
+                    {isAutoScrollActive ? (
+                      <Pause className="w-3.5 h-3.5" />
+                    ) : (
+                      <Play className="w-3.5 h-3.5 text-[#FA7533]" />
                     )}
                   </button>
-                );
-              })}
+                </div>
 
-              {/* Auto-scroll Pause / Play Toggle */}
-              <button
-                onClick={() => setIsAutoScrollActive(!isAutoScrollActive)}
-                aria-label={isAutoScrollActive ? "Pause auto-scroll" : "Play auto-scroll"}
-                className="p-1 rounded-full text-slate-400 hover:text-white transition-colors ml-1 cursor-pointer"
-              >
-                {isAutoScrollActive ? (
-                  <Pause className="w-3.5 h-3.5" />
-                ) : (
-                  <Play className="w-3.5 h-3.5 text-[#FA7533]" />
-                )}
-              </button>
-            </div>
-
-            {/* Slide Arrows & Facility Hotline */}
-            <div className="flex items-center gap-3">
-              <div className="hidden lg:flex items-center gap-2 text-xs font-mono text-slate-400 mr-4">
-                <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                <span>Delhi Center: +91 98400 89494</span>
-              </div>
-
-              <div className="flex items-center gap-1.5">
-                <button
-                  onClick={prevSlide}
-                  aria-label="Previous machine slide"
-                  className="p-2.5 rounded-xl bg-black/60 hover:bg-[#FA7533] text-white border border-white/20 transition-colors backdrop-blur-md cursor-pointer"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={nextSlide}
-                  aria-label="Next machine slide"
-                  className="p-2.5 rounded-xl bg-black/60 hover:bg-[#FA7533] text-white border border-white/20 transition-colors backdrop-blur-md cursor-pointer"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
+                {/* Right: Prev & Next Arrow Controls */}
+                <div className="flex items-center gap-1 shrink-0">
+                  <button
+                    onClick={prevSlide}
+                    aria-label="Previous machine slide"
+                    className="p-1.5 sm:p-2 rounded-lg bg-black/60 hover:bg-[#FA7533] text-white border border-slate-700 hover:border-[#FA7533] transition-colors cursor-pointer"
+                  >
+                    <ChevronLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  </button>
+                  <button
+                    onClick={nextSlide}
+                    aria-label="Next machine slide"
+                    className="p-1.5 sm:p-2 rounded-lg bg-black/60 hover:bg-[#FA7533] text-white border border-slate-700 hover:border-[#FA7533] transition-colors cursor-pointer"
+                  >
+                    <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  </button>
+                </div>
               </div>
             </div>
+
+            {/* 2. THEORIES & SPECS DOWN (Mobile: Order 2, Desktop: Order 1 Left Column 6 cols) */}
+            <div className="order-2 lg:order-1 lg:col-span-6 flex flex-col justify-center">
+              <div key={currentSlide.id} className="animate-in fade-in duration-300">
+                {/* Category & Heritage Subtitle */}
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <span className="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider text-[#FA7533]">
+                    {currentSlide.subtitle}
+                  </span>
+                </div>
+
+                {/* Machine Name */}
+                <h1 className="font-heading font-black text-xl sm:text-3xl lg:text-4xl text-white tracking-tight leading-snug">
+                  {currentSlide.name}
+                </h1>
+
+                {/* Machine Description */}
+                <p className="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed line-clamp-2 sm:line-clamp-3">
+                  {currentSlide.description}
+                </p>
+
+                {/* 2x2 Specs Grid */}
+                <div className="grid grid-cols-2 gap-2 mt-3.5 pt-3 border-t border-slate-800">
+                  {Object.entries(currentSlide.specs)
+                    .slice(0, 4)
+                    .map(([key, val], i) => (
+                      <div
+                        key={i}
+                        className="bg-[#0A1018] border border-slate-800/80 rounded-xl p-2.5 flex flex-col justify-center"
+                      >
+                        <span className="text-[10px] font-mono uppercase text-slate-400 truncate">
+                          {key}
+                        </span>
+                        <span className="text-xs sm:text-sm font-mono font-bold text-white truncate mt-0.5">
+                          {val}
+                        </span>
+                      </div>
+                    ))}
+                </div>
+
+                {/* Primary Action Buttons */}
+                <div className="mt-4 pt-3 border-t border-slate-800 space-y-2">
+                  <div className="flex flex-row gap-2">
+                    <button
+                      onClick={() => handleOpenDetail(currentSlide)}
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 sm:py-3 bg-[#FA7533] hover:bg-[#E05D1C] text-white text-xs sm:text-sm font-bold rounded-xl shadow-[0_0_15px_rgba(250,117,51,0.3)] transition-all cursor-pointer"
+                    >
+                      <Maximize2 className="w-3.5 h-3.5" />
+                      <span>Inspect Machine</span>
+                    </button>
+
+                    <a
+                      href={getProductWhatsAppUrl(
+                        currentSlide.name,
+                        currentSlide.modelCode
+                      )}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 sm:py-3 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs sm:text-sm font-bold rounded-xl shadow-sm transition-all"
+                    >
+                      <MessageCircle className="w-3.5 h-3.5 fill-white text-transparent" />
+                      <span>WhatsApp Raj Kumar</span>
+                    </a>
+                  </div>
+
+                  <Link
+                    href={currentSlide.href}
+                    className="w-full inline-flex items-center justify-center gap-1.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white text-xs font-semibold border border-white/10 transition-colors"
+                  >
+                    <span>View In Product Catalogue</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* Detailed Machine Modal (Triggered on Click) */}
+      {/* Machine Details Modal */}
       <MachineDetailModal
         machine={selectedMachine}
         isOpen={modalOpen}
