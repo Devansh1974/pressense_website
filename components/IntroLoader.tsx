@@ -108,34 +108,20 @@ export default function IntroLoader({ onComplete }: IntroLoaderProps) {
 
         {/* Content in Top Shutter: Logo & Brand Name */}
         <div className="pb-4 sm:pb-6 flex flex-col items-center z-10 px-4 text-center">
-          {/* Animated Glowing Logo Mark */}
-          <div className="relative mb-4 group">
+          {/* Animated Glowing Official Logo */}
+          <div className="relative mb-3 group">
             {/* Ambient Pulsing Glow behind Logo */}
-            <div className="absolute inset-0 bg-[#FA7533]/30 blur-2xl rounded-full scale-110 animate-pulse" />
+            <div className="absolute inset-0 bg-[#FA7533]/25 blur-3xl rounded-full scale-125 animate-pulse" />
             
-            <div className="relative p-3 rounded-2xl bg-[#0D141C] border border-[#FA7533]/30 shadow-[0_0_30px_rgba(250,117,51,0.25)] flex items-center justify-center">
-              <Image
-                src="/images/logo/pressense-icon-orange.svg"
-                alt="PRESS SENSE Emblem"
-                width={72}
-                height={72}
-                priority
-                className="w-12 h-12 sm:w-16 sm:h-16 object-contain drop-shadow-[0_0_12px_rgba(250,117,51,0.6)]"
-              />
-            </div>
+            <Image
+              src="/images/logo/pressense-logo-dark.svg"
+              alt="PRESS SENSE | Printing • Packaging • Industrial Solutions"
+              width={420}
+              height={78}
+              priority
+              className="h-14 sm:h-20 lg:h-24 w-auto object-contain drop-shadow-[0_0_25px_rgba(250,117,51,0.35)]"
+            />
           </div>
-
-          {/* Full Brand Name */}
-          <h1 className="font-heading font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-wider flex items-center gap-3">
-            <span>PRESS</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FA7533] via-[#FF8D4D] to-[#FA7533] drop-shadow-[0_0_20px_rgba(250,117,51,0.4)]">
-              SENSE
-            </span>
-          </h1>
-
-          <p className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.25em] text-slate-400 mt-2">
-            Printing • Packaging • Industrial Solutions
-          </p>
         </div>
       </div>
 
