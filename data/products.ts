@@ -427,7 +427,7 @@ export const products: Product[] = [
     description:
       "Authentic spec brush units engineered to maintain optimal plate cleanliness and roller discharge on Heidelberg QM46 presses. Fabricated with conductive bristles that dissipate static buildup while picking up stray paper dust and ink mist before cylinder contamination occurs.",
     images: [
-      "/images/products/heidelberg-quickmaster-46di.jpg",
+      "/images/products/offset-feeder-brush-clean.jpg",
       "/images/products/heidelberg-saphira-80c.webp",
       "/images/categories/offset-consumables.png",
     ],
@@ -846,7 +846,7 @@ export const products: Product[] = [
     description:
       "We source and supply printing machinery from international markets, specializing in pre-owned multi-color offset presses from established manufacturers such as Mitsubishi, Ryobi, Sakurai, and Heidelberg. Every machine is sourced around your format, production volume, and investment level with full technical verification.",
     images: [
-      "/images/products/heidelberg-quickmaster-46di.jpg",
+      "/images/products/offset-feeder-brush-clean.jpg",
       "/images/products/kba-rapida-162a-6.jpg",
     ],
     features: [

@@ -26,7 +26,7 @@ const pinnedMachines: HeroMachineDetail[] = [
     subtitle: "High-Speed Commercial Sheetfed Printing",
     category: "Offset Machinery",
     categorySlug: "digital-offset-finishing-machines",
-    image: "/images/products/heidelberg-quickmaster-46di.jpg",
+    image: "/images/products/offset-feeder-brush-clean.jpg",
     description:
       "Sourced internationally from top Japanese and German manufacturers (Heidelberg, Sakurai, Ryobi, Mitsubishi). Every press undergoes comprehensive mechanical, electrical, and cylinder tolerance audits by in-house engineers prior to delivery.",
     badge: "Internationally Sourced",
@@ -291,6 +291,7 @@ export default function PinnedMachineShowcase() {
                   src={activeMachine.image}
                   alt={activeMachine.name}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 600px"
                   className="object-contain p-3 sm:p-4 group-hover/img:scale-105 transition-transform duration-500"
                 />
 

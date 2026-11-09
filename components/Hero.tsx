@@ -25,7 +25,7 @@ const heroSlides: HeroMachineDetail[] = [
     category: "01 | Offset Printing Machinery",
     categorySlug: "digital-offset-finishing-machines",
     productSlug: "pre-owned-offset-printing-machines",
-    image: "/images/products/heidelberg-quickmaster-46di.jpg",
+    image: "/images/products/offset-feeder-brush-clean.jpg",
     description:
       "Internationally sourced high-precision offset presses, thoroughly inspected, cleaned, and supported by dedicated in-house engineers throughout their working life. Sourced to fit your production volume and budget.",
     badge: "Global Sourcing • Inspected",
