@@ -14,20 +14,20 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="bg-[#070B10] text-white min-h-screen py-8 lg:py-12">
+    <div className="bg-[#FAFBFB] text-slate-900 min-h-screen py-8 lg:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Breadcrumbs items={[{ label: "Contact Us" }]} />
 
         {/* Page Header */}
         <div className="mt-4 mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-[#FA7533]/15 text-[#FA7533] border border-[#FA7533]/30 mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-orange-50 text-[#FA7533] border border-orange-200 mb-3">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Direct Sales &amp; Technical Consultation Desk</span>
           </div>
-          <h1 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight mt-1.5">
+          <h1 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight mt-1.5">
             Contact Press Sense
           </h1>
-          <p className="text-sm sm:text-base text-slate-400 mt-2 max-w-2xl leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-600 mt-2 max-w-2xl leading-relaxed">
             Reach out directly to Raj Kumar for in-house barred printing blankets, DIC inks,
             Böttcher press chemicals, creasing matrix, thermal laminating machinery, or pre-owned offset presses.
           </p>
@@ -37,15 +37,15 @@ export default function ContactPage() {
           {/* Left Column: Direct Contact Info (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
             {/* Primary WhatsApp Card */}
-            <div className="bg-[#0D1520] border border-slate-800 text-white rounded-2xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
+            <div className="bg-white border border-slate-200 text-slate-900 rounded-2xl p-6 sm:p-8 shadow-xs relative overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#25D366] via-[#FA7533] to-[#25D366]" />
               <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#FA7533]">
                 Primary Consultation Desk
               </span>
-              <h2 className="font-heading font-bold text-xl sm:text-2xl text-white mt-1">
+              <h2 className="font-heading font-bold text-xl sm:text-2xl text-slate-900 mt-1">
                 WhatsApp Direct Desk
               </h2>
-              <p className="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
                 Send photos of your current blanket cylinders, knife bars, or machinery specifications
                 directly for immediate assistance and quotation.
               </p>
@@ -64,48 +64,48 @@ export default function ContactPage() {
             </div>
 
             {/* Address & Office Card */}
-            <div className="bg-[#0D1520] border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-xl space-y-6 text-white">
-              <h3 className="font-heading font-bold text-lg text-white pb-3 border-b border-slate-800">
+            <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-xs space-y-6 text-slate-900">
+              <h3 className="font-heading font-bold text-lg text-slate-900 pb-3 border-b border-slate-100">
                 Contact &amp; Facility Details
               </h3>
 
-              <div className="flex items-start gap-3 text-sm text-slate-300">
+              <div className="flex items-start gap-3 text-sm text-slate-600">
                 <Phone className="w-5 h-5 text-[#FA7533] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block font-heading">Raj Kumar (Key Contact)</strong>
+                  <strong className="text-slate-900 block font-heading">Raj Kumar (Key Contact)</strong>
                   <a
                     href={`tel:${companyInfo.displayPhone.replace(/\s+/g, "")}`}
-                    className="hover:text-[#FA7533] transition-colors font-mono font-medium text-slate-200"
+                    className="hover:text-[#FA7533] transition-colors font-mono font-medium text-slate-800"
                   >
                     {companyInfo.displayPhone}
                   </a>
                   <br />
                   <a
                     href={`tel:${companyInfo.displayAltPhone.replace(/\s+/g, "")}`}
-                    className="hover:text-[#FA7533] transition-colors text-slate-400 text-xs font-mono"
+                    className="hover:text-[#FA7533] transition-colors text-slate-500 text-xs font-mono"
                   >
                     Alt Mobile: {companyInfo.displayAltPhone}
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 text-sm text-slate-300">
+              <div className="flex items-start gap-3 text-sm text-slate-600">
                 <Mail className="w-5 h-5 text-[#FA7533] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block font-heading">Official Email</strong>
+                  <strong className="text-slate-900 block font-heading">Official Email</strong>
                   <a
                     href={`mailto:${companyInfo.email}`}
-                    className="hover:text-[#FA7533] transition-colors font-mono"
+                    className="hover:text-[#FA7533] transition-colors font-mono text-slate-800"
                   >
                     {companyInfo.email}
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 text-sm text-slate-300">
+              <div className="flex items-start gap-3 text-sm text-slate-600">
                 <MapPin className="w-5 h-5 text-[#FA7533] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block font-heading">Headquarters &amp; Blanket Baring Facility</strong>
+                  <strong className="text-slate-900 block font-heading">Headquarters &amp; Blanket Baring Facility</strong>
                   <span>{companyInfo.address.line1}</span>
                   <br />
                   <span>
@@ -113,16 +113,16 @@ export default function ContactPage() {
                     {companyInfo.address.postalCode}
                   </span>
                   <br />
-                  <span className="text-xs text-slate-400 font-mono">Established 2010 • Delhi, India</span>
+                  <span className="text-xs text-slate-500 font-mono">Established 2010 • Delhi, India</span>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 text-sm text-slate-300">
+              <div className="flex items-start gap-3 text-sm text-slate-600">
                 <Clock className="w-5 h-5 text-[#FA7533] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block font-heading">Working Hours</strong>
+                  <strong className="text-slate-900 block font-heading">Working Hours</strong>
                   <span>{companyInfo.operatingHours}</span>
-                  <p className="text-xs text-slate-400 mt-0.5">Emergency breakdown support available</p>
+                  <p className="text-xs text-slate-500 mt-0.5">Emergency breakdown support available</p>
                 </div>
               </div>
             </div>

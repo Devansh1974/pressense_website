@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-navy: #070B10;
+  --color-brand-navy: #0F172A;
   --color-brand-orange: #FA7533;
   --color-brand-orange-hover: #E05D1C;
-  --color-brand-orange-light: #1A130F;
+  --color-brand-orange-light: #FFF7ED;
   --color-brand-blue: #FA7533;
   --color-brand-blue-hover: #E05D1C;
-  --color-brand-bg: #070B10;
-  --color-brand-text: #F8FAFC;
-  --color-brand-secondary: #94A3B8;
-  --color-brand-border: #1E293B;
+  --color-brand-bg: #FAFBFB;
+  --color-brand-text: #0F172A;
+  --color-brand-secondary: #64748B;
+  --color-brand-border: #E2E8F0;
   --color-brand-whatsapp: #25D366;
   --color-brand-whatsapp-hover: #20ba59;
   
@@ -19,21 +19,21 @@
 }
 
 :root {
-  --background: #070B10;
-  --foreground: #F8FAFC;
+  --background: #FAFBFB;
+  --foreground: #0F172A;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #070B10;
-  color: #F8FAFC;
-  color-scheme: dark;
+  background-color: #FAFBFB;
+  color: #0F172A;
+  color-scheme: light;
 }
 
 body {
   font-family: var(--font-inter), sans-serif;
-  background-color: #070B10;
-  color: #F8FAFC;
+  background-color: #FAFBFB;
+  color: #0F172A;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -43,18 +43,18 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-/* Custom scrollbars - Dark & Orange */
+/* Custom scrollbars - Clean Light & Orange */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #070B10;
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1E293B;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 
@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Scroll reveal helper transitions */
 .reveal-init {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(24px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 

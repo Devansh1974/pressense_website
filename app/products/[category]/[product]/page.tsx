@@ -90,7 +90,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
   };
 
   return (
-    <div className="bg-[#070B10] text-[#F8FAFC] min-h-screen py-8 lg:py-12">
+    <div className="bg-[#FAFBFB] text-slate-900 min-h-screen py-8 lg:py-12">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

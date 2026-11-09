@@ -34,26 +34,26 @@ export default function Navbar() {
   return (
     <>
       <header
-        className="sticky top-0 z-40 bg-[#070B10]/95 backdrop-blur-md border-b border-slate-800 text-white transition-colors"
+        className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 text-slate-900 transition-colors shadow-xs"
         onMouseLeave={() => {
           setMegaMenuOpen(false);
           setIndustriesMenuOpen(false);
         }}
       >
         {/* Top utility sub-bar */}
-        <div className="hidden lg:block bg-[#030609] text-white py-1 px-4 sm:px-6 lg:px-8 text-xs border-b border-slate-900/80">
+        <div className="hidden lg:block bg-slate-100/90 text-slate-600 py-1 px-4 sm:px-6 lg:px-8 text-xs border-b border-slate-200">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
-            <div className="flex items-center gap-2.5 text-slate-400 font-medium font-mono text-[10.5px]">
+            <div className="flex items-center gap-2.5 text-slate-600 font-medium font-mono text-[10.5px]">
               <span className="text-[#FA7533] font-bold">PRESS SENSE</span>
-              <span className="text-slate-700">•</span>
+              <span className="text-slate-300">•</span>
               <span>Printing • Packaging • Industrial Solutions</span>
-              <span className="text-slate-700">•</span>
-              <span className="text-slate-400">Est. 2010 • Delhi Facility</span>
+              <span className="text-slate-300">•</span>
+              <span className="text-slate-500">Est. 2010 • Delhi Facility</span>
             </div>
             <div className="flex items-center gap-5">
               <a
                 href={`tel:${companyInfo.displayPhone.replace(/\s+/g, "")}`}
-                className="text-slate-400 hover:text-white flex items-center gap-1.5 transition-colors font-mono text-[11px]"
+                className="text-slate-600 hover:text-slate-900 flex items-center gap-1.5 transition-colors font-mono text-[11px]"
               >
                 <Phone className="w-3 h-3 text-[#FA7533]" />
                 <span>Raj Kumar: {companyInfo.displayPhone}</span>
@@ -62,7 +62,7 @@ export default function Navbar() {
                 href={getGeneralWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#FA7533] hover:text-[#FF8D4D] font-semibold flex items-center gap-1 transition-colors text-[11px]"
+                className="text-[#FA7533] hover:text-[#E05D1C] font-semibold flex items-center gap-1 transition-colors text-[11px]"
               >
                 <span>WhatsApp Consultation</span>
               </a>
@@ -77,7 +77,7 @@ export default function Navbar() {
             <div className="flex items-center">
               <Link href="/" className="group flex items-center py-0.5">
                 <Image
-                  src="/images/logo/pressense-logo-dark.svg"
+                  src="/images/logo/pressense-logo-light.svg"
                   alt="PRESS SENSE | Printing • Packaging • Industrial Solutions"
                   width={220}
                   height={38}
@@ -98,8 +98,8 @@ export default function Navbar() {
                 }}
                 className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
                   isActive("/")
-                    ? "text-[#FA7533] bg-[#FA7533]/15 border border-[#FA7533]/30"
-                    : "text-slate-300 hover:text-white hover:bg-white/5"
+                    ? "text-[#FA7533] bg-orange-50 border border-orange-200"
+                    : "text-slate-700 hover:text-[#FA7533] hover:bg-slate-50"
                 }`}
               >
                 Home
@@ -117,8 +117,8 @@ export default function Navbar() {
                   href="/products"
                   className={`inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
                     isActive("/products") || megaMenuOpen
-                      ? "text-[#FA7533] bg-[#FA7533]/15 border border-[#FA7533]/30"
-                      : "text-slate-300 hover:text-white hover:bg-white/5"
+                      ? "text-[#FA7533] bg-orange-50 border border-orange-200"
+                      : "text-slate-700 hover:text-[#FA7533] hover:bg-slate-50"
                   }`}
                 >
                   <span>Products</span>
@@ -142,8 +142,8 @@ export default function Navbar() {
                   href="/industries"
                   className={`inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
                     isActive("/industries") || industriesMenuOpen
-                      ? "text-[#FA7533] bg-[#FA7533]/15 border border-[#FA7533]/30"
-                      : "text-slate-300 hover:text-white hover:bg-white/5"
+                      ? "text-[#FA7533] bg-orange-50 border border-orange-200"
+                      : "text-slate-700 hover:text-[#FA7533] hover:bg-slate-50"
                   }`}
                 >
                   <span>Industries</span>
@@ -163,8 +163,8 @@ export default function Navbar() {
                 }}
                 className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
                   isActive("/about")
-                    ? "text-[#FA7533] bg-[#FA7533]/15 border border-[#FA7533]/30"
-                    : "text-slate-300 hover:text-white hover:bg-white/5"
+                    ? "text-[#FA7533] bg-orange-50 border border-orange-200"
+                    : "text-slate-700 hover:text-[#FA7533] hover:bg-slate-50"
                 }`}
               >
                 About Us
@@ -178,8 +178,8 @@ export default function Navbar() {
                 }}
                 className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
                   isActive("/contact")
-                    ? "text-[#FA7533] bg-[#FA7533]/15 border border-[#FA7533]/30"
-                    : "text-slate-300 hover:text-white hover:bg-white/5"
+                    ? "text-[#FA7533] bg-orange-50 border border-orange-200"
+                    : "text-slate-700 hover:text-[#FA7533] hover:bg-slate-50"
                 }`}
               >
                 Contact
@@ -192,11 +192,11 @@ export default function Navbar() {
               <button
                 onClick={openSearch}
                 aria-label="Open search catalogue"
-                className="flex items-center gap-2 px-2.5 py-1.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-900/90 hover:bg-slate-800 border border-slate-800 rounded-lg transition-colors cursor-pointer"
+                className="flex items-center gap-2 px-2.5 py-1.5 text-xs font-medium text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200/80 border border-slate-200 rounded-lg transition-colors cursor-pointer"
               >
                 <Search className="w-3.5 h-3.5 text-[#FA7533]" />
                 <span className="hidden sm:inline">Search</span>
-                <kbd className="hidden lg:inline-flex items-center px-1.5 py-0.5 text-[9px] font-mono text-slate-400 bg-black/50 border border-slate-700 rounded">
+                <kbd className="hidden lg:inline-flex items-center px-1.5 py-0.5 text-[9px] font-mono text-slate-500 bg-white border border-slate-200 rounded">
                   ⌘K
                 </kbd>
               </button>
@@ -206,7 +206,7 @@ export default function Navbar() {
                 href={getGeneralWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold rounded-lg shadow-sm transition-colors shrink-0"
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold rounded-lg shadow-xs transition-colors shrink-0"
               >
                 <MessageCircle className="w-3.5 h-3.5 fill-white text-transparent" />
                 <span>WhatsApp</span>
@@ -216,7 +216,7 @@ export default function Navbar() {
               <button
                 onClick={() => setMobileMenuOpen(true)}
                 aria-label="Open navigation menu"
-                className="lg:hidden p-1.5 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg transition-colors"
+                className="lg:hidden p-1.5 text-slate-700 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors"
               >
                 <Menu className="w-5 h-5" />
               </button>

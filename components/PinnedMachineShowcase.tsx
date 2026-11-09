@@ -189,26 +189,25 @@ export default function PinnedMachineShowcase() {
       <section
         id="machine-showcase"
         aria-label="Core Industrial Equipment Showcase"
-        className="relative bg-[#090E14] text-white py-8 sm:py-12 lg:py-14 border-b border-slate-800 overflow-hidden"
+        className="relative bg-slate-50/60 text-slate-900 py-8 sm:py-12 lg:py-14 border-b border-slate-200 overflow-hidden"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        {/* Subtle engineering background grid and ambient orange accents */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:36px_36px] pointer-events-none" />
-        <div className="absolute top-1/4 -left-40 w-80 h-80 bg-[#FA7533]/15 blur-[140px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-1/4 -right-40 w-80 h-80 bg-[#FA7533]/10 blur-[140px] rounded-full pointer-events-none" />
+        {/* Subtle warm orange accent glow */}
+        <div className="absolute top-1/4 -left-40 w-80 h-80 bg-orange-100/50 blur-[130px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-1/4 -right-40 w-80 h-80 bg-orange-100/40 blur-[130px] rounded-full pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-5 sm:mb-6 gap-3">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-bold uppercase tracking-wider bg-[#FA7533]/15 border border-[#FA7533]/30 text-[#FA7533] mb-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-bold uppercase tracking-wider bg-orange-50 border border-orange-200 text-[#FA7533] mb-2">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Machinery &amp; Facilities Showcase</span>
               </div>
-              <h2 className="font-heading font-black text-xl sm:text-2xl lg:text-3xl text-white tracking-tight leading-tight">
+              <h2 className="font-heading font-black text-xl sm:text-2xl lg:text-3xl text-slate-900 tracking-tight leading-tight">
                 Engineering Showcase:{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FA7533] to-[#FF9E66]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FA7533] to-[#E05D1C]">
                   High-Uptime Solutions
                 </span>
               </h2>
@@ -216,7 +215,7 @@ export default function PinnedMachineShowcase() {
 
             {/* Slide Navigation Controls */}
             <div className="flex items-center gap-3 self-end sm:self-auto">
-              <span className="text-xs font-mono text-slate-400">
+              <span className="text-xs font-mono text-slate-500">
                 [ 0{activeIndex + 1} / 0{pinnedMachines.length} ]
               </span>
               <div className="flex items-center gap-1.5">
@@ -227,7 +226,7 @@ export default function PinnedMachineShowcase() {
                     )
                   }
                   aria-label="Previous equipment"
-                  className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-black/60 hover:bg-[#FA7533] text-white border border-slate-700 hover:border-[#FA7533] transition-colors cursor-pointer"
+                  className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-white hover:bg-[#FA7533] text-slate-700 hover:text-white border border-slate-200 hover:border-[#FA7533] transition-colors cursor-pointer shadow-xs"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
@@ -236,7 +235,7 @@ export default function PinnedMachineShowcase() {
                     setActiveIndex((prev) => (prev + 1) % pinnedMachines.length)
                   }
                   aria-label="Next equipment"
-                  className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-black/60 hover:bg-[#FA7533] text-white border border-slate-700 hover:border-[#FA7533] transition-colors cursor-pointer"
+                  className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-white hover:bg-[#FA7533] text-slate-700 hover:text-white border border-slate-200 hover:border-[#FA7533] transition-colors cursor-pointer shadow-xs"
                 >
                   <ChevronRight className="w-4 h-4" />
                 </button>
@@ -252,8 +251,8 @@ export default function PinnedMachineShowcase() {
                 onClick={() => setActiveIndex(idx)}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg sm:rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
                   idx === activeIndex
-                    ? "bg-[#FA7533] text-white shadow-[0_0_12px_rgba(250,117,51,0.4)]"
-                    : "bg-[#0E1520] hover:bg-slate-800 text-slate-300 border border-slate-700/80"
+                    ? "bg-[#FA7533] text-white shadow-xs font-bold"
+                    : "bg-white hover:bg-slate-100 text-slate-700 border border-slate-200"
                 }`}
               >
                 <span className="font-mono text-[10px] opacity-80">0{idx + 1}</span>
@@ -265,26 +264,26 @@ export default function PinnedMachineShowcase() {
           {/* Compact 2-Column Split Showcase Viewport */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-8 items-stretch">
             {/* RIGHT COLUMN ON MOBILE (order-1), DESKTOP (order-2): SLIDESHOW CARD VIEWPORT (7 cols) */}
-            <div className="order-1 lg:order-2 lg:col-span-7 flex flex-col justify-between bg-[#0D141F] rounded-xl sm:rounded-2xl border border-slate-700/80 p-4 sm:p-5 shadow-2xl relative overflow-hidden group">
+            <div className="order-1 lg:order-2 lg:col-span-7 flex flex-col justify-between bg-white rounded-xl sm:rounded-2xl border border-slate-200 p-4 sm:p-5 shadow-xs relative overflow-hidden group">
               {/* Card top banner */}
-              <div className="flex items-center justify-between pb-2.5 border-b border-slate-800">
+              <div className="flex items-center justify-between pb-2.5 border-b border-slate-100">
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-mono font-bold text-[#FA7533]">
                     Equipment 0{activeIndex + 1}
                   </span>
-                  <span className="text-slate-600">•</span>
-                  <span className="text-xs font-mono uppercase text-slate-400 truncate max-w-[180px] sm:max-w-none">
+                  <span className="text-slate-300">•</span>
+                  <span className="text-xs font-mono uppercase text-slate-500 truncate max-w-[180px] sm:max-w-none">
                     {activeMachine.subtitle}
                   </span>
                 </div>
-                <span className="text-[10px] sm:text-[11px] font-mono px-2 py-0.5 rounded-full bg-[#FA7533]/20 text-[#FA7533] border border-[#FA7533]/30 font-bold shrink-0">
+                <span className="text-[10px] sm:text-[11px] font-mono px-2 py-0.5 rounded-full bg-orange-50 text-[#FA7533] border border-orange-200 font-bold shrink-0">
                   {activeMachine.badge}
                 </span>
               </div>
 
               {/* Main Machine Image Display */}
               <div
-                className="relative w-full aspect-[16/10] bg-[#070B10] rounded-lg sm:rounded-xl overflow-hidden my-3 sm:my-4 border border-slate-800 cursor-pointer group/img flex items-center justify-center"
+                className="relative w-full aspect-[16/10] bg-slate-50 rounded-lg sm:rounded-xl overflow-hidden my-3 sm:my-4 border border-slate-200 cursor-pointer group/img flex items-center justify-center"
                 onClick={() => handleOpenDetail(activeMachine)}
               >
                 <Image
@@ -296,8 +295,8 @@ export default function PinnedMachineShowcase() {
                 />
 
                 {/* Click to inspect overlay pill */}
-                <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/30 transition-colors flex items-center justify-center">
-                  <span className="opacity-0 group-hover/img:opacity-100 transition-opacity inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FA7533] text-white text-xs font-bold shadow-lg">
+                <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors flex items-center justify-center">
+                  <span className="opacity-0 group-hover/img:opacity-100 transition-opacity inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FA7533] text-white text-xs font-bold shadow-md">
                     <Maximize2 className="w-3.5 h-3.5" />
                     <span>Click to Inspect Full Details</span>
                   </span>
@@ -305,15 +304,15 @@ export default function PinnedMachineShowcase() {
 
                 {/* Model badge */}
                 {activeMachine.modelCode && (
-                  <span className="absolute bottom-2.5 right-2.5 text-[10px] font-mono bg-black/80 border border-slate-700 text-slate-300 px-2 py-0.5 rounded backdrop-blur-xs">
+                  <span className="absolute bottom-2.5 right-2.5 text-[10px] font-mono bg-white/95 border border-slate-200 text-slate-700 px-2 py-0.5 rounded shadow-2xs font-semibold">
                     {activeMachine.modelCode}
                   </span>
                 )}
               </div>
 
               {/* Bottom Thumbnail Strip for Instant Machine Switching */}
-              <div className="pt-2 border-t border-slate-800">
-                <p className="text-[10px] font-mono uppercase text-slate-400 mb-1.5">
+              <div className="pt-2 border-t border-slate-100">
+                <p className="text-[10px] font-mono uppercase text-slate-500 mb-1.5">
                   Equipment Queue:
                 </p>
                 <div className="grid grid-cols-5 gap-1.5 sm:gap-2">
@@ -321,10 +320,10 @@ export default function PinnedMachineShowcase() {
                     <button
                       key={m.id}
                       onClick={() => setActiveIndex(idx)}
-                      className={`relative aspect-[4/3] rounded-lg overflow-hidden border p-1 bg-[#070B10] transition-all cursor-pointer ${
+                      className={`relative aspect-[4/3] rounded-lg overflow-hidden border p-1 bg-slate-50 transition-all cursor-pointer ${
                         idx === activeIndex
-                          ? "border-[#FA7533] shadow-[0_0_10px_rgba(250,117,51,0.5)] ring-1 ring-[#FA7533]"
-                          : "border-slate-800 hover:border-slate-600 opacity-60 hover:opacity-100"
+                          ? "border-[#FA7533] shadow-xs ring-1 ring-[#FA7533]"
+                          : "border-slate-200 hover:border-slate-400 opacity-70 hover:opacity-100"
                       }`}
                     >
                       <Image
@@ -340,46 +339,46 @@ export default function PinnedMachineShowcase() {
             </div>
 
             {/* LEFT COLUMN: FIXED TELEMETRY & SPECIFICATIONS (order-2 mobile, order-1 desktop) (5 cols) */}
-            <div className="order-2 lg:order-1 lg:col-span-5 flex flex-col justify-between bg-[#0D141F]/90 backdrop-blur-md border border-slate-700/80 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-2xl relative overflow-hidden">
+            <div className="order-2 lg:order-1 lg:col-span-5 flex flex-col justify-between bg-white border border-slate-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-xs relative overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#FA7533] to-transparent" />
 
               <div>
                 {/* Header telemetry */}
-                <div className="flex items-center justify-between pb-2.5 border-b border-slate-800">
+                <div className="flex items-center justify-between pb-2.5 border-b border-slate-100">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#FA7533] animate-pulse" />
                     <span className="text-xs font-mono font-bold text-[#FA7533] uppercase">
                       {activeMachine.category}
                     </span>
                   </div>
-                  <span className="text-[11px] font-mono text-slate-400">
+                  <span className="text-[11px] font-mono text-slate-500">
                     Est. 2010 • Delhi HQ
                   </span>
                 </div>
 
                 {/* Active Machine Title & Description */}
                 <div className="mt-3 sm:mt-4">
-                  <h3 className="font-heading font-black text-lg sm:text-xl text-white leading-tight">
+                  <h3 className="font-heading font-black text-lg sm:text-xl text-slate-900 leading-tight">
                     {activeMachine.name}
                   </h3>
-                  <p className="text-xs text-slate-300 mt-2 leading-relaxed line-clamp-2 sm:line-clamp-3">
+                  <p className="text-xs text-slate-600 mt-2 leading-relaxed line-clamp-2 sm:line-clamp-3">
                     {activeMachine.description}
                   </p>
                 </div>
 
                 {/* Active Machine Specifications Grid */}
-                <div className="mt-4 pt-3 border-t border-slate-800">
-                  <p className="text-[10px] font-mono uppercase text-slate-400 font-bold mb-1.5">
+                <div className="mt-4 pt-3 border-t border-slate-100">
+                  <p className="text-[10px] font-mono uppercase text-slate-500 font-bold mb-1.5">
                     Key Machine Specifications:
                   </p>
                   <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
                     {Object.entries(activeMachine.specs).map(([k, v], idx) => (
                       <div
                         key={idx}
-                        className="bg-black/40 border border-slate-800/80 rounded-lg p-2 text-xs flex flex-col justify-center"
+                        className="bg-slate-50 border border-slate-200 rounded-lg p-2 text-xs flex flex-col justify-center"
                       >
-                        <span className="text-slate-400 text-[10px] uppercase truncate">{k}</span>
-                        <span className="text-white font-bold font-mono text-xs truncate mt-0.5">
+                        <span className="text-slate-500 text-[10px] uppercase truncate">{k}</span>
+                        <span className="text-slate-900 font-bold font-mono text-xs truncate mt-0.5">
                           {v}
                         </span>
                       </div>
@@ -388,12 +387,12 @@ export default function PinnedMachineShowcase() {
                 </div>
 
                 {/* Key Features Bullets */}
-                <div className="mt-3.5 pt-2.5 border-t border-slate-800">
+                <div className="mt-3.5 pt-2.5 border-t border-slate-100">
                   <ul className="space-y-1">
                     {activeMachine.features.slice(0, 2).map((feat, fIdx) => (
                       <li
                         key={fIdx}
-                        className="text-xs text-slate-300 flex items-start gap-1.5"
+                        className="text-xs text-slate-600 flex items-start gap-1.5"
                       >
                         <CheckCircle2 className="w-3.5 h-3.5 text-[#FA7533] shrink-0 mt-0.5" />
                         <span className="line-clamp-1">{feat}</span>
@@ -404,10 +403,10 @@ export default function PinnedMachineShowcase() {
               </div>
 
               {/* Action Buttons */}
-              <div className="mt-4 pt-3 border-t border-slate-800 flex flex-row gap-2">
+              <div className="mt-4 pt-3 border-t border-slate-100 flex flex-row gap-2">
                 <button
                   onClick={() => handleOpenDetail(activeMachine)}
-                  className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg bg-[#FA7533] hover:bg-[#E05D1C] text-white text-xs font-bold shadow-md transition-colors cursor-pointer"
+                  className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg bg-[#FA7533] hover:bg-[#E05D1C] text-white text-xs font-bold shadow-xs transition-colors cursor-pointer"
                 >
                   <Maximize2 className="w-3.5 h-3.5" />
                   <span>Inspect Specs</span>
@@ -420,7 +419,7 @@ export default function PinnedMachineShowcase() {
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold transition-colors"
+                  className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold transition-colors shadow-xs"
                 >
                   <MessageCircle className="w-3.5 h-3.5 fill-white text-transparent" />
                   <span>WhatsApp Inquiry</span>

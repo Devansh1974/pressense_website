@@ -84,16 +84,16 @@ export default function SearchModal() {
       role="dialog"
       aria-modal="true"
       aria-label="Catalogue Search"
-      className="fixed inset-0 z-[100] flex items-start justify-center pt-16 sm:pt-24 px-4 bg-black/80 backdrop-blur-sm transition-opacity duration-200"
+      className="fixed inset-0 z-[100] flex items-start justify-center pt-16 sm:pt-24 px-4 bg-black/60 backdrop-blur-sm transition-opacity duration-200"
       onClick={closeSearch}
     >
       <div
-        className="w-full max-w-2xl bg-[#0D1520] border border-slate-800 shadow-2xl rounded-2xl overflow-hidden flex flex-col max-h-[82vh] transition-all animate-in fade-in zoom-in-95 duration-150 text-white"
+        className="w-full max-w-2xl bg-white border border-slate-200 shadow-2xl rounded-2xl overflow-hidden flex flex-col max-h-[82vh] transition-all animate-in fade-in zoom-in-95 duration-150 text-slate-900"
         onClick={(e) => e.stopPropagation()}
         onKeyDown={handleKeyDown}
       >
         {/* Search Input Bar */}
-        <div className="relative flex items-center px-4 sm:px-6 py-4 border-b border-slate-800 bg-[#070B10]">
+        <div className="relative flex items-center px-4 sm:px-6 py-4 border-b border-slate-200 bg-slate-50">
           <Search className="w-5 h-5 text-[#FA7533] shrink-0 mr-3" />
           <input
             ref={inputRef}
@@ -104,7 +104,7 @@ export default function SearchModal() {
               setSelectedIndex(0);
             }}
             placeholder="Search machines, knives, blankets, or model code..."
-            className="w-full text-base sm:text-lg text-white placeholder:text-slate-500 bg-transparent outline-none font-medium"
+            className="w-full text-base sm:text-lg text-slate-900 placeholder:text-slate-400 bg-transparent outline-none font-medium"
           />
           {query ? (
             <button
@@ -112,27 +112,27 @@ export default function SearchModal() {
                 setQuery("");
                 inputRef.current?.focus();
               }}
-              className="p-1 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+              className="p-1 rounded-md text-slate-400 hover:text-slate-700 hover:bg-slate-200 transition-colors"
               aria-label="Clear query"
             >
               <X className="w-4 h-4" />
             </button>
           ) : (
-            <kbd className="hidden sm:inline-flex items-center px-2 py-0.5 text-xs font-mono text-slate-400 bg-black/60 border border-slate-700 rounded">
+            <kbd className="hidden sm:inline-flex items-center px-2 py-0.5 text-xs font-mono text-slate-500 bg-white border border-slate-200 rounded">
               ESC
             </kbd>
           )}
         </div>
 
         {/* Category Filter Pills */}
-        <div className="flex items-center gap-1.5 px-4 sm:px-6 py-2.5 bg-[#0A0F16] border-b border-slate-800 overflow-x-auto text-xs scrollbar-none font-mono">
+        <div className="flex items-center gap-1.5 px-4 sm:px-6 py-2.5 bg-slate-100/60 border-b border-slate-200 overflow-x-auto text-xs scrollbar-none font-mono">
           <span className="text-slate-500 font-medium shrink-0 mr-1">Filter:</span>
           <button
             onClick={() => setSelectedCategory("all")}
             className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-colors ${
               selectedCategory === "all"
                 ? "bg-[#FA7533] text-white"
-                : "bg-black/40 border border-slate-800 text-slate-400 hover:text-white"
+                : "bg-white border border-slate-200 text-slate-600 hover:text-slate-900 shadow-2xs"
             }`}
           >
             All Equipment ({products.length})
@@ -144,7 +144,7 @@ export default function SearchModal() {
               className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-colors ${
                 selectedCategory === cat.slug
                   ? "bg-[#FA7533] text-white"
-                  : "bg-black/40 border border-slate-800 text-slate-400 hover:text-white"
+                  : "bg-white border border-slate-200 text-slate-600 hover:text-slate-900 shadow-2xs"
               }`}
             >
               {cat.name.split(" ")[0]} ({products.filter((p) => p.categorySlug === cat.slug).length})
@@ -153,13 +153,13 @@ export default function SearchModal() {
         </div>
 
         {/* Results List */}
-        <div className="flex-1 overflow-y-auto p-3 sm:p-4 divide-y divide-slate-800/60">
+        <div className="flex-1 overflow-y-auto p-3 sm:p-4 divide-y divide-slate-100">
           {filteredProducts.length === 0 ? (
             <div className="py-12 text-center">
-              <p className="text-sm font-medium text-white">
+              <p className="text-sm font-medium text-slate-900">
                 No industrial equipment found for &ldquo;{query}&rdquo;
               </p>
-              <p className="text-xs text-slate-400 mt-1">
+              <p className="text-xs text-slate-500 mt-1">
                 Try searching for Polar, Conti-Air, Corner Rounder, Heidelberg, or Seypa
               </p>
             </div>
@@ -176,11 +176,11 @@ export default function SearchModal() {
                   onMouseEnter={() => setSelectedIndex(idx)}
                   className={`flex items-center gap-3 sm:gap-4 p-2.5 sm:p-3 rounded-xl transition-colors ${
                     isSelected
-                      ? "bg-slate-800/90 text-white"
-                      : "hover:bg-slate-800/50 text-slate-200"
+                      ? "bg-orange-50 text-slate-900"
+                      : "hover:bg-slate-50 text-slate-700"
                   }`}
                 >
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 bg-[#05080E] border border-slate-800 rounded-lg overflow-hidden p-1 flex items-center justify-center">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 bg-slate-50 border border-slate-200 rounded-lg overflow-hidden p-1 flex items-center justify-center">
                     <Image
                       src={product.images[0]}
                       alt={product.name}
@@ -195,15 +195,15 @@ export default function SearchModal() {
                         {category?.name || product.categorySlug}
                       </span>
                       {product.modelCode && (
-                        <span className="text-[10px] font-mono text-slate-400 bg-black/60 border border-slate-700 px-1.5 py-0.5 rounded">
+                        <span className="text-[10px] font-mono text-slate-500 bg-slate-100 border border-slate-200 px-1.5 py-0.5 rounded font-semibold">
                           {product.modelCode}
                         </span>
                       )}
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-white truncate mt-0.5">
+                    <h4 className="text-sm sm:text-base font-bold text-slate-900 truncate mt-0.5">
                       {product.name}
                     </h4>
-                    <p className="text-xs text-slate-400 line-clamp-1 mt-0.5">
+                    <p className="text-xs text-slate-500 line-clamp-1 mt-0.5">
                       {product.shortDescription}
                     </p>
                   </div>
@@ -211,7 +211,7 @@ export default function SearchModal() {
                     className={`w-4 h-4 shrink-0 transition-transform ${
                       isSelected
                         ? "text-[#FA7533] translate-x-1"
-                        : "text-slate-500"
+                        : "text-slate-400"
                     }`}
                   />
                 </Link>
@@ -221,19 +221,19 @@ export default function SearchModal() {
         </div>
 
         {/* Modal Footer */}
-        <div className="px-4 sm:px-6 py-3 bg-[#070B10] border-t border-slate-800 flex items-center justify-between text-xs text-slate-400 font-mono">
+        <div className="px-4 sm:px-6 py-3 bg-slate-50 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500 font-mono">
           <div className="flex items-center gap-3">
             <span className="hidden sm:inline-flex items-center gap-1">
-              <kbd className="px-1.5 py-0.5 text-[10px] font-mono bg-black/60 border border-slate-700 rounded text-slate-300">
+              <kbd className="px-1.5 py-0.5 text-[10px] font-mono bg-white border border-slate-200 rounded text-slate-700">
                 ↑
               </kbd>
-              <kbd className="px-1.5 py-0.5 text-[10px] font-mono bg-black/60 border border-slate-700 rounded text-slate-300">
+              <kbd className="px-1.5 py-0.5 text-[10px] font-mono bg-white border border-slate-200 rounded text-slate-700">
                 ↓
               </kbd>
               navigate
             </span>
             <span className="hidden sm:inline-flex items-center gap-1">
-              <kbd className="px-1.5 py-0.5 text-[10px] font-mono bg-black/60 border border-slate-700 rounded text-slate-300">
+              <kbd className="px-1.5 py-0.5 text-[10px] font-mono bg-white border border-slate-200 rounded text-slate-700">
                 <CornerDownLeft className="w-2.5 h-2.5" />
               </kbd>
               select

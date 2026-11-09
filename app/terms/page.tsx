@@ -10,18 +10,18 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <div className="bg-[#070B10] text-white min-h-screen py-8 lg:py-12">
+    <div className="bg-[#FAFBFB] text-slate-900 min-h-screen py-8 lg:py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Breadcrumbs items={[{ label: "Terms & Conditions" }]} />
 
-        <div className="bg-[#0D1520] border border-slate-800 rounded-2xl p-6 sm:p-12 my-6 shadow-xl space-y-6 text-sm text-slate-300 leading-relaxed">
-          <h1 className="font-heading font-black text-2xl sm:text-4xl text-white tracking-tight">
+        <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-12 my-6 shadow-xs space-y-6 text-sm text-slate-600 leading-relaxed">
+          <h1 className="font-heading font-black text-2xl sm:text-4xl text-slate-900 tracking-tight">
             Terms &amp; Conditions
           </h1>
           <p className="text-xs text-slate-400">Last updated: {new Date().getFullYear()}</p>
 
           <section className="space-y-3">
-            <h2 className="font-heading font-bold text-lg text-white">
+            <h2 className="font-heading font-bold text-lg text-slate-900">
               1. Catalogue Purpose
             </h2>
             <p>
@@ -33,7 +33,7 @@ export default function TermsPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="font-heading font-bold text-lg text-white">
+            <h2 className="font-heading font-bold text-lg text-slate-900">
               2. Quotations &amp; Commercial Terms
             </h2>
             <p>
@@ -45,7 +45,7 @@ export default function TermsPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="font-heading font-bold text-lg text-white">
+            <h2 className="font-heading font-bold text-lg text-slate-900">
               3. Compatibility &amp; Fitment
             </h2>
             <p>

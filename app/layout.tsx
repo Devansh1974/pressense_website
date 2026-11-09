@@ -22,7 +22,7 @@ const inter = Inter({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0D171F",
+  themeColor: "#FA7533",
   width: "device-width",
   initialScale: 1,
 };
@@ -170,7 +170,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-[#070B10] text-[#F8FAFC] antialiased selection:bg-[#FA7533] selection:text-white">
+      <body className="min-h-screen flex flex-col bg-[#FAFBFB] text-[#0F172A] antialiased selection:bg-[#FA7533] selection:text-white">
         <SearchProvider>
           <Navbar />
           <main className="flex-1">{children}</main>

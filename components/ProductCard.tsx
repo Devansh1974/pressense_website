@@ -17,11 +17,11 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
   const category = categories.find((c) => c.slug === product.categorySlug);
 
   return (
-    <div className="group flex flex-col bg-[#0D1522] border border-slate-800 hover:border-[#FA7533] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl hover:shadow-[0_0_20px_rgba(250,117,51,0.2)] transition-all duration-300 hover:-translate-y-1 text-white">
-      {/* 4:3 Image Container with object-fit: contain */}
+    <div className="group flex flex-col bg-white border border-slate-200 hover:border-[#FA7533] rounded-xl sm:rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 text-slate-900">
+      {/* 4:3 Image Container with clean light background */}
       <Link
         href={`/products/${product.categorySlug}/${product.slug}`}
-        className="relative w-full aspect-[4/3] bg-[#05080E] border-b border-slate-800 p-3 sm:p-4 flex items-center justify-center overflow-hidden"
+        className="relative w-full aspect-[4/3] bg-slate-50 border-b border-slate-100 p-3 sm:p-4 flex items-center justify-center overflow-hidden"
       >
         <Image
           src={product.images[0]}
@@ -43,7 +43,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
         </div>
 
         {product.modelCode && (
-          <span className="absolute bottom-2 right-2 bg-black/80 backdrop-blur-xs border border-slate-700 text-slate-300 text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded shadow-xs">
+          <span className="absolute bottom-2 right-2 bg-white/95 backdrop-blur-xs border border-slate-200 text-slate-700 text-[9px] sm:text-[10px] font-mono font-semibold px-2 py-0.5 rounded shadow-2xs">
             {product.modelCode}
           </span>
         )}
@@ -62,24 +62,24 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
             href={`/products/${product.categorySlug}/${product.slug}`}
             className="block"
           >
-            <h3 className="font-heading font-bold text-sm sm:text-base text-white group-hover:text-[#FA7533] transition-colors leading-snug line-clamp-2">
+            <h3 className="font-heading font-bold text-sm sm:text-base text-slate-900 group-hover:text-[#FA7533] transition-colors leading-snug line-clamp-2">
               {product.name}
             </h3>
           </Link>
 
-          <p className="text-xs text-slate-400 mt-1.5 line-clamp-2 leading-relaxed">
+          <p className="text-xs text-slate-600 mt-1.5 line-clamp-2 leading-relaxed">
             {product.shortDescription}
           </p>
         </div>
 
         {/* Action Bar: View Product & WhatsApp Lead */}
-        <div className="mt-3.5 pt-3 sm:mt-4 sm:pt-3 border-t border-slate-800 flex items-center justify-between gap-2">
+        <div className="mt-3.5 pt-3 sm:mt-4 sm:pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
           <Link
             href={`/products/${product.categorySlug}/${product.slug}`}
-            className="inline-flex items-center gap-1 text-xs font-bold text-slate-300 group-hover:text-[#FA7533] transition-colors"
+            className="inline-flex items-center gap-1 text-xs font-bold text-slate-600 hover:text-[#FA7533] transition-colors"
           >
             <span>Specs</span>
-            <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </Link>
 
           <WhatsAppQuickButton product={product} />

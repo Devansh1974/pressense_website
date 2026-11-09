@@ -80,29 +80,29 @@ export default function MachineDetailModal({
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-4xl max-h-[92vh] bg-[#0D1520] rounded-2xl shadow-2xl border border-slate-800 overflow-hidden flex flex-col animate-in zoom-in-95 duration-200"
+        className="relative w-full max-w-4xl max-h-[92vh] bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col animate-in zoom-in-95 duration-200 text-slate-900"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Header Bar */}
-        <div className="bg-[#070B10] text-white px-6 py-4 flex items-center justify-between border-b border-slate-800">
+        <div className="bg-slate-50 text-slate-900 px-6 py-4 flex items-center justify-between border-b border-slate-200">
           <div className="flex items-center gap-2.5">
             <span className="w-2 h-2 rounded-full bg-[#FA7533] animate-pulse" />
-            <span className="text-xs font-mono uppercase tracking-wider text-[#FA7533]">
+            <span className="text-xs font-mono uppercase tracking-wider text-[#FA7533] font-bold">
               {machine.category}
             </span>
-            <span className="text-slate-600 hidden sm:inline">•</span>
-            <span className="text-xs text-slate-400 hidden sm:inline font-mono">
+            <span className="text-slate-300 hidden sm:inline">•</span>
+            <span className="text-xs text-slate-500 hidden sm:inline font-mono">
               Est. 2010 • Delhi Facility
             </span>
           </div>
           <button
             onClick={onClose}
             aria-label="Close machine details modal"
-            className="p-1.5 rounded-lg bg-white/5 hover:bg-[#FA7533] text-slate-300 hover:text-white transition-colors cursor-pointer border border-white/10"
+            className="p-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-600 hover:text-slate-900 transition-colors cursor-pointer border border-slate-200"
           >
             <X className="w-5 h-5" />
           </button>
@@ -114,7 +114,7 @@ export default function MachineDetailModal({
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
             {/* Image Box */}
             <div className="md:col-span-5">
-              <div className="relative w-full aspect-[4/3] bg-[#070B10] border border-slate-800 rounded-xl overflow-hidden p-4 flex items-center justify-center shadow-inner group">
+              <div className="relative w-full aspect-[4/3] bg-slate-50 border border-slate-200 rounded-xl overflow-hidden p-4 flex items-center justify-center shadow-2xs group">
                 <Image
                   src={machine.image}
                   alt={machine.name}
@@ -125,7 +125,7 @@ export default function MachineDetailModal({
                   {machine.badge}
                 </span>
                 {machine.modelCode && (
-                  <span className="absolute bottom-3 right-3 text-[11px] font-mono bg-black/80 border border-white/10 text-slate-200 px-2 py-0.5 rounded shadow-2xs">
+                  <span className="absolute bottom-3 right-3 text-[11px] font-mono bg-white/95 border border-slate-200 text-slate-700 px-2 py-0.5 rounded shadow-2xs font-semibold">
                     {machine.modelCode}
                   </span>
                 )}
@@ -139,22 +139,22 @@ export default function MachineDetailModal({
               </span>
               <h2
                 id="modal-title"
-                className="font-heading font-black text-2xl sm:text-3xl text-white tracking-tight mt-1 leading-tight"
+                className="font-heading font-black text-2xl sm:text-3xl text-slate-900 tracking-tight mt-1 leading-tight"
               >
                 {machine.name}
               </h2>
-              <p className="text-sm text-slate-300 mt-3 leading-relaxed">
+              <p className="text-sm text-slate-600 mt-3 leading-relaxed">
                 {machine.description}
               </p>
 
               {/* Service & Guarantee Badges */}
-              <div className="flex flex-wrap items-center gap-2 mt-4 pt-3 border-t border-slate-800 text-xs">
-                <span className="inline-flex items-center gap-1.5 bg-[#FA7533]/15 text-[#FA7533] px-2.5 py-1 rounded-md font-semibold border border-[#FA7533]/30">
+              <div className="flex flex-wrap items-center gap-2 mt-4 pt-3 border-t border-slate-100 text-xs">
+                <span className="inline-flex items-center gap-1.5 bg-orange-50 text-[#FA7533] px-2.5 py-1 rounded-md font-semibold border border-orange-200">
                   <Wrench className="w-3.5 h-3.5" />
                   In-House Engineer Support
                 </span>
-                <span className="inline-flex items-center gap-1.5 bg-white/5 text-slate-300 px-2.5 py-1 rounded-md font-medium border border-white/10">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                <span className="inline-flex items-center gap-1.5 bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium border border-slate-200">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                   Pre-Dispatch Quality Inspection
                 </span>
               </div>
@@ -162,8 +162,8 @@ export default function MachineDetailModal({
           </div>
 
           {/* Technical Specifications Grid */}
-          <div className="bg-[#070B10] border border-slate-800 rounded-xl p-5">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-3 flex items-center gap-2">
+          <div className="bg-slate-50 border border-slate-200 rounded-xl p-5">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3 flex items-center gap-2">
               <Sparkles className="w-3.5 h-3.5 text-[#FA7533]" />
               Engineering Specifications
             </h3>
@@ -171,10 +171,10 @@ export default function MachineDetailModal({
               {Object.entries(machine.specs).map(([key, val], idx) => (
                 <div
                   key={idx}
-                  className="flex items-center justify-between p-2.5 bg-[#0D1520] rounded-lg border border-slate-800/80 text-xs"
+                  className="flex items-center justify-between p-2.5 bg-white rounded-lg border border-slate-200 text-xs shadow-2xs"
                 >
-                  <span className="text-slate-400 font-medium">{key}</span>
-                  <span className="font-bold text-white text-right font-mono ml-2">
+                  <span className="text-slate-500 font-medium">{key}</span>
+                  <span className="font-bold text-slate-900 text-right font-mono ml-2">
                     {val}
                   </span>
                 </div>
@@ -185,7 +185,7 @@ export default function MachineDetailModal({
           {/* Key Advantages & Applications Dual Column */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Features */}
-            <div className="border border-slate-800 rounded-xl p-5 bg-[#070B10]">
+            <div className="border border-slate-200 rounded-xl p-5 bg-slate-50">
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#FA7533] mb-3">
                 Key Performance Features
               </h4>
@@ -193,7 +193,7 @@ export default function MachineDetailModal({
                 {machine.features.map((feature, idx) => (
                   <li
                     key={idx}
-                    className="text-xs text-slate-300 flex items-start gap-2 leading-relaxed"
+                    className="text-xs text-slate-700 flex items-start gap-2 leading-relaxed"
                   >
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#FA7533] shrink-0 mt-0.5" />
                     <span>{feature}</span>
@@ -203,15 +203,15 @@ export default function MachineDetailModal({
             </div>
 
             {/* Applications */}
-            <div className="border border-slate-800 rounded-xl p-5 bg-[#070B10]">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-3">
+            <div className="border border-slate-200 rounded-xl p-5 bg-slate-50">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">
                 Production Applications
               </h4>
               <ul className="space-y-2">
                 {machine.applications.map((app, idx) => (
                   <li
                     key={idx}
-                    className="text-xs text-slate-300 flex items-start gap-2 leading-relaxed"
+                    className="text-xs text-slate-700 flex items-start gap-2 leading-relaxed"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-[#FA7533] shrink-0 mt-1.5" />
                     <span>{app}</span>
@@ -223,17 +223,17 @@ export default function MachineDetailModal({
         </div>
 
         {/* Modal Bottom CTA Bar */}
-        <div className="bg-[#070B10] border-t border-slate-800 px-6 py-4 flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-2 text-xs text-slate-400">
+        <div className="bg-slate-50 border-t border-slate-200 px-6 py-4 flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-2 text-xs text-slate-600">
             <Phone className="w-3.5 h-3.5 text-[#FA7533]" />
-            <span>Direct consultation with Raj Kumar: <strong className="text-white font-mono">{companyInfo.displayPhone}</strong></span>
+            <span>Direct consultation with Raj Kumar: <strong className="text-slate-900 font-mono">{companyInfo.displayPhone}</strong></span>
           </div>
 
           <div className="flex items-center gap-2.5">
             <Link
               href={machine.href}
               onClick={onClose}
-              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg border border-white/15 bg-white/5 hover:bg-white/10 text-white text-xs font-bold transition-colors"
+              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 text-slate-800 text-xs font-bold transition-colors shadow-2xs"
             >
               <span>View Product Page</span>
               <ExternalLink className="w-3.5 h-3.5" />
@@ -243,7 +243,7 @@ export default function MachineDetailModal({
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold shadow-sm transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold shadow-xs transition-colors"
             >
               <MessageCircle className="w-4 h-4 fill-white text-transparent" />
               <span>Inquire on WhatsApp</span>

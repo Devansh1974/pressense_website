@@ -266,12 +266,11 @@ export default function Hero() {
     <>
       <section
         aria-label="Press Sense Industrial Machinery Showcase"
-        className="relative bg-[#070B10] text-white overflow-hidden border-b border-slate-800 py-6 sm:py-8 lg:py-12"
+        className="relative bg-gradient-to-b from-orange-50/20 via-[#FAFBFB] to-slate-50/40 text-slate-900 overflow-hidden border-b border-slate-200 py-6 sm:py-8 lg:py-12"
       >
-        {/* Subtle background industrial grid & warm ambient glow */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
-        <div className="absolute top-1/3 -left-32 w-80 h-80 bg-[#FA7533]/15 blur-[130px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-[#FA7533]/10 blur-[130px] rounded-full pointer-events-none" />
+        {/* Subtle warm ambient background glow */}
+        <div className="absolute top-1/3 -left-32 w-80 h-80 bg-orange-200/25 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-orange-200/20 blur-[120px] rounded-full pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-10 items-center">
@@ -280,7 +279,7 @@ export default function Hero() {
             <div className="order-1 lg:order-2 lg:col-span-6 flex flex-col">
               {/* Dedicated Image Showcase Container */}
               <div
-                className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] bg-[#0A1018] rounded-2xl border border-slate-800 hover:border-[#FA7533] shadow-2xl p-3 sm:p-5 flex items-center justify-center cursor-pointer group overflow-hidden transition-all duration-300"
+                className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] bg-white rounded-2xl border border-slate-200 hover:border-[#FA7533] shadow-sm hover:shadow-md p-3 sm:p-5 flex items-center justify-center cursor-pointer group overflow-hidden transition-all duration-300"
                 onClick={() => handleOpenDetail(currentSlide)}
                 title="Click to inspect complete technical specifications"
               >
@@ -301,31 +300,31 @@ export default function Hero() {
 
                 {/* Machine Badge Floating Top-Left */}
                 <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 flex items-center gap-1.5 z-10 pointer-events-none">
-                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 sm:py-1 rounded-md text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider bg-[#FA7533] text-white shadow-md">
+                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 sm:py-1 rounded-md text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider bg-[#FA7533] text-white shadow-xs">
                     <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
                     {currentSlide.badge}
                   </span>
-                  <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono bg-black/80 border border-white/10 text-slate-300">
+                  <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono bg-white/95 border border-slate-200 text-slate-700 shadow-2xs">
                     Est. 2010
                   </span>
                 </div>
 
                 {/* Model Code Floating Bottom-Right */}
                 {currentSlide.modelCode && (
-                  <span className="absolute bottom-2.5 right-2.5 sm:bottom-3 sm:right-3 z-10 text-[10px] sm:text-[11px] font-mono bg-black/85 border border-slate-700 text-slate-300 px-2 py-0.5 rounded shadow-xs backdrop-blur-xs">
+                  <span className="absolute bottom-2.5 right-2.5 sm:bottom-3 sm:right-3 z-10 text-[10px] sm:text-[11px] font-mono bg-white/95 border border-slate-200 text-slate-700 px-2 py-0.5 rounded shadow-2xs backdrop-blur-xs font-semibold">
                     {currentSlide.modelCode}
                   </span>
                 )}
 
                 {/* Tap to inspect Floating Bottom-Left */}
-                <div className="absolute bottom-2.5 left-2.5 sm:bottom-3 sm:left-3 z-10 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] sm:text-xs font-semibold text-white bg-black/80 border border-white/15 backdrop-blur-xs group-hover:bg-[#FA7533] group-hover:border-[#FA7533] transition-colors shadow-xs">
+                <div className="absolute bottom-2.5 left-2.5 sm:bottom-3 sm:left-3 z-10 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] sm:text-xs font-semibold text-slate-700 bg-white/95 border border-slate-200 backdrop-blur-xs group-hover:bg-[#FA7533] group-hover:border-[#FA7533] group-hover:text-white transition-colors shadow-2xs">
                   <Maximize2 className="w-3 h-3 text-[#FA7533] group-hover:text-white" />
                   <span>Tap to inspect specs</span>
                 </div>
               </div>
 
               {/* Dedicated Image Navigation & Progress Bar (Right below Image, zero overlapping!) */}
-              <div className="flex items-center justify-between gap-3 mt-3 p-2 sm:p-2.5 rounded-xl bg-[#0D1520] border border-slate-800 shadow-sm">
+              <div className="flex items-center justify-between gap-3 mt-3 p-2 sm:p-2.5 rounded-xl bg-white border border-slate-200 shadow-xs">
                 {/* Left: Counter & Auto-scroll Segmented Indicators */}
                 <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
                   <span className="text-xs font-mono font-bold text-[#FA7533] shrink-0">
@@ -341,11 +340,11 @@ export default function Hero() {
                           key={slide.id}
                           onClick={() => goToSlide(i)}
                           aria-label={`Jump to slide ${i + 1}: ${slide.name}`}
-                          className="relative flex-1 h-1.5 sm:h-2 rounded-full overflow-hidden bg-slate-800 transition-all cursor-pointer hover:bg-slate-700"
+                          className="relative flex-1 h-1.5 sm:h-2 rounded-full overflow-hidden bg-slate-100 transition-all cursor-pointer hover:bg-slate-200"
                         >
                           {isActive && (
                             <div
-                              className="h-full bg-gradient-to-r from-[#FA7533] to-[#FF8D4D] rounded-full transition-all duration-75 shadow-[0_0_8px_#FA7533]"
+                              className="h-full bg-gradient-to-r from-[#FA7533] to-[#FF8D4D] rounded-full transition-all duration-75 shadow-xs"
                               style={{ width: `${slideProgress}%` }}
                             />
                           )}
@@ -358,7 +357,7 @@ export default function Hero() {
                   <button
                     onClick={() => setIsAutoScrollActive(!isAutoScrollActive)}
                     aria-label={isAutoScrollActive ? "Pause auto-scroll" : "Play auto-scroll"}
-                    className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors shrink-0 cursor-pointer"
+                    className="p-1 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-colors shrink-0 cursor-pointer"
                   >
                     {isAutoScrollActive ? (
                       <Pause className="w-3.5 h-3.5" />
@@ -373,14 +372,14 @@ export default function Hero() {
                   <button
                     onClick={prevSlide}
                     aria-label="Previous machine slide"
-                    className="p-1.5 sm:p-2 rounded-lg bg-black/60 hover:bg-[#FA7533] text-white border border-slate-700 hover:border-[#FA7533] transition-colors cursor-pointer"
+                    className="p-1.5 sm:p-2 rounded-lg bg-slate-100 hover:bg-[#FA7533] text-slate-700 hover:text-white border border-slate-200 hover:border-[#FA7533] transition-colors cursor-pointer"
                   >
                     <ChevronLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </button>
                   <button
                     onClick={nextSlide}
                     aria-label="Next machine slide"
-                    className="p-1.5 sm:p-2 rounded-lg bg-black/60 hover:bg-[#FA7533] text-white border border-slate-700 hover:border-[#FA7533] transition-colors cursor-pointer"
+                    className="p-1.5 sm:p-2 rounded-lg bg-slate-100 hover:bg-[#FA7533] text-slate-700 hover:text-white border border-slate-200 hover:border-[#FA7533] transition-colors cursor-pointer"
                   >
                     <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </button>
@@ -399,28 +398,28 @@ export default function Hero() {
                 </div>
 
                 {/* Machine Name */}
-                <h1 className="font-heading font-black text-xl sm:text-3xl lg:text-4xl text-white tracking-tight leading-snug">
+                <h1 className="font-heading font-black text-xl sm:text-3xl lg:text-4xl text-slate-900 tracking-tight leading-snug">
                   {currentSlide.name}
                 </h1>
 
                 {/* Machine Description */}
-                <p className="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed line-clamp-2 sm:line-clamp-3">
+                <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed line-clamp-2 sm:line-clamp-3">
                   {currentSlide.description}
                 </p>
 
                 {/* 2x2 Specs Grid */}
-                <div className="grid grid-cols-2 gap-2 mt-3.5 pt-3 border-t border-slate-800">
+                <div className="grid grid-cols-2 gap-2 mt-3.5 pt-3 border-t border-slate-200">
                   {Object.entries(currentSlide.specs)
                     .slice(0, 4)
                     .map(([key, val], i) => (
                       <div
                         key={i}
-                        className="bg-[#0A1018] border border-slate-800/80 rounded-xl p-2.5 flex flex-col justify-center"
+                        className="bg-white border border-slate-200 rounded-xl p-2.5 flex flex-col justify-center shadow-2xs"
                       >
-                        <span className="text-[10px] font-mono uppercase text-slate-400 truncate">
+                        <span className="text-[10px] font-mono uppercase text-slate-500 truncate">
                           {key}
                         </span>
-                        <span className="text-xs sm:text-sm font-mono font-bold text-white truncate mt-0.5">
+                        <span className="text-xs sm:text-sm font-mono font-bold text-slate-900 truncate mt-0.5">
                           {val}
                         </span>
                       </div>
@@ -428,11 +427,11 @@ export default function Hero() {
                 </div>
 
                 {/* Primary Action Buttons */}
-                <div className="mt-4 pt-3 border-t border-slate-800 space-y-2">
+                <div className="mt-4 pt-3 border-t border-slate-200 space-y-2">
                   <div className="flex flex-row gap-2">
                     <button
                       onClick={() => handleOpenDetail(currentSlide)}
-                      className="flex-1 inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 sm:py-3 bg-[#FA7533] hover:bg-[#E05D1C] text-white text-xs sm:text-sm font-bold rounded-xl shadow-[0_0_15px_rgba(250,117,51,0.3)] transition-all cursor-pointer"
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 sm:py-3 bg-[#FA7533] hover:bg-[#E05D1C] text-white text-xs sm:text-sm font-bold rounded-xl shadow-xs transition-all cursor-pointer"
                     >
                       <Maximize2 className="w-3.5 h-3.5" />
                       <span>Inspect Machine</span>
@@ -445,7 +444,7 @@ export default function Hero() {
                       )}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 sm:py-3 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs sm:text-sm font-bold rounded-xl shadow-sm transition-all"
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 sm:py-3 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs sm:text-sm font-bold rounded-xl shadow-xs transition-all"
                     >
                       <MessageCircle className="w-3.5 h-3.5 fill-white text-transparent" />
                       <span>WhatsApp Raj Kumar</span>
@@ -454,7 +453,7 @@ export default function Hero() {
 
                   <Link
                     href={currentSlide.href}
-                    className="w-full inline-flex items-center justify-center gap-1.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white text-xs font-semibold border border-white/10 transition-colors"
+                    className="w-full inline-flex items-center justify-center gap-1.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 text-xs font-semibold border border-slate-200 transition-colors"
                   >
                     <span>View In Product Catalogue</span>
                     <ArrowRight className="w-3.5 h-3.5" />
